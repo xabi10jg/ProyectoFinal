@@ -41,16 +41,16 @@
             <a class="nav-link js-scroll-trigger" href="#services">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Acogidas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#about">Quienes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+            <a class="nav-link js-scroll-trigger" href="#team">Equipo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
           </li>
         </ul>
       </div>
@@ -74,34 +74,34 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Que ofrecemos</h2>
+          <h3 class="section-subheading text-muted">Una aplicacion para englobar todas las necesidades para tu mascota.</h3>
         </div>
       </div>
       <div class="row text-center">
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-paw fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">E-Commerce</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Refugios</h4>
+          <p class="text-muted">Accede rapidamente a una amplia gama de refugios de mascotas y lugares de acogida.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-clinic-medical fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Responsive Design</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Veterinarios</h4>
+          <p class="text-muted">Una amplia cantidad de veterinarios a tu disposicion con unos pocos clicks.</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+            <i class="fas fa-h-square fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">Hoteles</h4>
+          <p class="text-muted">Hoteles para ir con tus mascotas o para hospedarlo si te vas de vacaciones.</p>
         </div>
       </div>
     </div>
@@ -112,8 +112,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Portfolio</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Mascotas en acogida o para adopcion</h2>
+          <h3 class="section-subheading text-muted">Algunas de las mascotas en espera de acogida o adopcion.</h3>
         </div>
       </div>
       <div class="row">
@@ -124,11 +124,11 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio/jaky-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Threads</h4>
-            <p class="text-muted">Illustration</p>
+            <h4>Jaky</h4>
+            <p class="text-muted">Pastor aleman</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -138,11 +138,11 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio/lur-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Explore</h4>
-            <p class="text-muted">Graphic Design</p>
+            <h4>Lur</h4>
+            <p class="text-muted">Border Collie</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -152,11 +152,11 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio/Bort-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Finish</h4>
-            <p class="text-muted">Identity</p>
+            <h4>Bort</h4>
+            <p class="text-muted">Husky siberiano</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -166,11 +166,11 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio/mast-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Lines</h4>
-            <p class="text-muted">Branding</p>
+            <h4>Mast</h4>
+            <p class="text-muted">Mastin</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -180,11 +180,11 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio/zuri-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Southwest</h4>
-            <p class="text-muted">Website Design</p>
+            <h4>Zuri</h4>
+            <p class="text-muted">Labrador</p>
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
@@ -194,11 +194,11 @@
                 <i class="fas fa-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+            <img class="img-fluid" src="img/portfolio/doby-thumbnail.jpg" alt="">
           </a>
           <div class="portfolio-caption">
-            <h4>Window</h4>
-            <p class="text-muted">Photography</p>
+            <h4>Doby</h4>
+            <p class="text-muted">Doberman</p>
           </div>
         </div>
       </div>
@@ -210,8 +210,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Quienes Somos</h2>
+          <h3 class="section-subheading text-muted">Un breve recorrido sobre quienes somos.</h3>
         </div>
       </div>
       <div class="row">
@@ -223,11 +223,11 @@
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 class="subheading">Our Humble Beginnings</h4>
+                  <h4>2018-2019</h4>
+                  <h4 class="subheading">Creacion de Comanimals</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p class="text-muted">En el año 2018 tuvimos la idea de formar Comanimals una aplicacion para englobar todos los aspectos posibles sobre las mascotas. En 2019 finalmente pusimos el proyecto en marcha.</p>
                 </div>
               </div>
             </li>
@@ -237,11 +237,11 @@
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 class="subheading">An Agency is Born</h4>
+                  <h4>Noviembre 2019</h4>
+                  <h4 class="subheading">Una landing se ha creado</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p class="text-muted">Los primeros vocetos de esta nuestra landing page los creamos en noviembre de 2019 tras varios cambios y versiones finalizamos nuestra landing.</p>
                 </div>
               </div>
             </li>
@@ -251,11 +251,11 @@
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>December 2012</h4>
-                  <h4 class="subheading">Transition to Full Service</h4>
+                  <h4>Diciembre-Enero 2019-2020</h4>
+                  <h4 class="subheading">Transicion a una aplicacion completa</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p class="text-muted">Constatamos las primeras necesidades que tendria nuestra aplicacion y comenzamos su diseño.</p>
                 </div>
               </div>
             </li>
@@ -265,19 +265,19 @@
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4>July 2014</h4>
-                  <h4 class="subheading">Phase Two Expansion</h4>
+                  <h4>Febrero 2020</h4>
+                  <h4 class="subheading">Expansion de segunda fase</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                  <p class="text-muted">Añadimos los veterinarios y hoteles a nuestros anteriores servicios ofrecidos con las protectoras y refugios.</p>
                 </div>
               </div>
             </li>
             <li class="timeline-inverted">
               <div class="timeline-image">
-                <h4>Be Part
-                  <br>Of Our
-                  <br>Story!</h4>
+                <h4>¡Se Parte
+                  <br>De Nuestra
+                  <br>Historia!</h4>
               </div>
             </li>
           </ul>
@@ -291,16 +291,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Nuestro increible equipo</h2>
+          <h3 class="section-subheading text-muted">Los componentes de nuestro experimentado equipo.</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="">
-            <h4>Kay Garland</h4>
-            <p class="text-muted">Lead Designer</p>
+            <h4>Andoni Bartolome Gonzalez</h4>
+            <p class="text-muted">Coordinador</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -323,8 +323,8 @@
         <div class="col-sm-4">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
-            <h4>Larry Parker</h4>
-            <p class="text-muted">Lead Marketer</p>
+            <h4>Jon Valdes Diaz</h4>
+            <p class="text-muted">Asistente de direccion</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -347,8 +347,8 @@
         <div class="col-sm-4">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
-            <h4>Diana Pertersen</h4>
-            <p class="text-muted">Lead Developer</p>
+            <h4>Xabier Jacob Gonzalez</h4>
+            <p class="text-muted">Tecnico especialista</p>
             <ul class="list-inline social-buttons">
               <li class="list-inline-item">
                 <a href="#">
@@ -371,13 +371,13 @@
       </div>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+          <p class="large text-muted">Equipo con gran experiencia y dominio de desarrollo y diseño web.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Clients -->
+  <!-- Clients 
   <section class="py-5">
     <div class="container">
       <div class="row">
@@ -404,44 +404,42 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- Contact -->
   <section class="page-section" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Contact Us</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Contacto</h2>
+          <h3 class="section-subheading">Si tienes cualquier duda o comentario no dudes en usar el area de contacto aqui abajo. Introduce todos los valores correctamente para poder realizar la consulta.</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <form id="contactForm" name="sentMessage" novalidate="novalidate">
+          <form id="contactForm" action="{{route('contacto')}}" method="post">
+            @csrf
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
+                  <input class="form-control" name="nombre" id="nombre" type="text" placeholder="Introduce un nombre *" required>
+                  <div class="section-subheading" id="nombreMal">Introduce un nombre.</div>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-                <div class="form-group">
-                  <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required="required" data-validation-required-message="Please enter your phone number.">
-                  <p class="help-block text-danger"></p>
+                  <input class="form-control" name="email" id="email" type="email" placeholder="Introduce tu email *" required>
+                  <div class="section-subheading" id="emailMal">Itroduce un email.</div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <textarea class="form-control" id="message" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message."></textarea>
-                  <p class="help-block text-danger"></p>
+                  <input class="form-control" type="text" name="mensaje" id="mensaje" placeholder="Introduce tu mensaje *" required>
+                  <div class="section-subheading" id="mensajeMal">Itroduce un Mensaje.</div>
                 </div>
               </div>
               <div class="clearfix"></div>
               <div class="col-lg-12 text-center">
                 <div id="success"></div>
-                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+                <button id="submit" class="btn btn-primary btn-xl text-uppercase" type="submit" disabled>Enviar datos</button>
               </div>
             </div>
           </form>
@@ -506,18 +504,18 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <h2 class="text-uppercase">Jacky</h2>
+                <p class="item-intro text-muted">Pastor aleman.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/jaky.jpg" alt="">
+                <p>Amable y cariñoso, acostumbrado a estar con niños. Esta en busca de un nuevo hogar.</p>
                 <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Threads</li>
-                  <li>Category: Illustration</li>
+                  <li>Nacimiento: Enero 2017</li>
+                  <li>Refugio: comanimals</li>
+                  <li>Raza: Pasto Aleman</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Cerrar</button>
               </div>
             </div>
           </div>
@@ -540,18 +538,18 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <h2 class="text-uppercase">Lur</h2>
+                <p class="item-intro text-muted">Border Collie.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/lur.jpg" alt="">
+                <p>Energico y cariñoso. Un poco asustadizo, le encanta correr por el monte y coger los palos mas grandes que encuentra.</p>
                 <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Explore</li>
-                  <li>Category: Graphic Design</li>
+                  <li>Nacimiento: Enero 2019</li>
+                  <li>Refugio: comanimals</li>
+                  <li>Raza: Border Collie</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Cerrar</button>
               </div>
             </div>
           </div>
@@ -574,18 +572,18 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <h2 class="text-uppercase">Bort</h2>
+                <p class="item-intro text-muted">Husky siberiano.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/Bort.jpg" alt="">
+                <p>Le encanta pasear y correr, muy cariñoso sobre todo con los niños.</p>
                 <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Finish</li>
-                  <li>Category: Identity</li>
+                  <li>Nacimiento: Marzo 2016</li>
+                  <li>Refugio: comanimals</li>
+                  <li>Raza: Husky siberiano</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Cerrar</button>
               </div>
             </div>
           </div>
@@ -608,18 +606,18 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <h2 class="text-uppercase">Mast</h2>
+                <p class="item-intro text-muted">Mastin.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/mast.jpg" alt="">
+                <p>Perezoso y cariñoso. Le encanta jugar.</p>
                 <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Lines</li>
-                  <li>Category: Branding</li>
+                  <li>Nacimiento: Junio 2012</li>
+                  <li>Refugio: comanimals</li>
+                  <li>Raza: Mastin</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Cerrar</button>
               </div>
             </div>
           </div>
@@ -642,18 +640,18 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <h2 class="text-uppercase">Zuri</h2>
+                <p class="item-intro text-muted">Labrador.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/zuri.jpg" alt="">
+                <p>Amable y cariñoso. Le encanta jugar y pasear. Sin problemas con otros perros.</p>
                 <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Southwest</li>
-                  <li>Category: Website Design</li>
+                  <li>Nacimiento: Julio 2018</li>
+                  <li>Refugio: comanimals</li>
+                  <li>Raza: Labrador</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Cerrar</button>
               </div>
             </div>
           </div>
@@ -676,18 +674,18 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <h2 class="text-uppercase">Doby</h2>
+                <p class="item-intro text-muted">Doberman.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/doby.jpg" alt="">
+                <p>Muy cariñoso y tranquilo. Doby es libre. El amo libero a doby.</p>
                 <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Window</li>
-                  <li>Category: Photography</li>
+                  <li>Nacimiento: Marzo 2016</li>
+                  <li>Refugio: comanimals</li>
+                  <li>Raza: Doberman</li>
                 </ul>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Cerrar</button>
               </div>
             </div>
           </div>
@@ -704,9 +702,11 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Contact form JavaScript -->
+  <script src="js/validacion.js"></script>
+  <!-- 
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>
-
+  -->
   <!-- Custom scripts for this template -->
   <script src="js/agency.min.js"></script>
 
