@@ -52,6 +52,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Iniciar Sesion</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -64,7 +67,7 @@
         <img class="img-fluid" src="img/logos/logo.png" alt="logo empresa">
         <div class="intro-lead-in">¡Bienvenidos a vuestra comunidad!</div>
         <div class="intro-heading text-uppercase">Comanimals</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Mas informacion</a>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">!Unete ya¡</a>
       </div>
     </div>
   </header>
