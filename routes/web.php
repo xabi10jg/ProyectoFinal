@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::post('contacto', 'contactoController@insert')->name('contacto');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -53,7 +53,7 @@
             <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Iniciar Sesion</a>
+            <a class="nav-link js-scroll-trigger" href="{{route('login')}}">Iniciar Sesion</a>
           </li>
         </ul>
       </div>
