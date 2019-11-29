@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//App::setlocale('es');
+Route::get('locale/{locale}', function($locale){
+	Session::put('locale',$locale);
+	return redirect()->back();
+})->name('change_lang');
 
 Route::get('/', function () {
     return view('index');
