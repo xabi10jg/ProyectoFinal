@@ -17,7 +17,15 @@ Route::get('locale/{locale}', function($locale){
 })->name('change_lang');
 
 Route::get('/', function () {
-    return view('index');
+
+	$user=Auth::user();
+
+	if($user->esAdmin()){
+		return view('administrador');
+	}
+	else{
+    	return view('index');
+    }
 });
 
 Route::post('contacto', 'contactoController@insert')->name('contacto');
