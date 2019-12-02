@@ -96,36 +96,7 @@
         <img class="img-fluid" src="img/logos/logo.png" alt="logo empresa">
         <div class="intro-lead-in">@lang('¡Bienvenidos a vuestra comunidad!')</div>
         <div class="intro-heading text-uppercase">Comanimals</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal"  data-whatever="@mdo" data-target="#exampleModal">¡Unete ya!</a>
-        <!--modal-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Mensaje</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                    <input type="text" class="form-control" id="recipient-name">
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Message:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal"  data-whatever="@mdo" data-target="#exampleModal">¡Unete ya!</a>   
       </div>
     </div>
   </header>
@@ -754,7 +725,67 @@
       </div>
     </div>
   </div>
-  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form method="POST" action="{{ route('register') }}">
+                          @csrf   
+                              <label for="name" id="name" class="col-md-4 col-form-label text-md-left" placeholder="@lang('Introduce un nombre.') *">{{ __('Name') }}</label>
+                              <div class="col-md-8">
+                                  <input id="nameMal" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                  @error('name')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
+                              </div>
+                      
+                              <label for="email" id="email2" class="col-md-4 col-form-label text-md-left" placeholder="@lang('Introduce un email.') *">{{ __('E-Mail Address') }}</label>
+
+                              <div class="col-md-8">
+                                  <input id="emailMal2" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                  @error('email')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
+                              </div>
+
+                              <label for="password" id="password" class="col-md-4 col-form-label text-md-left" placeholder="@lang('Introduce un password.') *">{{ __('Password') }}</label>
+
+                              <div class="col-md-8">
+                                  <input id="passwordMal" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                  @error('password')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                  @enderror
+                              </div>
+      
+                              <label for="password-confirm" id="password-confirm" class="col-md-5 col-form-label text-md-left" placeholder="@lang('Confirma el password') *">{{ __('Confirm Password') }}</label>
+
+                              <div class="col-md-8">
+                                  <input id="password-confirmMal" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                              </div>
+                </div>
+                <div class="modal-footer">                          
+                                  <button type="submit" class="btn btn-primary" disabled>
+                                      {{ __('Register') }}
+                                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -763,7 +794,8 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Contact form JavaScript -->
-  <script src="js/validacion.js"></script>
+  /**<script src="js/validacion.js"></script>
+  <script src="js/registro.js"></script>
   <!-- 
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>
