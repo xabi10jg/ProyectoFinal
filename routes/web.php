@@ -16,7 +16,7 @@ Route::get('locale/{locale}', function($locale){
 	return redirect()->back();
 })->name('change_lang');
 
-Route::get('/', function () {
+/*Route::get('/', function () {
 
 	$user=Auth::user();
 
@@ -26,6 +26,21 @@ Route::get('/', function () {
 	else{
     	return view('index');
     }
+});*/
+Route::get('/', function(){
+  if(isset(Auth::user()->role_id)){
+
+  	if(Auth::user()->role_id==1){
+  		return view('estandar');
+  	}
+  	else{
+  		if (Auth::user()->role_id==2) 
+  			return view('administrador');
+  		
+  	}
+    
+  }
+	return view('index');
 });
 
 Route::post('contacto', 'contactoController@insert')->name('contacto');
