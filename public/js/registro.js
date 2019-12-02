@@ -1,8 +1,9 @@
 $(document).ready(function(){
+    console.log("Probando");
 	let nameMal = document.getElementById("NameMal");
  	let emailMal = document.getElementById("emailMal2");
     let passwordMal = document.getElementById("passwordMal");
-    let passwordconfirmMal = document.getElementById("password-confirmMal");
+    let passwordconfirmMal = document.getElementById("passwordConfirmMal");
 
   
   	nameMal.hidden = true;
@@ -19,7 +20,7 @@ $(document).ready(function(){
     var name = document.getElementById("name");
     var email = document.getElementById("email2");
     var password = document.getElementById("password");
-    var passwordconfirm = document.getElementById('password-confirm');
+    var passwordconfirm = document.getElementById('passwordConfirm');
 
     if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
         nameMal.hidden = false;
@@ -37,7 +38,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof password != "string" && password.value.length < 7 || password.value.length >= 30){
+    if (typeof password != "string" && password.value.length < 7){
         passwordMal.hidden = false;
         bien--;
     }else{
@@ -45,7 +46,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof passwordconfirm != "string" && passwordconfirm.value.length === 0 || passwordconfirm.value.length >= 255){
+    if (typeof passwordConfirm != "string" && passwordconfirm.value.length < 7){
         passwordconfirmMal.hidden = false;
         bien--;
     }else{

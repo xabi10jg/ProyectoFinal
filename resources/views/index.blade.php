@@ -725,6 +725,7 @@
       </div>
     </div>
   </div>
+  <!--modal del formulario-->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -734,53 +735,29 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+                <div class="modal-body">
                 <form method="POST" action="{{ route('register') }}">
                           @csrf   
-                              <label for="name" id="name" class="col-md-4 col-form-label text-md-left" placeholder="@lang('Introduce un nombre.') *">{{ __('Name') }}</label>
-                              <div class="col-md-8">
-                                  <input id="nameMal" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                  @error('name')
-                                      <span class="invalid-feedback" role="alert">
-                                          <strong>{{ $message }}</strong>
-                                      </span>
-                                  @enderror
-                              </div>
-                      
-                              <label for="email" id="email2" class="col-md-4 col-form-label text-md-left" placeholder="@lang('Introduce un email.') *">{{ __('E-Mail Address') }}</label>
-
-                              <div class="col-md-8">
-                                  <input id="emailMal2" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                  @error('email')
-                                      <span class="invalid-feedback" role="alert">
-                                          <strong>{{ $message }}</strong>
-                                      </span>
-                                  @enderror
-                              </div>
-
-                              <label for="password" id="password" class="col-md-4 col-form-label text-md-left" placeholder="@lang('Introduce un password.') *">{{ __('Password') }}</label>
-
-                              <div class="col-md-8">
-                                  <input id="passwordMal" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                  @error('password')
-                                      <span class="invalid-feedback" role="alert">
-                                          <strong>{{ $message }}</strong>
-                                      </span>
-                                  @enderror
-                              </div>
-      
-                              <label for="password-confirm" id="password-confirm" class="col-md-5 col-form-label text-md-left" placeholder="@lang('Confirma el password') *">{{ __('Confirm Password') }}</label>
-
-                              <div class="col-md-8">
-                                  <input id="password-confirmMal" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                              </div>
+                          <div class="form-group">
+                            <div class="section-subheading" id="nombreMal">@lang('Introduce un nombre')</div>
+                            <input class="form-control" name="nombre" id="nombre" type="text" placeholder="@lang('Introduce un nombre.') *" required>
+                          </div>
+                          <div class="form-group">
+                            <div class="section-subheading" id="emailMal">@lang('Introduce un email')</div>
+                            <input class="form-control" name="email" id="email" type="email" placeholder="@lang('Introduce un email.') *" required>
+                          </div>
+                          <div class="form-group">
+                            <div class="section-subheading" id="passwordMal">@lang('Password')</div>
+                            <input class="form-control" name="password" id="password" type="password" placeholder="@lang('password') *" required>
+                          </div>
+                          <div class="form-group">
+                            <div class="section-subheading" id="passWordConfirmMal">@lang('Password')</div>
+                            <input class="form-control" name="passwordConfirm" id="passwordConfirm" type="password" placeholder="@lang('password') *" required autocomplete="new-password">
+                          </div>
                 </div>
                 <div class="modal-footer">                          
-                                  <button type="submit" class="btn btn-primary" disabled>
-                                      {{ __('Register') }}
-                                  </button>
+                                  <div id="success"></div>
+                <button id="submit" class="btn btn-primary" type="submit" disabled>@lang('Enviar datos')</button>
                 </div>
               </form>
             </div>
@@ -794,7 +771,7 @@
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Contact form JavaScript -->
-  /**<script src="js/validacion.js"></script>
+  <script src="js/validacion.js"></script>
   <script src="js/registro.js"></script>
   <!-- 
   <script src="js/jqBootstrapValidation.js"></script>
