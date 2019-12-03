@@ -48,3 +48,4 @@ Route::post('contacto', 'contactoController@insert')->name('contacto');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('FormularioEditar', 'HomeController@EditarUsuario')->name('FormularioEditar')->middleware('verified');
