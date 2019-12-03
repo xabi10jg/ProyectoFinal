@@ -73,8 +73,10 @@
 	"Iniciar Sesión": "Login",
 	"Registrarse": "Register",
 	"Cerrar Sesión": "Logout",
-	"Perfil": "Profile"
-
+	"Perfil": "Profile",
+	"Perfil Admin": "Admin Profile",
+	"Nombre":"Name",
+	"Rol":"Role"
 	
 
 }
