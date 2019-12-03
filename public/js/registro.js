@@ -1,9 +1,8 @@
 $(document).ready(function(){
-    console.log("Probando");
-	let nameMal = document.getElementById("NameMal");
+	let nameMal = document.getElementById("nameMal");
  	let emailMal = document.getElementById("emailMal2");
-    let passwordMal = document.getElementById("passwordMal");
-    let passwordconfirmMal = document.getElementById("passwordConfirmMal");
+  let passwordMal = document.getElementById("passwordMal");
+  let passwordconfirmMal = document.getElementById("passwordconfirmMal");
 
   
   	nameMal.hidden = true;
@@ -16,9 +15,10 @@ $(document).ready(function(){
   });
 
   function comprobar(){
+    console.log("Entra");
     var bien = 0;
     var name = document.getElementById("name");
-    var email = document.getElementById("email2");
+    var email = document.getElementById("email");
     var password = document.getElementById("password");
     var passwordconfirm = document.getElementById('passwordConfirm');
 
@@ -46,7 +46,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof passwordConfirm != "string" && passwordconfirm.value.length < 7){
+    if (typeof passwordconfirm != "string" && passwordconfirm.value.length < 7){
         passwordconfirmMal.hidden = false;
         bien--;
     }else{
@@ -55,18 +55,20 @@ $(document).ready(function(){
     }
 
     if(bien === 4){
+      console.log("Funciona");
       EnableSubmit();
     }else{
+      console.log("No funciona");
       DisableSubmit();
     }
   }
 
   function EnableSubmit(){
-    document.getElementById("submit").disabled = false;
+    document.getElementById("submit2").disabled = false;
   }
 
   function DisableSubmit(){
-    document.getElementById("submit").disabled = true;
+    document.getElementById("submit2").disabled = true;
   }
 	        
 });
