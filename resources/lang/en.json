@@ -73,7 +73,11 @@
 	"Iniciar Sesión": "Login",
 	"Registrarse": "Register",
 	"Cerrar Sesión": "Logout",
-	"Perfil": "Profile"
+	"Perfil": "Profile",
+	"Registro":"Registry",
+	"Nombre":"Name",
+	"Contraseña":"Password",
+	"Confirmar contraseña":"Confirm password"
 
 	
 
