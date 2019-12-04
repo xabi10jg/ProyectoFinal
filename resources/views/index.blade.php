@@ -37,9 +37,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">@lang('Servicios')</a>
-          </li>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">@lang('Acogidas')</a>
           </li>
@@ -69,7 +69,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{route('home')}}">
-                                    Perfil
+                                    @lang('Perfil')
                                     </a>
                                 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -101,9 +101,9 @@
     <div class="container">
       <div class="intro-text">
         <img class="img-fluid" src="img/logos/logo.png" alt="logo empresa">
-        <div class="intro-lead-in">@lang('¡Bienvenidos a vuestra comunidad!')</div>
+        <div class="intro-lead-in">@lang('!Bienvenidos a vuestra comunidad¡')</div>
         <div class="intro-heading text-uppercase">Comanimals</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal" data-target="#exampleModal">¡Unete ya!</a>   
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal" data-target="#exampleModal">@lang('¡Unete ya!')</a>   
       </div>
     </div>
   </header>
@@ -812,7 +812,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Login</h4>
+        <h4 class="modal-title w-100 font-weight-bold">@lang('Iniciar Sesión')</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -823,7 +823,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -837,7 +837,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -853,19 +853,19 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : ''}}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        @lang('Recordar Usuario')
                                     </label>
                                 </div>
                             </div>
                         </div>              
                         <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-default">{{ __('Login') }}</button>
+                            <button class="btn btn-default">{{ __('Iniciar Sesión') }}</button>
                             @if (Route::has('password.request'))
                               <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
+                                {{ __('¿Ha olvidad su contraseña?') }}
                               </a>
                             @endif
       </div>
