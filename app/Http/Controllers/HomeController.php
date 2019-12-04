@@ -54,7 +54,7 @@ class HomeController extends Controller
 
     public function EliminarUsuario(){
 
-        return view('EliminarUsuario');
+        
     }
 
 }
