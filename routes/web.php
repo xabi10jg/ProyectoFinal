@@ -52,7 +52,9 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'adminController@index')->name('admin');
+//Route::get('/admin', 'adminController@index')->name('admin');
+Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('admin');
+
 
 Route::get('FormularioEditar', 'HomeController@EditarUsuario')->name('FormularioEditar')->middleware('verified');
 

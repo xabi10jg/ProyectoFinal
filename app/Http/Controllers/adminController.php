@@ -11,13 +11,13 @@ class adminController extends Controller
     {
         $this->middleware(['admin']);
     }
-	/*if(Auth::user()->role_id === 3){
-    return view('administrador');
-  }else{
-    return redirect()->route('landing');
-  }*/
+	
     public function index()
     {
-        return view('administrador');
+    	if(Auth::user()->role_id === 3){
+    		return view('administrador');
+  		}else{
+    		return redirect()->route('landing');
+  		}
     }
 }
