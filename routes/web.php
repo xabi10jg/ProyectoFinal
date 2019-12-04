@@ -50,15 +50,9 @@ Route::post('contacto', 'contactoController@insert')->name('contacto');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', function(){
-  if(Auth::user()->role_id === 3){
-    return view('administrador');
-  }else{
-    return redirect()->route('landing');
-  }
-})->middleware(['auth', 'password.confirm']);
+Route::get('/admin', 'adminController@index')->name('admin');
 
 Route::get('FormularioEditar', 'HomeController@EditarUsuario')->name('FormularioEditar')->middleware('verified');
 
