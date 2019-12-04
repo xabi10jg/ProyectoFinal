@@ -750,8 +750,8 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Nombre')</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
+                                <input id="nameR" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <div id="nameMal">Introduce un nombre.</div>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -764,8 +764,8 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
+                                <input id="emailR" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <div id="emailMal2">Introduce un email.</div>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -778,8 +778,8 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
+                                <input id="passwordR" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <div id="passwordMal2">Introduce una contraseña.</div>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -792,12 +792,13 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">@lang('Confirmar contraseña')</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirmR" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <div id="passwordconfirmMal2">Introduce la misma contraseña.</div>
                             </div>
                         </div>
                 </div>
                 <div class="modal-footer">                          
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" id="submitR" class="btn btn-primary">
                   @lang('Registrarse')
                 </button>
                 </div>
@@ -862,7 +863,7 @@
                             </div>
                         </div>              
                         <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-default">{{ __('Iniciar Sesión') }}</button>
+                            <button id="submitSesion" class="btn btn-default">{{ __('Iniciar Sesión') }}</button>
                             @if (Route::has('password.request'))
                               <a class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('¿Ha olvidad su contraseña?') }}

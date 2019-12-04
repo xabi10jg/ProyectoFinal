@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	let nameMal = document.getElementById("nameMal");
  	let emailMal = document.getElementById("emailMal2");
-  let passwordMal = document.getElementById("passwordMal");
-  let passwordconfirmMal = document.getElementById("passwordconfirmMal");
+  let passwordMal = document.getElementById("passwordMal2");
+  let passwordconfirmMal = document.getElementById("passwordconfirmMal2");
 
   
   	nameMal.hidden = true;
@@ -17,10 +17,10 @@ $(document).ready(function(){
   function comprobar(){
     console.log("Entra");
     var bien = 0;
-    var name = document.getElementById("name");
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    var passwordconfirm = document.getElementById('passwordConfirm');
+    var name = document.getElementById("nameR");
+    var email = document.getElementById("emailR");
+    var password = document.getElementById("passwordR");
+    var passwordconfirm = document.getElementById('password-confirmR');
 
     if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
         nameMal.hidden = false;
@@ -46,7 +46,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof passwordconfirm != "string" && passwordconfirm.value.length < 7){
+    if (passwordconfirm != password){
         passwordconfirmMal.hidden = false;
         bien--;
     }else{
@@ -64,11 +64,11 @@ $(document).ready(function(){
   }
 
   function EnableSubmit(){
-    document.getElementById("submit2").disabled = false;
+    document.getElementById("submitR").disabled = false;
   }
 
   function DisableSubmit(){
-    document.getElementById("submit2").disabled = true;
+    document.getElementById("submitR").disabled = true;
   }
 	        
 });
