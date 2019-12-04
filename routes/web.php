@@ -58,5 +58,7 @@ Route::get('/admin', function(){
   }else{
     return redirect()->route('landing');
   }
-  
 })->middleware(['auth', 'password.confirm']);
+
+Route::get('FormularioEditar', 'HomeController@EditarUsuario')->name('FormularioEditar')->middleware('verified');
+

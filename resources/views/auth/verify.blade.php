@@ -1,7 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<!--Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">COMANIMALS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h1>Has sido registrado correctamente</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="mostrarmodal" class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -25,4 +42,5 @@
         </div>
     </div>
 </div>
+
 @endsection

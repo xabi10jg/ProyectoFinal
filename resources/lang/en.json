@@ -7,7 +7,7 @@
 	"Contacto": "Contact",
 	"Iniciar Sesion": "Log In",
 	"!Bienvenidos a vuestra comunidad¡": "!Welcome to our Comunity¡",
-	"!Unete ya¡": "!Enjoy now¡",
+	"¡Unete ya!": "!Enjoy now¡",
 	"Que ofrecemos": "What we offer",
 	"Una aplicacion para englobar todas las necesidades para tu mascota.": "An application to cover all the needs of your pets.",
 	"Refugios": "Shelters",
@@ -76,7 +76,14 @@
 	"Perfil": "Profile",
 	"Perfil Admin": "Admin Profile",
 	"Nombre":"Name",
-	"Rol":"Role"
+	"Rol":"Role",
+	"Registro":"Registry",
+	"Nombre":"Name",
+	"Contraseña":"Password",
+	"Confirmar contraseña":"Confirm password",
+	"Recordar Usuario":"Remember me",
+	"¿Ha olvidad su contraseña?":"Forgot Your Password?",
+	"Perfil Usuario":"User Profile"
 	
 
 }
