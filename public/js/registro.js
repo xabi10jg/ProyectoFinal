@@ -10,17 +10,20 @@ $(document).ready(function(){
     passwordMal.hidden = true;
     passwordconfirmMal.hidden = true;
 
-  $('input').change(function(){
+  $('input').keyup(function(){
+    comprobar();
+  });
+
+  $('input').focusout(function(){
     comprobar();
   });
 
   function comprobar(){
-    console.log("Entra");
     var bien = 0;
     var name = document.getElementById("nameR");
     var email = document.getElementById("emailR");
-    var password = document.getElementById("passwordR");
-    var passwordconfirm = document.getElementById('password-confirmR');
+    var password = document.getElementById("passwordR").value;
+    var passwordconfirm = document.getElementById("password-confirmR").value;
 
     if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
         nameMal.hidden = false;
@@ -38,7 +41,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof password != "string" && password.value.length < 7){
+    if (typeof password != "string" && password.value.length < 8){
         passwordMal.hidden = false;
         bien--;
     }else{
@@ -46,19 +49,37 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (passwordconfirm != password){
+    if (passwordconfirm == password){
+        console.log("Entra password bien");
+        passwordconfirmMal.hidden = true;
+        bien++;
+      }else{
+        console.log("La contraseña no es igual");
         passwordconfirmMal.hidden = false;
         bien--;
+      }
+/*
+    if (typeof passwordconfirm != "string" && passwordconfirm.value.length < 8){
+      console.log("Entra password mal");
+        passwordMal.hidden = false;
+        bien--;
     }else{
-      passwordconfirmMal.hidden = true;
-      bien++;
-    }
+      if (passwordconfirm === password){
+        console.log("Entra password bien");
+        passwordconfirmMal.hidden = true;
+        bien++;
+      }else{
+        console.log("La contraseña no es igual");
+        passwordconfirmMal.hidden = false;
+        bien--;
+      }
+    }*/
+
+    
 
     if(bien === 4){
-      console.log("Funciona");
       EnableSubmit();
     }else{
-      console.log("No funciona");
       DisableSubmit();
     }
   }
