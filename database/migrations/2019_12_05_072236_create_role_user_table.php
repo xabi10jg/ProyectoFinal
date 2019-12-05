@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class FkRolUsers extends Migration
+class CreateRoleUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class FkRolUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->default(1);
-
-            $table->foreign('role_id')->references('id')->on('roles');
+        Schema::create('role_user', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('role_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->timestamps();  
         });
-
-        Schema::disableForeignKeyConstraints();
     }
 
     /**
@@ -29,8 +28,6 @@ class FkRolUsers extends Migration
      */
     public function down()
     {
-       
-        $table->dropForeign(['role_id']);
-
+        Schema::dropIfExists('role_user');
     }
 }

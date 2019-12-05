@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.nav')
 
-@section('content')
-<div class="container">
+<header class="masthead">
+    <section class="page-section">
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -14,21 +15,26 @@
                         </div>
                     @endif
 
-                    <h1>Perfil Usuario Estandar</h1>
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
+                    </div>
+                    <div class="prueba">
+                        @lang('Nombre'): {{Auth()->user()->name}}<br>
+                        E-mail: {{Auth()->user()->email}}<br>
+                        Dirección: {{Auth()->user()->direccion}}<br>
+                        Localidad: {{Auth()->user()->localidad}}<br>
+                        Provincia: {{Auth()->user()->provincia}}<br>
+                        País: {{Auth()->user()->pais}}<br>
+                        Teléfono: {{Auth()->user()->telefono}}<br>
 
-                    Nombre: {{Auth()->user()->name}}<br>
-                    Apellido: {{Auth()->user()->apellido}}<br>
-                    E-mail: {{Auth()->user()->email}}<br>
-                    Dirección: {{Auth()->user()->direccion}}<br>
-                    Localidad: {{Auth()->user()->localidad}}<br>
-                    Provincia: {{Auth()->user()->provincia}}<br>
-                    País: {{Auth()->user()->pais}}<br>
-                    Teléfono: {{Auth()->user()->telefono}}<br>
-
-                    Te uniste en {{Auth()->user()->email_verified_at}}<br>
-                    <button id="EditarPerfil"><a href="{{route('FormularioEditar')}}">Editar</a></button>
-                    <button id="EliminarPerfil"><a href="{{route('EliminarUsuario')}}">Eliminar</a></button>
-
+                        Te uniste en {{Auth()->user()->email_verified_at}}<br>
+                        <button id="EditarPerfil">
+                            <a href="{{route('FormularioEditar')}}">Editar</a>
+                        </button>
+                        <button id="EliminarPerfil">
+                            <a href="{{route('EliminarUsuario')}}">Eliminar</a>
+                        </button>
+                    </div>
 
 
                 </div>
@@ -36,4 +42,9 @@
         </div>
     </div>
 </div>
-@endsection
+
+@extends('layouts.scriptsBody')
+
+</body>
+
+</html>

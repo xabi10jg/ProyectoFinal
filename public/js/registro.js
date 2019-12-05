@@ -1,8 +1,8 @@
 $(document).ready(function(){
 	let nameMal = document.getElementById("nameMal");
  	let emailMal = document.getElementById("emailMal2");
-  let passwordMal = document.getElementById("passwordMal");
-  let passwordconfirmMal = document.getElementById("passwordconfirmMal");
+  let passwordMal = document.getElementById("passwordMal2");
+  let passwordconfirmMal = document.getElementById("passwordconfirmMal2");
 
   
   	nameMal.hidden = true;
@@ -10,17 +10,20 @@ $(document).ready(function(){
     passwordMal.hidden = true;
     passwordconfirmMal.hidden = true;
 
-  $('input').change(function(){
+  $('input').keyup(function(){
+    comprobar();
+  });
+
+  $('input').focusout(function(){
     comprobar();
   });
 
   function comprobar(){
-    console.log("Entra");
     var bien = 0;
-    var name = document.getElementById("name");
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    var passwordconfirm = document.getElementById('passwordConfirm');
+    var name = document.getElementById("nameR");
+    var email = document.getElementById("emailR");
+    var password = document.getElementById("passwordR").value;
+    var passwordconfirm = document.getElementById("password-confirmR").value;
 
     if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
         nameMal.hidden = false;
@@ -38,7 +41,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof password != "string" && password.value.length < 7){
+    if (typeof password != "string" || password.length < 8){
         passwordMal.hidden = false;
         bien--;
     }else{
@@ -46,29 +49,45 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof passwordconfirm != "string" && passwordconfirm.value.length < 7){
+    if (passwordconfirm === password){
+        passwordconfirmMal.hidden = true;
+        bien++;
+      }else{
         passwordconfirmMal.hidden = false;
         bien--;
+      }
+/*
+    if (typeof passwordconfirm != "string" && passwordconfirm.value.length < 8){
+      console.log("Entra password mal");
+        passwordMal.hidden = false;
+        bien--;
     }else{
-      passwordconfirmMal.hidden = true;
-      bien++;
-    }
+      if (passwordconfirm === password){
+        console.log("Entra password bien");
+        passwordconfirmMal.hidden = true;
+        bien++;
+      }else{
+        console.log("La contraseña no es igual");
+        passwordconfirmMal.hidden = false;
+        bien--;
+      }
+    }*/
+
+    
 
     if(bien === 4){
-      console.log("Funciona");
       EnableSubmit();
     }else{
-      console.log("No funciona");
       DisableSubmit();
     }
   }
 
   function EnableSubmit(){
-    document.getElementById("submit2").disabled = false;
+    document.getElementById("submitR").disabled = false;
   }
 
   function DisableSubmit(){
-    document.getElementById("submit2").disabled = true;
+    document.getElementById("submitR").disabled = true;
   }
 	        
 });

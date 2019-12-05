@@ -27,27 +27,35 @@ Route::get('locale/{locale}', function($locale){
     	return view('index');
     }
 });*/
-Route::get('/', function(){
+/*Route::get('/', function(){
   if(isset(Auth::user()->role_id)){
 
   	if(Auth::user()->role_id==1){
   		return view('estandar');
   	}
-  	else{
-  		if (Auth::user()->role_id==2) 
+  	else if(Auth::user()->role_id==3) {
+  		
   			return view('administrador');
   		
   	}
     
   }
 	return view('index');
-});
+});*/
+Route::get('/', function(){
+  return view('index');
+})->name('landing');
 
 Route::post('contacto', 'contactoController@insert')->name('contacto');
 
 Auth::routes(['verify' => true]);
 
+
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('FormularioEditar', 'HomeController@VistaEditarUsuario')->name('FormularioEditar')->middleware('verified');
 Route::post('FormularioEditar', 'HomeController@EditarUsuario')->name('ConfirmarEdicion')->middleware('verified');
 Route::get('EliminarUsuario', 'HomeController@EliminarUsuario')->name('EliminarUsuario')->middleware('verified');
+
+
+//Route::get('/admin', 'adminController@index')->name('admin');
+Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('name');
