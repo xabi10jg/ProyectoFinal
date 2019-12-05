@@ -7,7 +7,11 @@ $(document).ready(function(){
   	emailMal.hidden = true;
   	mensajeMal.hidden = true;
 
-  $('input').change(function(){
+  $('input').keyup(function(){
+    comprobar();
+  });
+
+  $('input').focusout(function(){
     comprobar();
   });
 

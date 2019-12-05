@@ -826,8 +826,8 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
+                                <input id="emailI" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <div id="emailMal3">Introduce un email valido.</div>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -840,8 +840,8 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                                <input id="passwordI" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <div id="passwordMal3">Introduce una contraseña valida.</div>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -853,7 +853,7 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : ''}}>
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember">
 
                                     <label class="form-check-label" for="remember">
                                         @lang('Recordar Usuario')
@@ -862,7 +862,7 @@
                             </div>
                         </div>              
                         <div class="modal-footer d-flex justify-content-center">
-                            <button id="submitSesion" class="btn btn-default">{{ __('Iniciar Sesión') }}</button>
+                            <button id="submitI" class="btn btn-default" disabled>{{ __('Iniciar Sesión') }}</button>
                             @if (Route::has('password.request'))
                               <a class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('¿Ha olvidad su contraseña?') }}
@@ -884,6 +884,7 @@
   <!-- Contact form JavaScript -->
   <script src="js/validacion.js"></script>
   <script src="js/registro.js"></script>
+  <script src="js/inicioSesion.js"></script>
   <!-- 
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>
