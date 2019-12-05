@@ -41,7 +41,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof password != "string" && password.value.length < 8){
+    if (typeof password != "string" || password.length < 8){
         passwordMal.hidden = false;
         bien--;
     }else{
@@ -49,12 +49,10 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (passwordconfirm == password){
-        console.log("Entra password bien");
+    if (passwordconfirm === password){
         passwordconfirmMal.hidden = true;
         bien++;
       }else{
-        console.log("La contraseña no es igual");
         passwordconfirmMal.hidden = false;
         bien--;
       }
