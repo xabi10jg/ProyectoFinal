@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Role;
 
 class RolesSeeder extends Seeder
 {
@@ -15,10 +16,10 @@ class RolesSeeder extends Seeder
             'rol' => "Estandar",
         ]);
         DB::table('roles')->insert([
-            'rol' => "Administrador",
+            'rol' => "Encargado",
         ]);
         DB::table('roles')->insert([
-            'rol' => "SuperAdministrador",
+            'rol' => "Administrador",
         ]);
     }
 }
