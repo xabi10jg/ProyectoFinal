@@ -74,13 +74,16 @@
 	"Registrarse": "Register",
 	"Cerrar Sesión": "Logout",
 	"Perfil": "Profile",
+	"Perfil Admin": "Admin Profile",
+	"Nombre":"Name",
+	"Rol":"Role",
 	"Registro":"Registry",
 	"Nombre":"Name",
 	"Contraseña":"Password",
 	"Confirmar contraseña":"Confirm password",
 	"Recordar Usuario":"Remember me",
-	"¿Ha olvidad su contraseña?":"Forgot Your Password?"
-
+	"¿Ha olvidad su contraseña?":"Forgot Your Password?",
+	"Perfil Usuario":"User Profile"
 	
 
 }

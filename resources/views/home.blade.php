@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.nav')
 
-@section('content')
-<div class="container">
+<header class="masthead">
+    <section class="page-section">
+    <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -14,13 +15,15 @@
                         </div>
                     @endif
 
-                    <h1>Perfil Usuario Estandar</h1>
-
-                    Nombre: {{Auth()->user()->name}}<br>
-                    E-mail: {{Auth()->user()->email}}<br>
-                    <input type="button" name="editar" value="Editar">
-                    <input type="button" name="eliminar" value="Eliminar">
-
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
+                    </div>
+                    <div class="prueba">
+                        @lang('Nombre'): {{Auth()->user()->name}}<br>
+                        E-mail: {{Auth()->user()->email}}<br>
+                        <input type="button" name="editar" value="Editar">
+                        <input type="button" name="eliminar" value="Eliminar">
+                    </div>
 
 
                 </div>
@@ -28,4 +31,9 @@
         </div>
     </div>
 </div>
-@endsection
+
+@extends('layouts.scriptsBody')
+
+</body>
+
+</html>
