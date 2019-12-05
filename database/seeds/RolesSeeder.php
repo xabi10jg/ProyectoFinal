@@ -12,14 +12,16 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'rol' => "Estandar",
-        ]);
-        DB::table('roles')->insert([
-            'rol' => "Encargado",
-        ]);
-        DB::table('roles')->insert([
-            'rol' => "Administrador",
-        ]);
+        $role = new Role();
+        $role->rol = 'Estandar';
+        $role->save();
+
+        $role = new Role();
+        $role->rol = 'Encargado';
+        $role->save();
+
+        $role = new Role();
+        $role->rol = 'Administrador';
+        $role->save();
     }
 }
