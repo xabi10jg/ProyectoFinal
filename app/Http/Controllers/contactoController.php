@@ -24,7 +24,6 @@ class contactoController extends Controller
     	$data->mensaje= $request->input('mensaje');
 
     	$data->save();
-
     	return view('index');
     }
 }

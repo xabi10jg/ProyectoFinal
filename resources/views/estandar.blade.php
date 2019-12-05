@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -7,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Comanimals</title>
+  <title>View Usuario Estandar</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,6 +26,7 @@
 </head>
 
 <body id="page-top">
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -35,9 +37,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-          <!--<li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">@lang('Servicios')</a>
-          </li>-->
+          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">@lang('Acogidas')</a>
           </li>
@@ -50,13 +52,13 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">@lang('Contacto')</a>
           </li>
-          @guest
+                        @guest
                             <li class="nav-item">
-                                <a class="nav-link"data-toggle="modal" data-target="#modalLoginForm">@lang('Iniciar Sesión')</a>
+                                <a class="nav-link" href="{{ route('login') }}">@lang('Iniciar Sesión')</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">@lang('Registrarse')</a>
+                                    <a class="nav-link" href="{{ route('register') }}">@lang('Registrarse')</a>
                                 </li>
                             @endif
                         @else
@@ -73,7 +75,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        Cerrar Sesión
+                                        @lang('Cerrar Sesión')
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -101,7 +103,7 @@
         <img class="img-fluid" src="img/logos/logo.png" alt="logo empresa">
         <div class="intro-lead-in">@lang('!Bienvenidos a vuestra comunidad¡')</div>
         <div class="intro-heading text-uppercase">Comanimals</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" data-toggle="modal" data-target="#exampleModal">@lang('¡Unete ya!')</a>   
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{route('register')}}">!Unete ya¡</a>
       </div>
     </div>
   </header>
@@ -730,148 +732,6 @@
       </div>
     </div>
   </div>
-  <!--modal del formulario-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@lang('Registro')</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-                <div class="modal-body">
-                <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Nombre')</label>
-
-                            <div class="col-md-6">
-                                <input id="nameR" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                <div id="nameMal">Introduce un nombre.</div>
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
-
-                            <div class="col-md-6">
-                                <input id="emailR" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                <div id="emailMal2">Introduce un email.</div>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
-
-                            <div class="col-md-6">
-                                <input id="passwordR" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                <div id="passwordMal2">Introduce una contraseña.</div>
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">@lang('Confirmar contraseña')</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirmR" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                <div id="passwordconfirmMal2">Introduce la misma contraseña.</div>
-                            </div>
-                        </div>
-                </div>
-                <div class="modal-footer">                          
-                <button type="submit" id="submitR" class="btn btn-primary">
-                  @lang('Registrarse')
-                </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-  <!--Modal login-->
-
-  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">@lang('Iniciar Sesión')</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-        <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="emailI" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                <div id="emailMal3">Introduce un email valido.</div>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
-
-                            <div class="col-md-6">
-                                <input id="passwordI" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                <div id="passwordMal3">Introduce una contraseña valida.</div>
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember">
-
-                                    <label class="form-check-label" for="remember">
-                                        @lang('Recordar Usuario')
-                                    </label>
-                                </div>
-                            </div>
-                        </div>              
-                        <div class="modal-footer d-flex justify-content-center">
-                            <button id="submitI" class="btn btn-default" disabled>{{ __('Iniciar Sesión') }}</button>
-                            @if (Route::has('password.request'))
-                              <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('¿Ha olvidad su contraseña?') }}
-                              </a>
-                            @endif
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -882,8 +742,6 @@
 
   <!-- Contact form JavaScript -->
   <script src="js/validacion.js"></script>
-  <script src="js/registro.js"></script>
-  <script src="js/inicioSesion.js"></script>
   <!-- 
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>

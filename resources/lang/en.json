@@ -7,7 +7,7 @@
 	"Contacto": "Contact",
 	"Iniciar Sesion": "Log In",
 	"!Bienvenidos a vuestra comunidad¡": "!Welcome to our Comunity¡",
-	"!Unete ya¡": "!Enjoy now¡",
+	"¡Unete ya!": "!Enjoy now¡",
 	"Que ofrecemos": "What we offer",
 	"Una aplicacion para englobar todas las necesidades para tu mascota.": "An application to cover all the needs of your pets.",
 	"Refugios": "Shelters",
@@ -69,8 +69,21 @@
 	"Raza: Labrador": "Breed: Labrador",
 	"Muy cariñoso y tranquilo. Doby es libre. El amo libero a Doby.": "Very affectionate and quiet. Doby is free. The master released Doby.",
 	"Nacimiento: Marzo 2016": "Birthdate: March 2016",
-	"Raza: Doberman": "Breed: Doberman"
-
+	"Raza: Doberman": "Breed: Doberman",
+	"Iniciar Sesión": "Login",
+	"Registrarse": "Register",
+	"Cerrar Sesión": "Logout",
+	"Perfil": "Profile",
+	"Perfil Admin": "Admin Profile",
+	"Nombre":"Name",
+	"Rol":"Role",
+	"Registro":"Registry",
+	"Nombre":"Name",
+	"Contraseña":"Password",
+	"Confirmar contraseña":"Confirm password",
+	"Recordar Usuario":"Remember me",
+	"¿Ha olvidad su contraseña?":"Forgot Your Password?",
+	"Perfil Usuario":"User Profile"
 	
 
 }
