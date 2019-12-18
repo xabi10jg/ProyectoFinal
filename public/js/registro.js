@@ -24,6 +24,7 @@ $(document).ready(function(){
     var email = document.getElementById("emailR");
     var password = document.getElementById("passwordR").value;
     var passwordconfirm = document.getElementById("password-confirmR").value;
+    var emailReg = new RegExp("/.+[@].+[\.].+/");
 
     if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
         nameMal.hidden = false;
@@ -33,7 +34,7 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof email != "email" && email.value.length < 6 || email.value.length >= 50){
+    if (typeof email != "email" && email.value.length < 6 || email.value.length >= 50 || emailReg.test(email.value) != true){
         emailMal.hidden = false;
         bien--;
     }else{
