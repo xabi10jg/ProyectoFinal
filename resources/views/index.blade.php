@@ -796,7 +796,7 @@
                         </div>
                 </div>
                 <div class="modal-footer">                          
-                <button type="submit" id="submitR" class="btn btn-primary">
+                <button type="submit" id="submitR" class="btn btn-primary" disabled>
                   @lang('Registrarse')
                 </button>
                 </div>
