@@ -24,7 +24,7 @@ $(document).ready(function(){
     var email = document.getElementById("emailR");
     var password = document.getElementById("passwordR").value;
     var passwordconfirm = document.getElementById("password-confirmR").value;
-    var emailReg = new RegExp("/.+[@].+[\.].+/");
+    var emailReg = /.+[@].+[\.].+/g;
 
     if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
         nameMal.hidden = false;
@@ -33,13 +33,15 @@ $(document).ready(function(){
       nameMal.hidden = true;
       bien++;
     }
-
-    if (typeof email != "email" && email.value.length < 6 || email.value.length >= 50 || emailReg.test(email.value) != true){
+    //valida si el email esta entre 6 y 50 caracteres ambos incluidos y con el match si cumple la regular expresion
+    if (email.value.length >= 6 && email.value.length <= 50 && email.value.match(emailReg)){
+        console.log(email.value.match(emailReg));
+          emailMal.hidden = true;
+          bien++;
+    }else{
         emailMal.hidden = false;
         bien--;
-    }else{
-      emailMal.hidden = true;
-      bien++;
+
     }
 
     if (typeof password != "string" || password.length < 8){
