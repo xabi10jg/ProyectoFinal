@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	let nombreMal = document.getElementById("nombreMal");
  	let emailMal = document.getElementById("emailMal");
-  	let mensajeMal = document.getElementById("mensajeMal");
+  let mensajeMal = document.getElementById("mensajeMal");
+  let emailReg = /.+[@].+[\.].+/g;
   
   	nombreMal.hidden = true;
   	emailMal.hidden = true;
@@ -29,13 +30,17 @@ $(document).ready(function(){
       bien++;
     }
 
-    if (typeof email != "email" && email.value.length < 6 || email.value.length >= 50){
+    //valida si el email esta entre 6 y 50 caracteres ambos incluidos y con el match si cumple la regular expresion
+    if (email.value.length >= 6 && email.value.length <= 50 && email.value.match(emailReg)){
+        console.log(email.value.match(emailReg));
+          emailMal.hidden = true;
+          bien++;
+    }else{
         emailMal.hidden = false;
         bien--;
-    }else{
-      emailMal.hidden = true;
-      bien++;
+
     }
+
 
     if (typeof mensaje != "string" && mensaje.value.length === 0 || mensaje.value.length >= 255){
         mensajeMal.hidden = false;
