@@ -24,7 +24,7 @@ $(document).ready(function(){
     var email = document.getElementById("emailR");
     var password = document.getElementById("passwordR").value;
     var passwordconfirm = document.getElementById("password-confirmR").value;
-    var emailReg = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+    var emailReg = new RegExp("/.+[@].+[\.].+/g");
 
     if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
         nameMal.hidden = false;
