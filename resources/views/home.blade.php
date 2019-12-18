@@ -20,6 +20,7 @@
                     </div>
                     <div class="prueba">
                         @lang('Nombre'): {{Auth()->user()->name}}<br>
+                        Apellido: {{Auth()->user()->apellido}}</br>
                         E-mail: {{Auth()->user()->email}}<br>
                         Dirección: {{Auth()->user()->direccion}}<br>
                         Localidad: {{Auth()->user()->localidad}}<br>
