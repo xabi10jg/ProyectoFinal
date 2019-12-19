@@ -61,7 +61,7 @@ class HomeController extends Controller
         $usuario->save();
 
 
-
+        //hay que cambiarlo
         return view('home');
     }
 
