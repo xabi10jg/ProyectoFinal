@@ -1,5 +1,4 @@
 @extends('layouts.nav')
-
 <header class="masthead">
     <section class="page-section">
     <div class="container">
@@ -27,6 +26,7 @@
                         Provincia: {{Auth()->user()->provincia}}<br>
                         País: {{Auth()->user()->pais}}<br>
                         Teléfono: {{Auth()->user()->telefono}}<br>
+                        Rol: {{Auth()->user()->roles->rol}}<br>
 
                         Te uniste en {{Auth()->user()->email_verified_at}}<br>
                         <button id="EditarPerfil">
@@ -43,8 +43,6 @@
         </div>
     </div>
 </div>
-
-@extends('layouts.scriptsBody')
 
 </body>
 

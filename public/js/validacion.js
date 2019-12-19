@@ -2,7 +2,6 @@ $(document).ready(function(){
 	let nombreMal = document.getElementById("nombreMal");
  	let emailMal = document.getElementById("emailMal");
   let mensajeMal = document.getElementById("mensajeMal");
-  let emailReg = /.+[@].+[\.].+/g;
   
   	nombreMal.hidden = true;
   	emailMal.hidden = true;
@@ -21,6 +20,7 @@ $(document).ready(function(){
     var nombre = document.getElementById("nombre");
     var email = document.getElementById("email");
     var mensaje = document.getElementById("mensaje");
+    var emailReg = /.+[@].+[\.].+/g;
 
     if (typeof nombre != "string" && nombre.value.length < 3 || nombre.value.length >= 50){
         nombreMal.hidden = false;
