@@ -67,3 +67,7 @@ Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administ
 Route::get('veterinario', function(){
   return view('organizaciones/veterinario');
 });
+
+Route::get('hotel', function(){
+  return view('organizaciones/hotel');
+});
