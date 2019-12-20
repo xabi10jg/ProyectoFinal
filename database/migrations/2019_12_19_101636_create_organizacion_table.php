@@ -15,6 +15,16 @@ class CreateOrganizacionTable extends Migration
     {
         Schema::create('organizacion', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('email', 50)->unique();
+            $table->string('direccion')->nullable();
+            $table->string('localidad')->nullable();
+            $table->string('provincia')->nullable();
+            $table->string('pais')->nullable();
+            $table->integer('telefono')->nullable();
+            $table->string('CIF', 50)->unique();
+            $table->time('horarioApertura')->nullable();
+            $table->time('horarioCierre')->nullable();
             $table->timestamps();
         });
     }

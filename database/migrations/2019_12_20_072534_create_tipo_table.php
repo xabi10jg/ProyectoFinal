@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CrateMascotasTipoTable extends Migration
+class CreateTipoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class CrateMascotasTipoTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tipo', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CrateMascotasTipoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tipo');
     }
 }
