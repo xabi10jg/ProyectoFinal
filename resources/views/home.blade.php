@@ -1,5 +1,4 @@
 @extends('layouts.nav')
-
 <header class="masthead">
     <section class="page-section">
     <div class="container">
@@ -20,12 +19,14 @@
                     </div>
                     <div class="prueba">
                         @lang('Nombre'): {{Auth()->user()->name}}<br>
+                        Apellido: {{Auth()->user()->apellido}}</br>
                         E-mail: {{Auth()->user()->email}}<br>
                         Dirección: {{Auth()->user()->direccion}}<br>
                         Localidad: {{Auth()->user()->localidad}}<br>
                         Provincia: {{Auth()->user()->provincia}}<br>
                         País: {{Auth()->user()->pais}}<br>
                         Teléfono: {{Auth()->user()->telefono}}<br>
+                        Rol: {{Auth()->user()->roles->rol}}<br>
 
                         Te uniste en {{Auth()->user()->email_verified_at}}<br>
                         <button id="EditarPerfil">
@@ -42,8 +43,6 @@
         </div>
     </div>
 </div>
-
-@extends('layouts.scriptsBody')
 
 </body>
 

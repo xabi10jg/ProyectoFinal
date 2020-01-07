@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>Veterinario View</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,17 +24,33 @@
 
 </head>
 
+
 <body id="page-top">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="{{route('landing')}}">Comanimals</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Comanimals</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
+          <!--<li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">@lang('Servicios')</a>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">@lang('Acogidas')</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">@lang('Quienes Somos')</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#team">@lang('Equipo')</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">@lang('Contacto')</a>
+          </li>
           @guest
                             <li class="nav-item">
                                 <a class="nav-link"data-toggle="modal" data-target="#modalLoginForm">@lang('Iniciar Sesión')</a>
@@ -79,18 +95,70 @@
     </div>
   </nav>
 
-  <!-- Header -->
-  @yield('content')
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="col-lg-5 text-center">
+          <div class="newcard ">
+            <div class="card-body">
+              
 
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+              <h2 class="section-heading text-uppercase text-dark">Información</h2><hr>
+
+              <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                       
+              
+
+            </div>
+          </div> 
+        </div> 
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+  <!-- Contact form JavaScript -->
+  <script src="js/validacion.js"></script>
+  <script src="js/registro.js"></script>
+  <script src="js/inicioSesion.js"></script>
   <!-- 
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>
   -->
   <!-- Custom scripts for this template -->
-  <script src="/js/agency.min.js"></script>
+  <script src="js/agency.min.js"></script>
+
+</body>
+
+</html>

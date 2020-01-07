@@ -63,3 +63,15 @@ Route::get('EliminarUsuario', 'HomeController@EliminarUsuario')->name('EliminarU
 
 //Route::get('/admin', 'adminController@index')->name('admin');
 Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('name');
+
+
+
+
+
+Route::get('veterinario', function(){
+  return view('organizaciones/veterinario');
+});
+
+Route::get('hotel', function(){
+  return view('organizaciones/hotel');
+});

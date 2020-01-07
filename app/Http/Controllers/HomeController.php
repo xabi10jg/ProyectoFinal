@@ -36,12 +36,12 @@ class HomeController extends Controller
 
         $request->validate([
             'nombre'=>'string|required|min:3|max:50',
-            'apellido'=>['string|min:2|max:50','nullable'],
+            'apellido'=>['string','min:2','max:50','nullable'],
             'email'=>'email|required|min:6|max:50',
-            'direccion'=>['string|min:2|max:50','nullable'],
-            'localidad'=>['string|min:2|max:50','nullable'],
-            'provincia'=>['string|min:2|max:50','nullable'],
-            'pais'=>['string|min:2|max:50','nullable'],
+            'direccion'=>['string','min:2','max:50','nullable'],
+            'localidad'=>['string','min:2','max:50','nullable'],
+            'provincia'=>['string','min:2','max:50','nullable'],
+            'pais'=>['string','min:2','max:50','nullable'],
             'telefono'=>['regex:/^[679][0-9]{8}$/','nullable']
 
         ]);
@@ -61,7 +61,7 @@ class HomeController extends Controller
         $usuario->save();
 
 
-
+        //hay que cambiarlo
         return view('home');
     }
 
