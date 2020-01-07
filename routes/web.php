@@ -71,3 +71,7 @@ Route::get('veterinario', function(){
 Route::get('hotel', function(){
   return view('organizaciones/hotel');
 });
+
+Route::get('hoteles', function(){
+  return view('organizaciones/hoteles');
+});
