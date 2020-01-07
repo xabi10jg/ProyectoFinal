@@ -24,14 +24,24 @@ class adminController extends Controller
         $users = User::all();
         $mascotas = Mascota::all();
         $organizaciones = Organizacion::all();
-        $tipos = Tipo::all();
 
 
         return view('administrador', array('user'=>$user), array('users'=>$users, 'organizaciones'=>$organizaciones));
     }
 
-    public function edit($id){
+    public function editUser($id){
         $user = User::where('id',$id)->first();
         return view('editUserAdminZone', array('user'=>$user));
+    }
+
+    public function destroyUser($id)
+    {
+        $user = User::where('id',$id)->first();
+        $user->forceDelete();
+
+        $users = User::all();
+        $mascotas = Mascota::all();
+        $organizaciones = Organizacion::all();
+        return redirect(route('admin', array('user'=>$user), array('users'=>$users, 'organizaciones'=>$organizaciones)));
     }
 }

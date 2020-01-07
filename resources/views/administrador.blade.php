@@ -68,8 +68,14 @@
                       <td class="col-md-4">{{$user->name}}</td>
                       <td class="col-md-4">{{$user->email}}</td>
                       <td class="col-md-4">{{$user->roles->rol}}</td>
-                      <td class="col-md-4"><a href="{{route('editUserAdminZone', $user->id)}}">Editar</a></td>
-                      <td class="col-md">Eliminar</td>
+                      <td class="col-md-4"><a href="{{route('admin.editUser', $user->id)}}">Editar</a></td>
+                      <td class="col-md">
+                        <form action="{{route('admin.destroyUser', $user->id)}}" method="post">
+                          @method('DELETE')
+                          @csrf
+                          <input type="submit" value="Eliminar">
+                        </form>
+                      </td>
                     </tr>
                   @endforeach
                   </table>
