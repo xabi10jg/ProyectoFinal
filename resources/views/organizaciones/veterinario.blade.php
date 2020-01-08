@@ -97,14 +97,17 @@
 
   <header class="masthead">
     <div class="container">
+            
       <div class="intro-text">
+        <h1 class="intro-heading text-uppercase">Nombre Veterinario</h1>
+        <div class="d-flex justify-content-around">
         <div class="col-lg-5 text-center">
-          <div class="newcard ">
+          <div class="newcard">
             <div class="card-body">
               
 
 
-              <h2 class="section-heading text-uppercase text-dark">Información</h2><hr>
+              <h2 class="section-heading text-uppercase text-dark">@lang('Información')</h2><hr>
 
               <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -114,12 +117,30 @@
               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                       
               
 
+              </div>
             </div>
-          </div> 
-        </div> 
+          </div>
+        <div class="col-lg-5 text-center">
+          <div class="newcard ">
+            <div class="card-body">
+              
+
+
+              <h2 class="section-heading text-uppercase text-dark">@lang('Horario')</h2><hr>
+
+              <p class="text-dark">@lang('Lunes a Viernes:')</p>
+              <p class="text-dark">08:00-20:00</p>  
+              <p class="text-dark">@lang('Sabados:')</p>  
+              <p class="text-dark">10:00-19:00</p>                         
+              
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
 
 
@@ -148,10 +169,7 @@
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Contact form JavaScript -->
-  <script src="js/validacion.js"></script>
-  <script src="js/registro.js"></script>
-  <script src="js/inicioSesion.js"></script>
+  
   <!-- 
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>
