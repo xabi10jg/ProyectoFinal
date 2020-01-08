@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Mascotas;
+use App\Mascota;
 use App\User;
 
 class mascotasController extends Controller
@@ -34,25 +34,25 @@ class mascotasController extends Controller
     {
         $request->validate([
             'nombre'=>'string|required|min:3|max:50',
-            'titulo'=>'string|min:2|max:50|required',
-            'fechaI'=>'date|required',
-            'fechaF'=>'date|required|after_or_equal_:fechaI',
-            'horasE'=>'numeric|required'
+            'fecha_nacimiento'=>'date|required',
+            'raza'=>'string|min:2|max:50|required',
+            'descripcion'=>'string|min:2|max:50|required',
+            'img'=>'required'
         ]);
 
-        $proyecto = new Proyectos();
+        $mascota = new Mascota();
 
-        $proyecto->nombre = $request->input('nombre');
-        $proyecto->titulo = $request->input('titulo');
-        $proyecto->fechainicio = $request->input('fechaI');
-        $proyecto->fechafin = $request->input('fechaF');
-        $proyecto->horasestimadas = $request->input('horasE');
-        $proyecto->responsable = $request->get('res');
+        $mascota->name = $request->input('nombre');
+        $mascota->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $mascota->raza = $request->input('raza');
+        $mascota->descripcion = $request->input('descripcion');
+        $mascota->img = '/img/portfolio/'.$request->input('img');
+        $mascota->propietario = Auth::user()->id;
 
-        $proyecto->save();
+        $mascota->save();
 
-        $proyectos = Proyectos::all();
-        return view('proyectos/index', array('proyectos'=>$proyectos));
+        $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+        return view('home', array('mascotas'=>$mascotas));
 
     }
 

@@ -7,8 +7,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="prueba">
-                    <form method="post" action="">
-                    
+                    <form method="post" action="{{route('mascotas.store')}}">
                     @csrf
 
                     Nombre: <input type="text" name="nombre" value=""><br>
@@ -41,7 +40,6 @@
                         <strong>{{ $message }}</strong>
                       </span>
                     @enderror<br>
-                    <input type="hidden" name="propietario" value="{{Auth::user()->id}}">
                     <input type="submit" name="confirmarcambios" value="Confirmar">
 
 

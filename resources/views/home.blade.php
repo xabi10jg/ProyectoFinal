@@ -40,10 +40,10 @@
                         </button>
                     </div>
                     <div class="prueba">
-                        @foreach($mascotas as $mascota)
                         <section class="bg-light page-section" id="portfolio">
                             <div class="container">
                                 <div class="row">
+                                @foreach($mascotas as $mascota)
                                     <div class="col-md-4 col-sm-6 portfolio-item">
                                         <a class="portfolio-link" data-toggle="modal" href="#mascota{{$mascota->id}}">
                                         <div class="portfolio-hover">
@@ -58,11 +58,14 @@
                                         <p class="text-muted">{{$mascota->raza}}</p>
                                       </div>
                                     </div>
+                                @endforeach
                                 </div>
                             </div>
                         </section>
-
                         
+
+
+                        @foreach($mascotas as $mascota)
                         <div class="portfolio-modal modal fade" id="mascota{{$mascota->id}}" tabindex="-1" role="dialog" aria-hidden="false">
                         <div class="modal-dialog">
                           <div class="modal-content">
