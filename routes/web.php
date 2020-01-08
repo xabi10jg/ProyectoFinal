@@ -50,13 +50,16 @@ Route::post('contacto', 'contactoController@insert')->name('contacto');
 
 Auth::routes(['verify' => true]);
 
-
+//Rutas usuario
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('FormularioEditar', 'HomeController@VistaEditarUsuario')->name('FormularioEditar')->middleware('verified');
 Route::post('FormularioEditar', 'HomeController@EditarUsuario')->name('ConfirmarEdicion')->middleware('verified');
 Route::get('EliminarUsuario', 'HomeController@EliminarUsuario')->name('EliminarUsuario')->middleware('verified');
 
+//Rutas mascotas
+Route::resource('mascotas', 'mascotasController');
 
+//Rutas Admin
 //Route::get('/admin', 'adminController@index')->name('admin');
 Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('admin');
 Route::get('/admin/{id}', 'adminController@editUser')->middleware('auth', 'role:Administrador')->name('admin.editUser');
@@ -66,7 +69,7 @@ Route::delete('/admin/{id}', 'adminController@destroyUser')->middleware('auth', 
 
 
 
-
+//Rutas org
 Route::get('veterinario', function(){
   return view('organizaciones/veterinario');
 });
