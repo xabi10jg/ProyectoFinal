@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Mascota;
 use Auth;
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+        return view('home', array('mascotas'=>$mascotas));
     }
 
     public function VistaEditarUsuario()

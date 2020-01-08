@@ -24,6 +24,7 @@ class CreateOrganizacionTable extends Migration
             $table->double('longitud',18,15)->nullable();
             $table->string('pais')->nullable();
             $table->integer('telefono')->nullable();
+            $table->string('img')->nullable();
             $table->string('CIF', 50)->unique();
             $table->time('horarioApertura')->nullable();
             $table->time('horarioCierre')->nullable();

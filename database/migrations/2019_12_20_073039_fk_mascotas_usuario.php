@@ -14,9 +14,9 @@ class FkMascotasUsuario extends Migration
     public function up()
     {
         Schema::table('mascotas', function (Blueprint $table) {
-            $table->unsignedBigInteger('usuario_id')->nullable()->after('raza');
+            $table->unsignedBigInteger('propietario')->nullable()->after('raza');
 
-            $table->foreign('usuario_id')->references('id')->on('users');
+            $table->foreign('propietario')->references('id')->on('users');
         });
 
         Schema::disableForeignKeyConstraints();
@@ -29,6 +29,6 @@ class FkMascotasUsuario extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['usuario_id']);
+        $table->dropForeign(['propietario']);
     }
 }
