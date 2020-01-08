@@ -60,6 +60,7 @@ Route::get('EliminarUsuario', 'HomeController@EliminarUsuario')->name('EliminarU
 //Route::get('/admin', 'adminController@index')->name('admin');
 Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('admin');
 Route::get('/admin/{id}', 'adminController@editUser')->middleware('auth', 'role:Administrador')->name('admin.editUser');
+Route::post('/admin/{id}', 'adminController@updateUser')->middleware('auth', 'role:Administrador')->name('admin.updateUser');
 Route::delete('/admin/{id}', 'adminController@destroyUser')->middleware('auth', 'role:Administrador')->name('admin.destroyUser');
 
 

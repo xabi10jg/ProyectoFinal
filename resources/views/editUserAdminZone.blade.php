@@ -7,7 +7,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="prueba">
-                    <form method="post" action="{{route('ConfirmarEdicion')}}">
+                    <form method="post" action="{{route('admin.updateUser', $user->id)}}">
                     
                     @csrf
 
