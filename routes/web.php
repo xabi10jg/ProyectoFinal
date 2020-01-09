@@ -47,6 +47,7 @@ Route::get('/', function(){
 })->name('landing');
 
 Route::post('contacto', 'contactoController@insert')->name('contacto');
+Route::get('refugio', 'RefugioController@index')->name('refugio');
 
 Auth::routes(['verify' => true]);
 
