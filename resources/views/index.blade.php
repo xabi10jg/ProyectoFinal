@@ -134,7 +134,7 @@
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-h-square fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">@lang('Hoteles')</h4>
+          <h4 class="service-heading"><a href="{{route('hoteles')}}">@lang('Hoteles')</a></h4>
           <p class="text-muted">@lang('Hoteles para ir con tus mascotas o para hospedarlo si te vas de vacaciones.')</p>
         </div>
       </div>

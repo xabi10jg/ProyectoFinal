@@ -50,22 +50,30 @@ Route::post('contacto', 'contactoController@insert')->name('contacto');
 
 Auth::routes(['verify' => true]);
 
-
+//Rutas usuario
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('FormularioEditar', 'HomeController@VistaEditarUsuario')->name('FormularioEditar')->middleware('verified');
 Route::post('FormularioEditar', 'HomeController@EditarUsuario')->name('ConfirmarEdicion')->middleware('verified');
 Route::get('EliminarUsuario', 'HomeController@EliminarUsuario')->name('EliminarUsuario')->middleware('verified');
 
+//Rutas mascotas
+Route::resource('mascotas', 'mascotasController');
 
+//Rutas Admin
 //Route::get('/admin', 'adminController@index')->name('admin');
-Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('name');
+Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('admin');
+Route::get('/admin/{id}', 'adminController@editUser')->middleware('auth', 'role:Administrador')->name('admin.editUser');
+Route::post('/admin/{id}', 'adminController@updateUser')->middleware('auth', 'role:Administrador')->name('admin.updateUser');
+Route::delete('/admin/{id}', 'adminController@destroyUser')->middleware('auth', 'role:Administrador')->name('admin.destroyUser');
+
+//Rutas org
 
 
 Route::get('/veterinarios', 'VeterinarioController@index')->name('veterinarios');
+
 Route::get('/veterinario', 'VeterinarioController@show')->name('veterinario');
 
+Route::get('/hoteles', 'HotelesController@index')->name('hoteles');
 
+Route::get('/hotel', 'HotelesController@show')->name('hotel');
 
-Route::get('hotel', function(){
-  return view('organizaciones/hotel');
-});

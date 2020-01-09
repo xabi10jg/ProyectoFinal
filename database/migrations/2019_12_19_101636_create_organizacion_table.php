@@ -20,8 +20,11 @@ class CreateOrganizacionTable extends Migration
             $table->string('direccion')->nullable();
             $table->string('localidad')->nullable();
             $table->string('provincia')->nullable();
+            $table->double('latitud',18,15)->nullable();
+            $table->double('longitud',18,15)->nullable();
             $table->string('pais')->nullable();
             $table->integer('telefono')->nullable();
+            $table->string('img')->nullable();
             $table->string('CIF', 50)->unique();
             $table->time('horarioApertura')->nullable();
             $table->time('horarioCierre')->nullable();
