@@ -204,7 +204,7 @@ header.masthead .intro-text .intro-heading {
 
 @media (min-width: 768px) {
   header.masthead .intro-text {
-    padding-top: 300px;
+    padding-top: 170px;
     padding-bottom: 200px;
   }
   header.masthead .intro-text .intro-lead-in {
@@ -703,4 +703,18 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   opacity: 0.6;
+  margin-top: 70px;
   }
+  .margincard{
+    margin-top: 300px;
+
+  }
+  #mapid{
+  margin-top: 2px;
+  height: 50%;
+  width: 70%;
+  position: absolute;
+  margin-left: -15px;
+  margin-right: 1px;
+}
+

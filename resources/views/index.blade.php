@@ -39,13 +39,10 @@
             <a class="nav-link js-scroll-trigger" href="#services">@lang('Servicios')</a>
           </li>-->
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">@lang('Acogidas')</a>
+            <a class="nav-link js-scroll-trigger" href="#services">@lang('Servicios')</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">@lang('Quienes Somos')</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#team">@lang('Equipo')</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">@lang('Contacto')</a>
@@ -129,7 +126,7 @@
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-clinic-medical fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">@lang('Veterinarios')</h4>
+          <h4 class="service-heading"><a href="{{route('veterinarios')}}">@lang('Veterinarios')</a></h4>
           <p class="text-muted">@lang('Una amplia cantidad de veterinarios a tu disposicion con unos pocos clicks.')</p>
         </div>
         <div class="col-md-4">
