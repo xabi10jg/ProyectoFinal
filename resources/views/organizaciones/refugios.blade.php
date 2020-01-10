@@ -1,6 +1,6 @@
-@extends('layouts.nav')  
+@extends('layouts.nav')
+@section('content') 
     <header class="masthead">
-    
         <div class="container">
             <div class="intro-text text-dark">
                 <div class="row">
@@ -17,37 +17,18 @@
                                     Launch demo modal
                                 </button>
                             </div>
-                        </div>@endforeach
-                    </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </header>
     
     <p>{{$refugios}}</p>
 
-    
-
-
-
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Contact form JavaScript -->
-  <script src="js/validacion.js"></script>
-  <script src="js/registro.js"></script>
-  <script src="js/inicioSesion.js"></script>
-  <!-- 
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
-  -->
-  <!-- Custom scripts for this template -->
-  <script src="js/agency.min.js"></script>
+    @endsection
 
 </body>
 
 </html>
-
 

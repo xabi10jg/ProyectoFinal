@@ -250,10 +250,7 @@
   </div>
 </div>
     
-    <!-- Contact form JavaScript -->
-  <script src="/js/validacion.js"></script>
-  <script src="/js/registro.js"></script>
-  <script src="/js/inicioSesion.js"></script>
+
   
   <script src="/vendor/jquery/jquery.min.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
