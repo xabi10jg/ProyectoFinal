@@ -9,9 +9,11 @@ use App\User;
 
 class mascotasController extends Controller
 {
-    public function index($id)
+    public function index()
     {
-       //
+       $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+
+       return view('mascotas/mascotas')->with(['mascotas'=>$mascotas]);
     }
 
     /**
@@ -52,7 +54,7 @@ class mascotasController extends Controller
         $mascota->save();
 
         $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
-        return view('home', array('mascotas'=>$mascotas));
+        return view('mascotas/mascotas', array('mascotas'=>$mascotas));
 
     }
 
@@ -64,8 +66,7 @@ class mascotasController extends Controller
      */
     public function show($id)
     {
-        $proyecto = Proyectos::where('id',$id)->first();
-        return view('proyectos/proyecto', array('proyecto'=>$proyecto));
+        
     }
 
     /**
@@ -76,9 +77,9 @@ class mascotasController extends Controller
      */
     public function edit($id)
     {
-        $proyecto = Proyectos::where('id', $id)->first();
-        $empleados = Empleados::all();
-        return view('proyectos/editProyecto', array('proyecto'=>$proyecto), array('empleados'=>$empleados));
+        $mascota = Mascota::find($id);
+        return view ('mascotas.mascotaEdit')->with(['mascota'=> $mascota]);
+        
     }
 
     /**
@@ -91,24 +92,24 @@ class mascotasController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'titulo'=>'string|min:2|max:50|required',
-            'fechaI'=>'date|required',
-            'fechaF'=>'date|required|after_or_equal_:fechaI',
-            'horasE'=>'numeric|required'
+            'nombre' => 'required|min:2|max:30|string',
+            'fecha_nacimiento' => 'required|date',
+            'raza' => 'required|min:2|max:30|string',
+            'descripcion' => 'required|string|min:2|max:300'
+           
+            
         ]);
-
-        $proyecto = Proyectos::where('id',$id)->first();
-
-        $proyecto->titulo = $request->input('titulo');
-        $proyecto->fechainicio = $request->input('fechaI');
-        $proyecto->fechafin = $request->input('fechaF');
-        $proyecto->horasestimadas = $request->input('horasE');
-        $proyecto->responsable = $request->get('res');
-
-        $proyecto->save();
-
-        $proyectos = Proyectos::all();
-        return view('proyectos/index', array('proyectos'=>$proyectos));
+        $mascota = Mascota::find($id);
+        $mascota->name = $request -> input('nombre');
+        $mascota->fecha_nacimiento = $request -> input('fecha_nacimiento');
+        $mascota->raza = $request -> input('raza');
+        $mascota->descripcion = $request -> input('descripcion');
+        if ($request->input('img')!=null) {
+            $mascota->img = '/img/portfolio/'.$request->input('img');
+        }
+        
+        $mascota->save();
+        return redirect(route('mascotas.index'));
     }
 
     /**
@@ -119,10 +120,8 @@ class mascotasController extends Controller
      */
     public function destroy($id)
     {
-        $proyectoDelete = Proyectos::where('id',$id)->first();
-        $proyectoDelete->delete();
-
-        $proyectos = Proyectos::all();
-        return redirect(route('proyecto.index', array('proyectos'=>$proyectos)));
+        $mascota = Mascota::find($id);
+        $mascota->delete();
+        return redirect(route('mascotas.index'));
     }
 }
