@@ -45,7 +45,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
-          @guest
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('refugios')}}">@lang('Refugios')</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('veterinarios')}}">@lang('Veterinarios')</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('hoteles')}}">@lang('Hoteles')</a>
+          </li>
+          @guest 
                             <li class="nav-item">
                                 <a class="nav-link"data-toggle="modal" data-target="#modalLoginForm">@lang('Iniciar Sesión')</a>
                             </li>
@@ -55,12 +65,18 @@
                                 </li>
                             @endif
                         @else
+                          @if(Auth::user()->role_id === 1)
+                            <li class="nav-item">
+                              <a class="nav-link" href="">@lang('Registrar Organizacion')</a>
+                            </li>
+                          @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    
                                     <a class="dropdown-item" href="{{route('home')}}">
                                     @lang('Perfil')
                                     </a>
@@ -88,10 +104,157 @@
       </div>
     </div>
   </nav>
-
+  
   <!-- Header -->
   @yield('content')
+  <!--modal del formulario-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@lang('Registro')</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-body">
+                <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">@lang('Nombre')</label>
+
+                            <div class="col-md-6">
+                                <input id="nameR" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <div id="nameMal">Introduce un nombre.</div>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+
+                            <div class="col-md-6">
+                                <input id="emailR" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <div id="emailMal2">Introduce un email.</div>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
+
+                            <div class="col-md-6">
+                                <input id="passwordR" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <div id="passwordMal2">Introduce una contraseña.</div>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">@lang('Confirmar contraseña')</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirmR" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <div id="passwordconfirmMal2">Introduce la misma contraseña.</div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">                          
+                <button type="submit" id="submitR" class="btn btn-primary" disabled>
+                  @lang('Registrarse')
+                </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+  <!--Modal login-->
+
+  <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">@lang('Iniciar Sesión')</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+        <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="emailI" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <div id="emailMal3">Introduce un email valido.</div>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Contraseña')</label>
+
+                            <div class="col-md-6">
+                                <input id="passwordI" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <div id="passwordMal3">Introduce una contraseña valida.</div>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember">
+
+                                    <label class="form-check-label" for="remember">
+                                        @lang('Recordar Usuario')
+                                    </label>
+                                </div>
+                            </div>
+                        </div>              
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button id="submitI" class="btn btn-default" disabled>{{ __('Iniciar Sesión') }}</button>
+                            @if (Route::has('password.request'))
+                              <a class="btn btn-link" href="{{ route('password.request') }}">
+                                {{ __('¿Ha olvidad su contraseña?') }}
+                              </a>
+                            @endif
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+    
+    <!-- Contact form JavaScript -->
+  <script src="/js/validacion.js"></script>
+  <script src="/js/registro.js"></script>
+  <script src="/js/inicioSesion.js"></script>
+  
   <script src="/vendor/jquery/jquery.min.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
