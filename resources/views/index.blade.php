@@ -121,7 +121,7 @@
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
             <i class="fas fa-paw fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">@lang('Refugios')</h4>
+          <h4 class="service-heading"><a href="{{route('refugios')}}">@lang('Refugios')</a></h4>
           <p class="text-muted">@lang('Accede rapidamente a una amplia gama de refugios de mascotas y lugares de acogida.')</p>
         </div>
         <div class="col-md-4">
