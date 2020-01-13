@@ -7,6 +7,30 @@
             
       <div class="intro-text">
         <h1 class="intro-heading text-uppercase">Veterinarios</h1>
+
+        <div class="d-flex flex-row">
+                <div class="col-lg-4">
+                  <button class="btn btn-primary" type="button">
+                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="col-lg-4">
+                  <button class="btn btn-primary" type="button">
+                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Disponibilidad </a><i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="col-lg-4">
+                  <div class="input-group">
+                    <input type="text" placeholder="Filtrar por Zona" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-primary" type="button">Buscar</button>
+                    </span>
+                  </div>
+                </div>
+              </div> 
+              <br><br>
+
+
         <div class="d-flex justify-content-around flex-wrap">
 
         	<!--Aqui habría que poner el foreach para recorrer la base de datos-->
