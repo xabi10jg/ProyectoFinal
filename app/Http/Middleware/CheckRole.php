@@ -16,7 +16,7 @@ class CheckRole
     public function handle($request, Closure $next, $role)
     {
         if (! $request->user()->hasRole($role)) {
-            return redirect()->route('organizaciones');
+            return redirect()->route('refugios');
         }
         return $next($request);
     }

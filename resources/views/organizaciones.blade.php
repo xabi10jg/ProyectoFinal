@@ -3,10 +3,10 @@
 <header class="masthead">
   <div class="container">
     <div class="intro-text text-dark">
-      <h1 class="text-white">Refugios</h1>
-      <div class="row justify-content-start">
+      <h1 class="text-white mt-1">Refugios</h1>
+      <div class="row ">
         @foreach($refugios as $refugio)
-        <div class="card col-md-5 col-sm-6 mx-2 mt-3">
+        <div class="card col-md-5 col-sm-6 mx-4 mt-5">
           <img src="{{$refugio->img}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h4 class="card-text">{{$refugio->name}}</h4>
@@ -18,12 +18,11 @@
         </div>
         @endforeach
         </div>
-      </div>
 
-      <h1 class="text-white">Refugios</h1>
+      <h1 class="text-white mt-5">Refugios</h1>
       <div class="row justify-content-start">
         @foreach($veterinarios as $veterinario)
-        <div class="text-dark card col-md-5 col-sm-6 mx-2 mt-3">
+        <div class="text-dark card col-md-5 col-sm-6 mx-4 mt-5">
           <img src="{{$veterinario->img}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h4 class="card-text">{{$veterinario->name}}</h4>
@@ -35,12 +34,11 @@
         </div>
         @endforeach
         </div>
-      </div>
 
-      <h1 class="text-white">Hoteles</h1>
+      <h1 class="text-white mt-5">Hoteles</h1>
       <div class="row justify-content-start">
         @foreach($hoteles as $hotel)
-        <div class="text-dark card col-md-5 col-sm-6 mx-2 mt-3">
+        <div class="text-dark card col-md-5 col-sm-6 mx-4 mt-5">
           <img src="{{$hotel->img}}" class="card-img-top">
           <div class="card-body">
             <h4 class="card-text">{{$hotel->name}}</h4>
@@ -52,6 +50,8 @@
         </div>
         @endforeach
         </div>
+      </div>
+    </div>
     </div>
   </div>
 </header>

@@ -13,9 +13,9 @@
                                     <img src="img/logos/katubihotz.jpg" width="40px">
                                 </h5>
                                 <p class="card-text">Katubihotz es una asociación creada para cuidar y controlar las colonias de gatos que viven en la calle y procurar una casa a nuestros felinos a través de la adopción.</p>
-                                <button type="button" class="btn btn-primary">
-                                    Launch demo modal
-                                </button>
+                                <a style="color:white; text-decoration:none;" href="{{route('refugio',$refugio->id)}}"><button type="button" class="btn btn-primary">
+                                    Más Información
+                                </button></a>
                             </div>
                         </div>
                     @endforeach
