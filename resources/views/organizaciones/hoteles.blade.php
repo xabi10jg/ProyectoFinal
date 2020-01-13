@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
 
                 
-                <div class="col-lg-12 text-center">
+                <div class="col-lg-12 text-center mt-5">
                     <h2 class="section-heading text-uppercase">@lang('Hoteles')</h2>
                 </div>
 
