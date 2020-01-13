@@ -9,7 +9,7 @@ class Organizacion extends Model
     protected $table = 'organizacion';
 
     //relacion
-    public function mascota()
+    public function encargado()
     {
         return $this->belongsTo('App\User', 'encargado_id');
     }

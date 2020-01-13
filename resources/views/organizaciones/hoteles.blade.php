@@ -19,14 +19,16 @@
                     </div>
                     
                     <div class="prueba">
-                        Nombre: <br>
-                        Email: <br>
-                        TLF: <br>
-                        Direccion: <br>
-                        Localidad: <br>
-                        Provincia: <br>
-                        Pais: <br>
-                        Encargado: <br>
+                    @foreach($hoteles as $hotel)
+                        Nombre: {{$hotel->name}}<br>
+                        Email: {{$hotel->email}}<br>
+                        TLF: {{$hotel->telefono}}<br>
+                        Direccion: {{$hotel->direccion}}<br>
+                        Localidad: {{$hotel->localidad}}<br>
+                        Provincia: {{$hotel->provincia}}<br>
+                        Pais: {{$hotel->pais}}<br>
+                        Encargado: {{$hotel->encargado->name}}<br>
+                    @endforeach
                     </div>
 
                 </div>
