@@ -30,10 +30,11 @@ class adminController extends Controller
         return view('administrador', array('user'=>$user), array('users'=>$users, 'mascotas'=>$mascotas, 'organizaciones'=>$organizaciones));
     }
 
+    //Zona Usuario
     public function editUser($id){
         $user = User::where('id',$id)->first();
         $roles = Role::all();
-        return view('editUserAdminZone', array('user'=>$user, 'roles'=>$roles));
+        return view('admin.editUserAdminZone', array('user'=>$user, 'roles'=>$roles));
     }
 
     public function updateUser(Request $request, $id)
@@ -76,6 +77,51 @@ class adminController extends Controller
     {
         $user = User::where('id',$id)->first();
         $user->forceDelete();
+
+        $users = User::all();
+        $mascotas = Mascota::all();
+        $organizaciones = Organizacion::all();
+        return redirect(route('admin', array('user'=>$user), array('users'=>$users, 'organizaciones'=>$organizaciones)));
+    }
+
+    //Zona mascotas
+    public function editMascota($id){
+        $mascota = Mascota::where('id',$id)->first();
+        $users = User::all();
+        return view('admin.editMascAdminZone', array('users'=>$users, 'mascota'=>$mascota));
+    }
+
+    public function updateMasc(Request $request, $id)
+    {
+        $request->validate([
+            'nombre' => 'required|min:2|max:30|string',
+            'fecha_nacimiento' => 'required|date',
+            'raza' => 'required|min:2|max:30|string',
+            'descripcion' => 'required|string|min:2|max:300'
+           
+            
+        ]);
+        $mascota = Mascota::find($id);
+        $mascota->name = $request -> input('nombre');
+        $mascota->fecha_nacimiento = $request -> input('fecha_nacimiento');
+        $mascota->raza = $request -> input('raza');
+        $mascota->descripcion = $request -> input('descripcion');
+        if ($request->input('img')!=null) {
+            $mascota->img = '/img/portfolio/'.$request->input('img');
+        }
+        
+        $mascota->save();
+
+        $users = User::all();
+        $mascotas = Mascota::all();
+        $organizaciones = Organizacion::all();
+        return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+    }
+
+    public function destroyMasc($id)
+    {
+        $mascota = Mascota::find($id);
+        $mascota->forceDelete();
 
         $users = User::all();
         $mascotas = Mascota::all();

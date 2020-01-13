@@ -30,11 +30,17 @@ class HomeController extends Controller
         return view('home', array('mascotas'=>$mascotas));
     }
 
-    public function VistaEditarUsuario()
+    public function VistaEditarUsuario($id)
     {
-        return view('FormularioEditar');
+        if(Auth::user()->role_id === 3){
+            $user = User::where('id',$id)->first();
+            $roles = Role::all();
+            return view('admin.editUserAdminZone', array('user'=>$user, 'roles'=>$roles));
+        }else{
+            return view('FormularioEditar');
+        }
     }
-    public function EditarUsuario(Request $request){
+    public function EditarUsuario(Request $request, $id){
 
         $request->validate([
             'nombre'=>'string|required|min:3|max:50',

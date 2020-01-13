@@ -3,13 +3,13 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <p id="usu"><a href="#">Usuarios</a></p>
-      <p id="masc"><a href="#">Mascotas</a></p>
-      <p id="hot"><a href="#">Hoteles</a></p>
-      <p id="ref"><a href="#">Refugios</a></p>
-      <p id="vet"><a href="#">Veterinarios</a></p>
-      <p id="aco"><a href="#">Centros de Acogida</a></p>
-      <p id="pro"><a href="#">Protectoras</a></p>
+      <p id="usu"><a>Usuarios</a></p>
+      <p id="masc"><a>Mascotas</a></p>
+      <p id="hot"><a>Hoteles</a></p>
+      <p id="ref"><a>Refugios</a></p>
+      <p id="vet"><a>Veterinarios</a></p>
+      <p id="aco"><a>Centros de Acogida</a></p>
+      <p id="pro"><a>Protectoras</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Esta es la vista de administracion</h1>
@@ -25,9 +25,9 @@
               <td class="col-md-4 text-center">{{$user->name}}</td>
               <td class="col-md-4 text-center">{{$user->email}}</td>
               <td class="col-md-4 text-center">{{$user->roles->rol}}</td>
-              <td class="col-md-4"><a href="{{route('admin.editUser', $user->id)}}">Editar</a></td>
+              <td class="col-md-4"><a href="{{route('FormularioEditar', $user->id)}}">Editar</a></td>
                       <td class="col-md">
-                        <form action="{{route('admin.destroyUser', $user->id)}}" method="post">
+                        <form action="{{route('EliminarUsuario', $user->id)}}" method="post">
                           @method('DELETE')
                           @csrf
                           <input type="submit" value="Eliminar">
@@ -47,8 +47,14 @@
               <td class="col-md-4 text-center">{{$mascota->name}}</td>
               <td class="col-md-4 text-center">{{$mascota->raza}}</td>
               <td class="col-md-4 text-center">{{$mascota->usuario->name}}</td>
-              <td class="col-md-4">Editar</td>
-              <td class="col-md">Eliminar</td>
+              <td class="col-md-4"><a href="{{route('mascotas.edit',$mascota->id)}}">Editar</a></td>
+              <td class="col-md">
+                <form action="{{route('mascotas.destroy',$mascota->id)}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <input type="submit" value="Eliminar">
+                </form>
+              </td>
             </tr>
           @endforeach
         </table>
