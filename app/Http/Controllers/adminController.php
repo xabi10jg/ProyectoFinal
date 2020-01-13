@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Role;
 use App\Mascota;
 use App\Organizacion;
 use App\Tipo;
@@ -26,12 +27,13 @@ class adminController extends Controller
         $organizaciones = Organizacion::all();
 
 
-        return view('administrador', array('user'=>$user), array('users'=>$users, 'organizaciones'=>$organizaciones));
+        return view('administrador', array('user'=>$user), array('users'=>$users, 'mascotas'=>$mascotas, 'organizaciones'=>$organizaciones));
     }
 
     public function editUser($id){
         $user = User::where('id',$id)->first();
-        return view('editUserAdminZone', array('user'=>$user));
+        $roles = Role::all();
+        return view('editUserAdminZone', array('user'=>$user, 'roles'=>$roles));
     }
 
     public function updateUser(Request $request, $id)
@@ -44,7 +46,8 @@ class adminController extends Controller
             'localidad'=>['string','min:2','max:50','nullable'],
             'provincia'=>['string','min:2','max:50','nullable'],
             'pais'=>['string','min:2','max:50','nullable'],
-            'telefono'=>['regex:/^[679][0-9]{8}$/','nullable']
+            'telefono'=>['regex:/^[679][0-9]{8}$/','nullable'],
+            'rol'=>['required']
 
         ]);
 
@@ -59,6 +62,7 @@ class adminController extends Controller
         $usuario->provincia = $request->input('provincia');
         $usuario->pais = $request->input('pais');
         $usuario->telefono = $request->input('telefono');
+        $usuario->role_id = $request->get('rol');
 
         $usuario->save();
 
