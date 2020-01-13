@@ -80,6 +80,9 @@
                                     <a class="dropdown-item" href="{{route('home')}}">
                                     @lang('Perfil')
                                     </a>
+                                    <a class="dropdown-item" href="{{route('mascotas.index')}}">
+                                    @lang('Mis Mascotas')
+                                    </a>
                                 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

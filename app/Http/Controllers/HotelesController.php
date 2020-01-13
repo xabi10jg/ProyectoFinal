@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Organizacion;
 
 class HotelesController extends Controller
 {
     public function index()
-    {
-        return view('organizaciones/hoteles');
+    {	
+    	$hoteles = Organizacion::where('tipo_id', 1)->get();
+        return view('organizaciones/hoteles', array('hoteles'=>$hoteles));
     }
     public function show()
     {

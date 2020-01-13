@@ -3,7 +3,29 @@
     <header class="masthead">
         <div class="container">
             <div class="intro-text text-dark">
+              <div class="d-flex flex-row">
+                <div class="col-lg-4">
+                  <button class="btn btn-primary" type="button">
+                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="col-lg-4">
+                  <button class="btn btn-primary" type="button">
+                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Cantidad </a><i class="fas fa-arrow-down"></i>
+                  </button>
+                </div>
+                <div class="col-lg-4">
+                  <div class="input-group">
+                    <input type="text" placeholder="Filtrar por Zona" class="form-control">
+                    <span class="input-group-btn">
+                      <button class="btn btn-primary" type="button">Buscar</button>
+                    </span>
+                  </div>
+                </div>
+              </div>                        
+              <br><br>
                 <div class="row">
+
                     <div class="col-sm-12">
                     @foreach($refugios as $refugio)
                         <div class="card">
@@ -24,7 +46,7 @@
         </div>
     </header>
     
-    <p>{{$refugios}}</p>
+ 
 
     @endsection
 
