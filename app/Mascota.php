@@ -13,4 +13,9 @@ class Mascota extends Model
     {
         return $this->belongsTo('App\User', 'propietario');
     }
+
+    public function organizacion()
+    {
+        return $this->belongsTo('App\Organizacion', 'organizacion_id');
+    }
 }

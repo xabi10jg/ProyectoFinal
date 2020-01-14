@@ -2,7 +2,6 @@
 @section('content')
   <div class="container-fluid text-center">
     <div class="row content"><br>
-      <div class="prueba">
         <div class="prueba">
           <form method="post" action="{{route('mascotas.update',$mascota->id)}}">
             @method('PUT')
@@ -32,7 +31,7 @@
                 <strong>{{ $message }}</strong>
               </span>
             @enderror<br>
-            Imagen: <input type="file" name="img"><br>
+            Imagen: <input class="file" type="file" name="img"><br>
             @error('img')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -45,5 +44,3 @@
     </div>
 
 @endsection
-</body>
-</html>

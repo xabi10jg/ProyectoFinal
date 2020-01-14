@@ -134,15 +134,19 @@ class mascotasController extends Controller
      */
     public function destroy($id)
     {
-        $mascota = Mascota::find($id);
-        $mascota->forceDelete();
         if(Auth::user()->role_id === 3){
+            $mascota = Mascota::find($id);
+            $mascota->forceDelete();
+
             $users = User::all();
             $mascotas = Mascota::all();
             $organizaciones = Organizacion::all();
             return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
         }else{
-        return redirect(route('mascotas.index'));
+            $mascota = Mascota::find($id);
+            $mascota->delete();
+            $mascotas = Mascota::all();
+            return redirect(route('mascotas.index'));
         }
     }
 }

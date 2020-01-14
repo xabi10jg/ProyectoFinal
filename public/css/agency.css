@@ -718,7 +718,10 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   margin-left: -15px;
   margin-right: 1px;
 }
-
+.file{
+  margin-left: auto;
+  margin-right: auto;
+}
 /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;

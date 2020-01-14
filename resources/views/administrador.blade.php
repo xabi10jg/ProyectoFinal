@@ -3,6 +3,7 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
+      <p><a href="{{route('org.create')}}">Crear Organizacion</a></p>
       <p id="usu"><a>Usuarios</a></p>
       <p id="masc"><a>Mascotas</a></p>
       <p id="hot"><a>Hoteles</a></p>
@@ -26,13 +27,11 @@
               <td class="col-md-4 text-center">{{$user->email}}</td>
               <td class="col-md-4 text-center">{{$user->roles->rol}}</td>
               <td class="col-md-4"><a href="{{route('FormularioEditar', $user->id)}}">Editar</a></td>
-                      <td class="col-md">
-                        <form action="{{route('EliminarUsuario', $user->id)}}" method="post">
-                          @method('DELETE')
-                          @csrf
-                          <input type="submit" value="Eliminar">
-                        </form>
-                      </td>
+              <td class="col-md-4">
+                <button id="EliminarPerfil">
+                  <a href="{{route('EliminarUsuario', $user->id)}}">Eliminar</a>
+                </button>
+              </td>
             </tr>
           @endforeach
         </table>
@@ -70,8 +69,14 @@
               <td class="col-md-4">{{$org->name}}</td>
               <td class="col-md-4">{{$org->email}}</td>
               <td class="col-md-4">{{$org->tipo->name}}</td>
-              <td class="col-md-4">Editar</td>
-              <td class="col-md">Eliminar</td>
+              <td class="col-md-4"><a href="{{route('org.edit',$org->id)}}">Editar</a></td>
+              <td class="col-md">
+                <form action="{{route('org.destroy',$org->id)}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <input type="submit" value="Eliminar">
+                </form>
+              </td>
             </tr>
             @endif
           @endforeach
@@ -88,8 +93,14 @@
               <td class="col-md-4">{{$org->name}}</td>
               <td class="col-md-4">{{$org->email}}</td>
               <td class="col-md-4">{{$org->tipo->name}}</td>
-              <td class="col-md-4">Editar</td>
-              <td class="col-md">Eliminar</td>
+              <td class="col-md-4"><a href="{{route('org.edit',$org->id)}}">Editar</a></td>
+              <td class="col-md">
+                <form action="{{route('org.destroy',$org->id)}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <input type="submit" value="Eliminar">
+                </form>
+              </td>
             </tr>
             @endif
           @endforeach
@@ -105,8 +116,14 @@
               <td class="col-md-4">{{$org->name}}</td>
               <td class="col-md-4">{{$org->email}}</td>
               <td class="col-md-4">{{$org->tipo->name}}</td>
-              <td class="col-md-4">Editar</td>
-              <td class="col-md">Eliminar</td>
+              <td class="col-md-4"><a href="{{route('org.edit',$org->id)}}">Editar</a></td>
+              <td class="col-md">
+                <form action="{{route('org.destroy',$org->id)}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <input type="submit" value="Eliminar">
+                </form>
+              </td>
             </tr>
             @endif
           @endforeach
@@ -122,8 +139,14 @@
               <td class="col-md-4">{{$org->name}}</td>
               <td class="col-md-4">{{$org->email}}</td>
               <td class="col-md-4">{{$org->tipo->name}}</td>
-              <td class="col-md-4">Editar</td>
-              <td class="col-md">Eliminar</td>
+              <td class="col-md-4"><a href="{{route('org.edit',$org->id)}}">Editar</a></td>
+              <td class="col-md">
+                <form action="{{route('org.destroy',$org->id)}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <input type="submit" value="Eliminar">
+                </form>
+              </td>
             </tr>
             @endif
           @endforeach
@@ -139,8 +162,14 @@
               <td class="col-md-4">{{$org->name}}</td>
               <td class="col-md-4">{{$org->email}}</td>
               <td class="col-md-4">{{$org->tipo->name}}</td>
-              <td class="col-md-4">Editar</td>
-              <td class="col-md">Eliminar</td>
+              <td class="col-md-4"><a href="{{route('org.edit',$org->id)}}">Editar</a></td>
+              <td class="col-md">
+                <form action="{{route('org.destroy',$org->id)}}" method="post">
+                  @method('DELETE')
+                  @csrf
+                  <input type="submit" value="Eliminar">
+                </form>
+              </td>
             </tr>
             @endif
           @endforeach

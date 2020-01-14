@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Mascota;
+use App\Role;
+use App\Organizacion;
 use Auth;
 
 class HomeController extends Controller
@@ -42,20 +44,33 @@ class HomeController extends Controller
     }
     public function EditarUsuario(Request $request, $id){
 
-        $request->validate([
-            'nombre'=>'string|required|min:3|max:50',
-            'apellido'=>['string','min:2','max:50','nullable'],
-            'email'=>'email|required|min:6|max:50',
-            'direccion'=>['string','min:2','max:50','nullable'],
-            'localidad'=>['string','min:2','max:50','nullable'],
-            'provincia'=>['string','min:2','max:50','nullable'],
-            'pais'=>['string','min:2','max:50','nullable'],
-            'telefono'=>['regex:/^[679][0-9]{8}$/','nullable']
+        if(Auth::user()->role_id === 3){
+            $request->validate([
+                'nombre'=>'string|required|min:3|max:50',
+                'apellido'=>['string','min:2','max:50','nullable'],
+                'email'=>'email|required|min:6|max:50',
+                'direccion'=>['string','min:2','max:50','nullable'],
+                'localidad'=>['string','min:2','max:50','nullable'],
+                'provincia'=>['string','min:2','max:50','nullable'],
+                'pais'=>['string','min:2','max:50','nullable'],
+                'telefono'=>['regex:/^[679][0-9]{8}$/','nullable'],
+                'rol'=>['required']
+            ]);
+        }else{
+            $request->validate([
+                'nombre'=>'string|required|min:3|max:50',
+                'apellido'=>['string','min:2','max:50','nullable'],
+                'email'=>'email|required|min:6|max:50',
+                'direccion'=>['string','min:2','max:50','nullable'],
+                'localidad'=>['string','min:2','max:50','nullable'],
+                'provincia'=>['string','min:2','max:50','nullable'],
+                'pais'=>['string','min:2','max:50','nullable'],
+                'telefono'=>['regex:/^[679][0-9]{8}$/','nullable'],
+            ]);
+        }
 
-        ]);
 
-
-        $usuario= User::find(Auth::user()->id);
+        $usuario= User::where('id',$id)->first();
 
         $usuario->name = $request->input('nombre');
         $usuario->apellido = $request->input('apellido');
@@ -66,22 +81,40 @@ class HomeController extends Controller
         $usuario->pais = $request->input('pais');
         $usuario->telefono = $request->input('telefono');
 
+        if(Auth::user()->role_id === 3){
+            $usuario->role_id = $request->get('rol');
+        }
+
         $usuario->save();
 
-
-        //hay que cambiarlo
-        return view('home');
+        if(Auth::user()->role_id === 3){
+            $users = User::all();
+            $mascotas = Mascota::all();
+            $organizaciones = Organizacion::all();
+            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+        }else{
+            //hay que cambiarlo
+            return redirect(route('admin'));
+        }
     }
 
-    public function EliminarUsuario(){
-
-        $usuario= User::find(Auth::user()->id);
-        $usuario->delete();
-        Auth::logout();
-
-        return view('index');
+    public function EliminarUsuario($id){
 
         
+        if(Auth::user()->role_id === 3){
+            $user = User::where('id',$id)->first();
+            $user->forceDelete();
+
+            $users = User::all();
+            $mascotas = Mascota::all();
+            $organizaciones = Organizacion::all();
+            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones)));
+        }else{
+            $usuario= User::find(Auth::user()->id);
+            $usuario->delete();
+            Auth::logout();
+            return view('index');
+        }
     }
 
 }
