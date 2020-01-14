@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Mascota;
 use App\User;
+use App\Organizacion;
 
 class mascotasController extends Controller
 {
@@ -78,7 +79,13 @@ class mascotasController extends Controller
     public function edit($id)
     {
         $mascota = Mascota::find($id);
-        return view ('mascotas.mascotaEdit')->with(['mascota'=> $mascota]);
+        if(Auth::user()->role_id === 3){
+            $mascota = Mascota::where('id',$id)->first();
+            $users = User::all();
+            return view('admin.editMascAdminZone', array('users'=>$users, 'mascota'=>$mascota));
+        }else{
+            return view ('mascotas.mascotaEdit')->with(['mascota'=> $mascota]);
+        }
         
     }
 
@@ -109,7 +116,14 @@ class mascotasController extends Controller
         }
         
         $mascota->save();
-        return redirect(route('mascotas.index'));
+        if(Auth::user()->role_id === 3){
+            $users = User::all();
+            $mascotas = Mascota::all();
+            $organizaciones = Organizacion::all();
+            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+        }else{
+            return redirect(route('mascotas.index'));
+        }
     }
 
     /**
@@ -120,8 +134,19 @@ class mascotasController extends Controller
      */
     public function destroy($id)
     {
-        $mascota = Mascota::find($id);
-        $mascota->delete();
-        return redirect(route('mascotas.index'));
+        if(Auth::user()->role_id === 3){
+            $mascota = Mascota::find($id);
+            $mascota->forceDelete();
+
+            $users = User::all();
+            $mascotas = Mascota::all();
+            $organizaciones = Organizacion::all();
+            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+        }else{
+            $mascota = Mascota::find($id);
+            $mascota->delete();
+            $mascotas = Mascota::all();
+            return redirect(route('mascotas.index'));
+        }
     }
 }

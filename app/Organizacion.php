@@ -18,4 +18,9 @@ class Organizacion extends Model
     {
         return $this->belongsTo('App\Tipo', 'tipo_id');
     }
+
+    public function mascotas()
+    {
+        return $this->hashMany('App\Mascota');
+    }
 }
