@@ -31,6 +31,34 @@
                 <strong>{{ $message }}</strong>
               </span>
             @enderror<br>
+            Propietario: <select name="user">
+              @foreach($users as $user)
+                @if($user->id === $mascota->propietario)
+                  <option selected value="{{$user->id}}">{{$user->name}}</option>
+                @else
+                  <option value="{{$user->id}}">{{$user->name}}</option>
+                @endif
+              @endforeach
+            </select>
+            @error('user')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+             @enderror<br>
+            Organizacion: <select name="org">
+              @foreach($orgs as $org)
+                @if($org->id === $mascota->organizacion_id)
+                  <option selected value="{{$org->id}}">{{$org->name}}</option>
+                @else
+                  <option value="{{$org->id}}">{{$org->name}}</option>
+                @endif
+              @endforeach
+            </select>
+            @error('org')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+             @enderror<br>
             Imagen: <input class="file" type="file" name="img"><br>
             @error('img')
               <span class="invalid-feedback" role="alert">
