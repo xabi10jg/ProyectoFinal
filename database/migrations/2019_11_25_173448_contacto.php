@@ -17,7 +17,9 @@ class Contacto extends Migration
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('email', 50);
-            $table->string('mensaje');
+            $table->string('mensaje')->nullable();
+            $table->string('cif')->nullable();
+            $table->string('tipo')->nullable();
             $table->timestamps();
         });
     }
