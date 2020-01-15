@@ -121,10 +121,9 @@ class OrganizacionesController extends Controller
 
         $org->save();
 
-        $users = User::all();
-        $mascotas = Mascota::all();
+        
         $organizaciones = Organizacion::all();
-        return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+        return redirect(route('orgAdmin', array('organizaciones'=>$organizaciones)));
 
     }
 
@@ -133,9 +132,7 @@ class OrganizacionesController extends Controller
     	$org = Organizacion::find($id);
     	$org->forceDelete();
 
-    	$users = User::all();
-        $mascotas = Mascota::all();
         $organizaciones = Organizacion::all();
-        return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+        return redirect(route('orgAdmin', array('organizaciones'=>$organizaciones)));
     }
 }
