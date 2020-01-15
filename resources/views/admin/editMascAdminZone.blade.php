@@ -3,7 +3,7 @@
   <div class="container-fluid text-center">
     <div class="row content"><br>
         <div class="prueba">
-          <form method="post" action="{{route('mascotas.update',$mascota->id)}}">
+          <form method="post" class="col-lg-8 text-center" action="{{route('mascotas.update',$mascota->id)}}">
             @method('PUT')
             @csrf
 

@@ -3,7 +3,7 @@
   <div class="container-fluid text-center">
     <div class="row content"><br>
       <div class="prueba">
-        <form method="post" action="{{route('ConfirmarEdicion', $user->id)}}">
+        <form method="post" class="text-center" action="{{route('ConfirmarEdicion', $user->id)}}">
         
         @csrf
 

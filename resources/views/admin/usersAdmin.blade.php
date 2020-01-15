@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div class="col-sm-8 text-left"> 
+<div class="col-lg-10 text-left"> 
     <div class="prueba">
       <table id="users" class="col-lg-12 text-center">
         <tr>
