@@ -75,3 +75,7 @@ Route::get('/hoteles', 'HotelesController@index')->name('hoteles');
 
 Route::get('/hotel', 'HotelesController@show')->name('hotel');
 
+
+Route::get('/formulario', 'contactoController@index')->name('formularioEncargado');
+Route::post('/formularioenc', 'contactoController@store')->name('formularioEnc');
+

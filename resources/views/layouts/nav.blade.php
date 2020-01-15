@@ -67,7 +67,7 @@
                         @else
                           @if(Auth::user()->role_id === 1)
                             <li class="nav-item">
-                              <a class="nav-link" href="">@lang('Registrar Organizacion')</a>
+                              <a class="nav-link" href="{{route('formularioEncargado')}}">@lang('Registrar Organizacion')</a>
                             </li>
                           @endif
                             <li class="nav-item dropdown">
