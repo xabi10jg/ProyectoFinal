@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Organizacion;
 
 class VeterinarioController extends Controller
 {
     public function index()
-    {
-        return view('organizaciones/veterinarios');
+    {   
+        $veterinarios = Organizacion::where('tipo_id',3)->get();
+        return view('organizaciones/veterinarios',['veterinarios' => $veterinarios]);
     }
-    public function show()
+    public function show($id)
     {
-        return view('organizaciones/veterinario');
+        $veterinario = Organizacion::find($id);
+        return view('organizaciones.veterinario',compact('veterinario'));
     }
 }

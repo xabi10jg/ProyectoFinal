@@ -69,7 +69,7 @@ Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administ
 
 Route::get('/veterinarios', 'VeterinarioController@index')->name('veterinarios');
 
-Route::get('/veterinario', 'VeterinarioController@show')->name('veterinario');
+Route::get('/veterinario/{id}', 'VeterinarioController@show')->name('veterinario');
 
 Route::get('/hoteles', 'HotelesController@index')->name('hoteles');
 
