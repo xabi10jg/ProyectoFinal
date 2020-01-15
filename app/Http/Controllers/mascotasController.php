@@ -135,8 +135,17 @@ class mascotasController extends Controller
             }else{
                 $mascota->propietario = Auth::user()->id;
             }
-        }else if(){
-
+        }else if(Auth::user()->role_id === 3){
+            if($request->input('org') === "null" && $request->input('user') != "null"){
+                $mascota->organizacion_id = $request->input('org');
+                $mascota->organizacion_id = NULL;
+            }
+            if($request->input('user') === "null" && $request->input('org') != "null"){
+                $mascota->organizacion_id = $request->input('org');
+                $mascota->organizacion_id = NULL;
+            }
+            
+            
         }
         
         $mascota->save();

@@ -45,7 +45,13 @@
             <tr>
               <td class="col-md-4 text-center">{{$mascota->name}}</td>
               <td class="col-md-4 text-center">{{$mascota->raza}}</td>
-              <td class="col-md-4 text-center">{{$mascota->usuario->name}}</td>
+              @isset($mascota->usuario->name)
+                <td class="col-md-4 text-center">{{$mascota->usuario->name}}</td>
+              @endisset
+              @isset($mascota->organizacion->name)
+                <td class="col-md-4 text-center">{{$mascota->organizacion->name}}</td>
+              @endisset
+              
               <td class="col-md-4"><a href="{{route('mascotas.edit',$mascota->id)}}">Editar</a></td>
               <td class="col-md">
                 <form action="{{route('mascotas.destroy',$mascota->id)}}" method="post">
