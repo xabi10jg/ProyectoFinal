@@ -10,6 +10,11 @@ USE App\Mascota;
 
 class OrganizacionesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+    
     public function index()
     {
         $hoteles = Organizacion::where('tipo_id',1)->get();

@@ -61,11 +61,13 @@ Route::get('EliminarUsuario/{id}', 'HomeController@EliminarUsuario')->name('Elim
 
 //Rutas mascotas
 Route::resource('mascotas', 'mascotasController');
-Route::resource('org', 'OrganizacionesController')->middleware('auth', 'role:Administrador');
+Route::resource('org', 'OrganizacionesController');
 
 //Rutas Admin
 //Route::get('/admin', 'adminController@index')->name('admin');
 Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('admin');
+
+Route::get('/org/create', 'OrganizacionesController@create')->middleware('auth', 'role:Administrador')->name('org.create');
 
 Route::get('/veterinarios', 'VeterinarioController@index')->name('veterinarios');
 
