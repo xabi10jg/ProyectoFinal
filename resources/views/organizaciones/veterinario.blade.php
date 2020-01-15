@@ -1,53 +1,48 @@
 @extends('layouts.nav')
 @section('content')
-
-  <header class="masthead">
-    <div class="container">
-            
-      <div class="intro-text">
-        <h1 class="intro-heading text-uppercase">Nombre Veterinario</h1>
+<header class="masthead">
+  <section class="page-section">
+    <div class="container">  
+      <h1 class="intro-heading text-uppercase">{{$veterinario->name}}</h1> 
+        @auth
+        @if(Auth::user()->id===$veterinario->encargado_id)
+            <div class="d-flex flex-row" style="margin-bottom:-100px; margin-top: 40px;">
+                <div class="col-lg-12">
+                  <button class="btn btn-primary" type="button">
+                      <a style="color: white; text-decoration: none;" href="{{route('mascotas.create')}}">Editar veterinario</a>
+                     </button>
+                </div>
+            </div>
+        @endif
+        @endauth
+      <div class="intro-text text-dark">
         <div class="d-flex justify-content-around flex-wrap">
-        <div class="col-lg-10" id="mapid"></div>
-        <div class="col-lg-5 text-center">
-          <div class="newcard margincard">
-            <div class="card-body">
-              
-
-
-              <h2 class="section-heading text-uppercase text-dark">@lang('Información')</h2><hr>
-
-              <p class="text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                       
-              
-
+          <div class="col-lg-10" id="mapid"></div>
+          <div class="col-lg-5 text-center">
+            <div class="newcard margincard">
+              <div class="card-body">
+                <h2 class="section-heading text-uppercase text-dark">@lang('Información')</h2>
+                <p>Email: {{$veterinario->email}}</p>
+                <p>Dirección: {{$veterinario->direccion}}</p>
+                <p>Localidad: {{$veterinario->localidad}}</p>
+                <p>Provincia: {{$veterinario->Provincia}}</p>
+                <p>Pais: {{$veterinario->pais}}</p>
+                <p>Telefono: {{$veterinario->telefono}}</p>
               </div>
             </div>
           </div>
-        <div class="col-lg-5 text-center">
-          <div class="newcard margincard">
-            <div class="card-body">
-              
-
-
-              <h2 class="section-heading text-uppercase text-dark">@lang('Horario')</h2><hr>
-
-              <p class="text-dark">@lang('Lunes a Viernes:')</p>
-              <p class="text-dark">08:00-20:00</p>  
-              <p class="text-dark">@lang('Sabados:')</p>  
-              <p class="text-dark">10:00-19:00</p>                         
-              
-
+          <div class="col-lg-5 text-center">
+            <div class="newcard margincard">
+              <div class="card-body">
+                <h2 class="section-heading text-uppercase text-dark">@lang('Horario')</h2><hr>
+                <p>Horario: Desde {{$veterinario->horarioApertura}} hasta {{$veterinario->horarioCierre}}</p>      
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </section>
 
 <script>
     var mymap = L.map('mapid').setView([43.385537, -1.949364], 10);
@@ -79,9 +74,6 @@ var toplayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png
 
 
    </script>
-
-
-
 @endsection
 
 </body>
