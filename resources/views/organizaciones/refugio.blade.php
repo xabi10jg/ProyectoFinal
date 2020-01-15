@@ -1,21 +1,49 @@
 @extends('layouts.nav')
 @section('content') 
     <header class="masthead">
-        <div class="container">
-            <div class="intro-text text-dark">
-            <div class="row">
-
-<div class="col-sm-12">
-    <div class="card">
-        <div class="card-body">
-            
-        </div>
-    </div>
-</div>
+        <section class="page-section">
+            <div class="container">
+                
+                <div class="row justify-content-center">
+                    <div class="col-md-8">    
+                        <div class="prueba mb-5">
+                        @auth
+                        @if(Auth::user()->id===$refugio->encargado_id)
+                            <div class="d-flex flex-row">
+                                <div class="col-lg-12">
+                	                <button class="btn btn-primary" type="button">
+        	                            <a style="color: white; text-decoration: none;" href="{{route('mascotas.create')}}">Añadir Mascota</a>
+      	                             </button>
+                                </div>
+                            </div>
+                        @endif
+                        @endauth
+                        </div>
+                    
+                    <div class="row justify-content-center  text-dark">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{$refugio->name}}
+                                    </h5>
+                                    <p>Email: {{$refugio->email}}</p>
+                                    <p>Dirección: {{$refugio->direccion}}</p>
+                                    <p>Localidad: {{$refugio->localidad}}</p>
+                                    <p>Provincia: {{$refugio->Provincia}}</p>
+                                    <p>Pais: {{$refugio->pais}}</p>
+                                    <p>Telefono: {{$refugio->telefono}}</p>
+                                    <p>Horario: Desde {{$refugio->horarioApertura}} hasta {{$refugio->horarioCierre}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>    
     </header>
 @endsection
+
 </body>
 </html>
 

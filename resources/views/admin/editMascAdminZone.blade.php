@@ -32,7 +32,9 @@
               </span>
             @enderror<br>
             Propietario: <select name="user">
-              @foreach($users as $user)
+                <option hidden selected value="null">Sin Propietario</option>
+                <option value="null">Sin Propietario</option>
+              @foreach($users as $user)s
                 @if($user->id === $mascota->propietario)
                   <option selected value="{{$user->id}}">{{$user->name}}</option>
                 @else
@@ -46,6 +48,8 @@
               </span>
              @enderror<br>
             Organizacion: <select name="org">
+              <option hidden selected value="null">nada</option>
+              <option value="null">Sin Organizacion</option>
               @foreach($orgs as $org)
                 @if($org->id === $mascota->organizacion_id)
                   <option selected value="{{$org->id}}">{{$org->name}}</option>

@@ -135,16 +135,23 @@ class mascotasController extends Controller
             }else{
                 $mascota->propietario = Auth::user()->id;
             }
-        }else if(){
-
+        }else if(Auth::user()->role_id === 3){
+            if($request->input('org') === "null" && $request->input('user') != "null"){
+                $mascota->propietario = $request->input('user');
+                $mascota->organizacion_id = NULL;
+            }
+            if($request->input('user') === "null" && $request->input('org') != "null"){
+                $mascota->organizacion_id = $request->input('org');
+                $mascota->propietario = NULL;
+            }
+            
+            
         }
         
         $mascota->save();
         if(Auth::user()->role_id === 3){
-            $users = User::all();
             $mascotas = Mascota::all();
-            $organizaciones = Organizacion::all();
-            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+            return redirect(route('mascAdmin', array('mascotas'=>$mascotas)));
         }else{
             return redirect(route('mascotas.index'));
         }
@@ -162,10 +169,8 @@ class mascotasController extends Controller
             $mascota = Mascota::find($id);
             $mascota->forceDelete();
 
-            $users = User::all();
             $mascotas = Mascota::all();
-            $organizaciones = Organizacion::all();
-            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+            return redirect(route('mascAdmin', array('mascotas'=>$mascotas)));
         }else{
             $mascota = Mascota::find($id);
             $mascota->delete();

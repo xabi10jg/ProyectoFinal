@@ -67,10 +67,17 @@
     </div>
   </div>
 </nav>
-
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="{{route('org.create')}}">Crear Organizacion</a></p>
+      <p id="usu"><a href="{{route('usersAdmin')}}">Usuarios</a></p>
+      <p id="masc"><a href="{{route('mascAdmin')}}">Mascotas</a></p>
+      <p id="hot"><a href="{{route('orgAdmin')}}">Organizaciones</a></p>
+    </div>
 @yield('content')
+  </div>
+</div>
 
-<!-- Custom scripts for this template -->
-  <script src="/js/admin.js"></script>
 </body>
 </html>

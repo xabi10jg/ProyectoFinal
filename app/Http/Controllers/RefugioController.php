@@ -13,7 +13,8 @@ class RefugioController extends Controller
         return view('organizaciones.refugios',['refugios' => $refugios]);
     }
     public function show($id)
-    {
+    {   
+        $refugios = Organizacion::all();
         $refugio = Organizacion::find($id);
         return view ('organizaciones.refugio',compact('refugio'));
     }
