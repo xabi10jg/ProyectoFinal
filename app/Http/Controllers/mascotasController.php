@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Mascota;
 use App\User;
+use App\Organizacion;
 
 class mascotasController extends Controller
 {
@@ -49,7 +50,16 @@ class mascotasController extends Controller
         $mascota->raza = $request->input('raza');
         $mascota->descripcion = $request->input('descripcion');
         $mascota->img = '/img/portfolio/'.$request->input('img');
-        $mascota->propietario = Auth::user()->id;
+        if(Auth::user()->role_id === 1){
+            $mascota->propietario = Auth::user()->id;
+        }else if(Auth::user()->role_id === 2){
+            $org = Organizacion::where('encargado_id', Auth::user()->id)->first();
+            if($org->tipo_id === 5 || $org->tipo_id === 2 || $org->tipo_id === 4){
+                $mascota->organizacion_id = $org->id;
+            }else{
+                $mascota->propietario = Auth::user()->id;
+            }
+        }
 
         $mascota->save();
 
@@ -78,7 +88,16 @@ class mascotasController extends Controller
     public function edit($id)
     {
         $mascota = Mascota::find($id);
-        return view ('mascotas.mascotaEdit')->with(['mascota'=> $mascota]);
+        if(Auth::user()->role_id === 3){
+            $mascota = Mascota::where('id',$id)->first();
+            $users = User::all();
+            $orgs = Organizacion::all();
+            return view('admin.editMascAdminZone', array('users'=>$users, 'mascota'=>$mascota, 'orgs'=>$orgs));
+        }else{
+            $users = User::all();
+            $orgs = Organizacion::all();
+            return view ('mascotas.mascotaEdit')->with(['mascota'=> $mascota, 'orgs'=>$orgs]);
+        }
         
     }
 
@@ -107,9 +126,28 @@ class mascotasController extends Controller
         if ($request->input('img')!=null) {
             $mascota->img = '/img/portfolio/'.$request->input('img');
         }
+        if(Auth::user()->role_id === 1){
+            $mascota->propietario = Auth::user()->id;
+        }else if(Auth::user()->role_id === 2){
+            $org = Organizacion::where('encargado_id', Auth::user()->id)->first();
+            if($org->tipo_id === 5 || $org->tipo_id === 2 || $org->tipo_id === 4){
+                $mascota->organizacion_id = $org->id;
+            }else{
+                $mascota->propietario = Auth::user()->id;
+            }
+        }else if(){
+
+        }
         
         $mascota->save();
-        return redirect(route('mascotas.index'));
+        if(Auth::user()->role_id === 3){
+            $users = User::all();
+            $mascotas = Mascota::all();
+            $organizaciones = Organizacion::all();
+            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+        }else{
+            return redirect(route('mascotas.index'));
+        }
     }
 
     /**
@@ -120,8 +158,19 @@ class mascotasController extends Controller
      */
     public function destroy($id)
     {
-        $mascota = Mascota::find($id);
-        $mascota->delete();
-        return redirect(route('mascotas.index'));
+        if(Auth::user()->role_id === 3){
+            $mascota = Mascota::find($id);
+            $mascota->forceDelete();
+
+            $users = User::all();
+            $mascotas = Mascota::all();
+            $organizaciones = Organizacion::all();
+            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+        }else{
+            $mascota = Mascota::find($id);
+            $mascota->delete();
+            $mascotas = Mascota::all();
+            return redirect(route('mascotas.index'));
+        }
     }
 }

@@ -30,10 +30,10 @@
 
                         Te uniste en {{Auth()->user()->email_verified_at}}<br>
                         <button id="EditarPerfil">
-                            <a href="{{route('FormularioEditar')}}">Editar</a>
+                            <a href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a>
                         </button>
                         <button id="EliminarPerfil">
-                            <a href="{{route('EliminarUsuario')}}">Eliminar</a>
+                            <a href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a>
                         </button>
                         
                     </div>
