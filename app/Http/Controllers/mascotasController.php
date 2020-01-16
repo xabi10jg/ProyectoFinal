@@ -149,7 +149,7 @@ class mascotasController extends Controller
             CURLOPT_POSTFIELDS => array('image' => $image64),
             CURLOPT_HTTPHEADER => array(
               // "Authorization: Client-ID {{1cb45b7462006f}}",
-              "Authorization: Client-ID ".$client_id //nuestro token para acceder a la api
+              "Authorization: Bearer ".$token //nuestro token para acceder a la api
             ),
           ));
           $response = curl_exec($curl);
