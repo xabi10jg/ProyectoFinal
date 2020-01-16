@@ -1,6 +1,46 @@
 @extends('layouts.nav')
 @section('content')
 <header class="masthead">
+        <section class="page-section">
+            <div class="container">
+                
+                <div class="row justify-content-center">
+                    <div class="col-md-8">    
+                        <div class="prueba mb-5">
+                        @auth
+                        @if(Auth::user()->id===$veterinario->encargado_id)
+                            <div class="d-flex flex-row">
+                                <div class="col-lg-12">
+                                 <a class="btn btn-primary" href="{{route('mascotas.create')}}">Editar Veterinario</a>
+                                </div>
+                            </div>
+                        @endif
+                        @endauth
+                        </div>
+                    
+                    <div class="row justify-content-center  text-dark">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        {{$veterinario->name}}
+                                    </h5>
+                                    <p>Email: {{$veterinario->email}}</p>
+                                    <p>Dirección: {{$veterinario->direccion}}</p>
+                                    <p>Localidad: {{$veterinario->localidad}}</p>
+                                    <p>Provincia: {{$veterinario->Provincia}}</p>
+                                    <p>Pais: {{$veterinario->pais}}</p>
+                                    <p>Telefono: {{$veterinario->telefono}}</p>
+                                    <p>Horario: Desde {{$veterinario->horarioApertura}} hasta {{$veterinario->horarioCierre}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    
+    </header>
+<!--<header class="masthead2">
   <section class="page-section">
     <div class="container">  
       <h1 class="intro-heading text-uppercase">{{$veterinario->name}}</h1> 
@@ -13,11 +53,11 @@
             </div>
         @endif
         @endauth
-      <div class="intro-text text-dark">
-        <div class="d-flex justify-content-around flex-wrap">
+      <div class="intro-text text-dark d-flex justify-content-around flex-wrap">
+        
           <div class="col-lg-10" id="mapid"></div>
           <div class="col-lg-5 text-center">
-            <div class="newcard margincard">
+            <div class="newcard">
               <div class="card-body">
                 <h2 class="section-heading text-uppercase text-dark">@lang('Información')</h2>
                 <p>Email: {{$veterinario->email}}</p>
@@ -30,14 +70,14 @@
             </div>
           </div>
           <div class="col-lg-5 text-center">
-            <div class="newcard margincard">
+            <div class="newcard">
               <div class="card-body">
                 <h2 class="section-heading text-uppercase text-dark">@lang('Horario')</h2><hr>
                 <p>Horario: Desde {{$veterinario->horarioApertura}} hasta {{$veterinario->horarioCierre}}</p>      
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -70,7 +110,7 @@ var toplayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png
   L.control.layers(layers).addTo(mymap);
 
 
-   </script>
+   </script>-->
 @endsection
 
 </body>
