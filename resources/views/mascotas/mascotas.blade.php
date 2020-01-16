@@ -36,7 +36,7 @@
                               <i class="fas fa-plus fa-3x"></i>
                             </div>
                           </div>
-                          <img src="https://i.imgur.com/cElnd25.jpg" alt="" width="100%" height="50%;">
+                          <img src="{{$mascota->img}}" alt="" width="100%" height="50%;">
                           </a>
                         <div class="portfolio-caption">
                           <h4>{{$mascota->name}}</h4>
