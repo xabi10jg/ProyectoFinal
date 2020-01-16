@@ -45,7 +45,7 @@
        			      <hr>
        			    <p>Horario: Lunes a Sábado {{$veterinario->horarioApertura}}-{{$veterinario->horarioCierre}}</p>
        			      <br>
-       			    <a href="{{route('veterinario',$veterinario->id)}}"><button>Ver Veterinaria</button></a>
+       			    <a class="btn btn-primary" href="{{route('veterinario',$veterinario->id)}}">Ver Veterinaria</a>
           	  </div>
             </div>
           </div>
