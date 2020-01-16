@@ -11,9 +11,7 @@
             <section class="page-section" id="portfolio">
               <div class="d-flex flex-row">
                 <div class="col-lg-5">
-                	<button class="btn btn-primary" type="button">
-        	           <a style="color: white; text-decoration: none;" href="{{route('mascotas.create')}}">Añadir Mascota</a>
-      	          </button>
+                  <a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a>
                 </div>
                 <div class="col-lg-5">
                   <div class="input-group">
@@ -78,9 +76,8 @@
                             @endisset
                             <li>{{$mascota->raza}}</li>
                           </ul>
-                          <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-pencil-alt"></i><a style="color: white; text-decoration: none;" href="{{route('mascotas.edit',$mascota->id)}}">
-                                    @lang('Editar')</a></button>
+                                    <a class="btn btn-primary" href="{{route('mascotas.edit',$mascota->id)}}"><i class="fas fa-pencil-alt"></i>
+                                    @lang('Editar')</a>
                                     <form style="display:inline" action="{{  route('mascotas.destroy',$mascota->id) }}" method="POST">
                                      @method('DELETE')
                                      @csrf

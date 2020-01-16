@@ -8,9 +8,7 @@
         @if(Auth::user()->id===$veterinario->encargado_id)
             <div class="d-flex flex-row" style="margin-bottom:-100px; margin-top: 40px;">
                 <div class="col-lg-12">
-                  <button class="btn btn-primary" type="button">
-                      <a style="color: white; text-decoration: none;" href="{{route('mascotas.create')}}">Editar veterinario</a>
-                     </button>
+                      <a class="btn btn-primary" href="{{route('mascotas.create')}}">Editar veterinario</a>
                 </div>
             </div>
         @endif

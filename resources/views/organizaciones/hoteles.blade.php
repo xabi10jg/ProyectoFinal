@@ -11,14 +11,10 @@
 
                 <div class="d-flex flex-row mt-4">
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                    <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Disponibilidad </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                     <a class="btn btn-primary" href="#">Filtrar por Disponibilidad <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
                   <div class="input-group">
@@ -49,13 +45,10 @@
                                     Provincia: {{$hotel->provincia}}<br>
                                     Pais: {{$hotel->pais}}<br>
                                     Encargado: {{$hotel->encargado->name}}<br>
-                                    <a style="color:white; text-decoration:none;" href="{{route('hotel',$hotel->id)}}"><button type="button" class="btn btn-primary">
-                                    Más Información
-                                </button></a>
+                                    <a class="btn btn-primary" href="{{route('hotel',$hotel->id)}}">
+                                    Más Información</a>
                                 @endforeach
                             </div>
-
-
                         </div>
                     </div>
                 </div>

@@ -5,14 +5,10 @@
             <div class="intro-text text-dark">
               <div class="d-flex flex-row">
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                  <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Cantidad </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                  <a class="btn btn-primary" href="#">Filtrar por Cantidad <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
                   <div class="input-group">
@@ -35,9 +31,9 @@
                                     <img src="img/logos/katubihotz.jpg" width="40px">
                                 </h5>
                                 <p class="card-text">Katubihotz es una asociación creada para cuidar y controlar las colonias de gatos que viven en la calle y procurar una casa a nuestros felinos a través de la adopción.</p>
-                                <a style="color:white; text-decoration:none;" href="{{route('refugio',$refugio->id)}}"><button type="button" class="btn btn-primary">
+                                <a class="btn btn-primary" href="{{route('refugio',$refugio->id)}}">
                                     Más Información
-                                </button></a>
+                                </a>
                             </div>
                         </div>
                     @endforeach

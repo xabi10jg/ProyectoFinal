@@ -11,9 +11,7 @@
                         @if(Auth::user()->id===$refugio->encargado_id)
                             <div class="d-flex flex-row">
                                 <div class="col-lg-12">
-                	                <button class="btn btn-primary" type="button">
-        	                            <a style="color: white; text-decoration: none;" href="{{route('mascotas.create')}}">Añadir Mascota</a>
-      	                             </button>
+        	                       <a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a>
                                 </div>
                             </div>
                         @endif

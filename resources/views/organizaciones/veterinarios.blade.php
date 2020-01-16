@@ -10,14 +10,10 @@
 
         <div class="d-flex flex-row">
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                  <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Disponibilidad </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                  <a class="btn btn-primary" href="#">Filtrar por Disponibilidad <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
                   <div class="input-group">

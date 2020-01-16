@@ -40,7 +40,7 @@
                         <strong>{{ $message }}</strong>
                       </span>
                     @enderror<br>
-                    <input type="submit" name="confirmarcambios" value="Confirmar">
+                    <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
 
 
                   </form>
