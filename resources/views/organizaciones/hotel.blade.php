@@ -18,14 +18,14 @@
                         <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
                     </div>
                     <div class="prueba">
-                        Nombre: <br>
-                        Email: <br>
-                        TLF: <br>
-                        Direccion: <br>
-                        Localidad: <br>
-                        Provincia: <br>
-                        Pais: <br>
-                        Encargado: <br>
+                        Nombre: {{$hotel->name}}<br>
+                        Email: {{$hotel->email}}<br>
+                        TLF: {{$hotel->telefono}}<br>
+                        Direccion: {{$hotel->direccion}}<br>
+                        Localidad: {{$hotel->localidad}}<br>
+                        Provincia: {{$hotel->provincia}}<br>
+                        Pais: {{$hotel->pais}}<br>
+                        Encargado: {{$hotel->encargado->name}}<br>
                     </div>
 
 

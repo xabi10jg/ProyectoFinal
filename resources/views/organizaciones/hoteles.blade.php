@@ -49,6 +49,9 @@
                                     Provincia: {{$hotel->provincia}}<br>
                                     Pais: {{$hotel->pais}}<br>
                                     Encargado: {{$hotel->encargado->name}}<br>
+                                    <a style="color:white; text-decoration:none;" href="{{route('hotel',$hotel->id)}}"><button type="button" class="btn btn-primary">
+                                    Más Información
+                                </button></a>
                                 @endforeach
                             </div>
 

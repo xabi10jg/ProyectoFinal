@@ -77,7 +77,7 @@ Route::get('/veterinario/{id}', 'VeterinarioController@show')->name('veterinario
 
 Route::get('/hoteles', 'HotelesController@index')->name('hoteles');
 
-Route::get('/hotel', 'HotelesController@show')->name('hotel');
+Route::get('/hotel/{id}', 'HotelesController@show')->name('hotel');
 
 
 Route::get('/formulario', 'contactoController@index')->name('formularioEncargado');
