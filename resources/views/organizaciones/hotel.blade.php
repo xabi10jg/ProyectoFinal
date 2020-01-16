@@ -15,10 +15,9 @@
                     @endif
 
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
+                        <h2 class="section-heading text-uppercase">{{$hotel->name}}<img src="{{$hotel->img}} "width="60px"></h2>
                     </div>
                     <div class="prueba">
-                        Nombre: {{$hotel->name}}<br>
                         Email: {{$hotel->email}}<br>
                         TLF: {{$hotel->telefono}}<br>
                         Direccion: {{$hotel->direccion}}<br>

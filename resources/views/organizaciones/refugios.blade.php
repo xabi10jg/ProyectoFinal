@@ -28,7 +28,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{$refugio->name}}
-                                    <img src="img/logos/katubihotz.jpg" width="40px">
+                                    <img src="{{$refugio->img}}" width="40px">
                                 </h5>
                                 <p class="card-text">Katubihotz es una asociación creada para cuidar y controlar las colonias de gatos que viven en la calle y procurar una casa a nuestros felinos a través de la adopción.</p>
                                 <a class="btn btn-primary" href="{{route('refugio',$refugio->id)}}">

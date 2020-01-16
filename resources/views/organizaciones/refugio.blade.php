@@ -23,7 +23,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        {{$refugio->name}}
+                                        {{$refugio->name}} <img src="{{$refugio->img}}" width="40px">
                                     </h5>
                                     <p>Email: {{$refugio->email}}</p>
                                     <p>Dirección: {{$refugio->direccion}}</p>

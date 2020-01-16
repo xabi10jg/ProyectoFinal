@@ -37,7 +37,7 @@
             
                             <div class="prueba">
                                 @foreach($hoteles as $hotel)
-                                    Nombre: {{$hotel->name}}<br>
+                                    Nombre: {{$hotel->name}}<img src="{{$hotel->img}} "width="60px"><br>
                                     Email: {{$hotel->email}}<br>
                                     TLF: {{$hotel->telefono}}<br>
                                     Direccion: {{$hotel->direccion}}<br>
