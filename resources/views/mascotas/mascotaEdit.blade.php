@@ -8,7 +8,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="prueba">
-                    <form method="post" action="{{route('mascotas.update',$mascota->id)}}">
+                    <form method="post" action="{{route('mascotas.update',$mascota->id)}}" enctype="multipart/form-data">
                       @method('PUT')
                       @csrf
 

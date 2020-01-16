@@ -39,6 +39,7 @@
                           <strong>{{ $message }}</strong>
                         </span>
                       @enderror<br>
+                     
                       
                       <input type="submit" name="confirmarcambios" value="Confirmar">
 
