@@ -12,6 +12,7 @@ class RefugioController extends Controller
         $refugios = Organizacion::where('tipo_id',2)->get();
         return view('organizaciones.refugios',['refugios' => $refugios]);
     }
+    
     public function show($id)
     {   
         $refugios = Organizacion::all();
