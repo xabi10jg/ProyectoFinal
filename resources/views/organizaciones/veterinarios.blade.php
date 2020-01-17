@@ -33,7 +33,7 @@
             <div class="card  text-dark">
               <div class="card-body">
 
-       			    <img class="card-img" src="img/portfolio/Bort.jpg">
+       			    <img class="card-img" src="{{$veterinario->img}}">
 
        			    <div class="card-title">{{$veterinario->name}}</div>
        			      <hr>

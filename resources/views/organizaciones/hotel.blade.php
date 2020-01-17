@@ -15,9 +15,9 @@
                     @endif
 
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">{{$hotel->name}}</h2>
+                        <h2 class="section-heading text-uppercase">{{$hotel->name}}<img src="{{$hotel->img}} "width="60px"></h2>
                     </div>
-                    <div class="prueba">                        
+                    <div class="prueba">
                         Email: {{$hotel->email}}<br>
                         TLF: {{$hotel->telefono}}<br>
                         Direccion: {{$hotel->direccion}}<br>

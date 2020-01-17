@@ -43,7 +43,7 @@
 <!--<header class="masthead2">
   <section class="page-section">
     <div class="container">  
-      <h1 class="intro-heading text-uppercase">{{$veterinario->name}}</h1> 
+      <h1 class="intro-heading text-uppercase">{{$veterinario->name}}<img src="{{$veterinario->img}} "width="60px"></h1> 
         @auth
         @if(Auth::user()->id===$veterinario->encargado_id)
             <div class="d-flex flex-row" style="margin-bottom:-100px; margin-top: 40px;">
