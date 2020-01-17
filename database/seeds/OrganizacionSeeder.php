@@ -42,7 +42,7 @@ class OrganizacionSeeder extends Seeder
         $org->email = 'xabiAcogida@gmail.com';
         $org->CIF = '123456789QWE';
         $org->img = '/img/portfolio/jaky-thumbnail.jpg';
-        $org->tipo_id = $tipo_aco->id;
+        $org->tipo_id = $tipo_ref->id;
         $org->encargado_id = 5;
         $org->save();
 
@@ -60,7 +60,7 @@ class OrganizacionSeeder extends Seeder
         $org->email = 'mariaPro@gmail.com';
         $org->CIF = '123456789LKJ';
         $org->img = '/img/portfolio/mast-thumbnail.jpg';
-        $org->tipo_id = $tipo_pro->id;
+        $org->tipo_id = $tipo_ref->id;
         $org->encargado_id = 8;
         $org->save();
     }

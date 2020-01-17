@@ -35,7 +35,7 @@
                                     Más Información
                                 </a>
                             </div>
-                        </div>
+                        </div><br>
                     @endforeach
                 </div>
             </div>
