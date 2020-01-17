@@ -13,7 +13,7 @@
                   <button class="btn btn-primary" type="button">
                      <a style="color: white; text-decoration: none;" href="#">Filtrar por Cantidad </a><i class="fas fa-arrow-down"></i>
                   </button>
-                </div>-->
+                </div>
 
                 <div class="col-lg-5">
                   <nav class="navbar navbar-light flex-row-reverse">
@@ -22,7 +22,7 @@
                       <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
                     </form>
                   </nav>
-                </div>
+                </div>-->
               </div>                        
               <br><br>
                 <div class="row">
@@ -42,23 +42,10 @@
                             </div>
                         </div><br>
                     @endforeach
-                </div              <div class="col-lg-4">
-                  <a class="btn btn-primary" href="#">Filtrar por Cantidad <i class="fas fa-arrow-down"></i></a>
-                </div>
-                <div class="col-lg-4">
-                  <div class="input-group">
-                    <input type="text" placeholder="Filtrar por Zona" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-primary" type="button">Buscar</button>
-                    </span>
-                  </div>
->>>>>>> 80731b3cc47879c214bb709e6355c3c5554c372b>
+                </div>             
             </div>
         </div>
     </header>
-    
- 
-
     @endsection
 
 </body>

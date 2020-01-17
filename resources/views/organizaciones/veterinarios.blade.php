@@ -8,7 +8,7 @@
       <div class="intro-text">
         <h1 class="intro-heading text-uppercase">Veterinarios</h1>
 
-        <div class="d-flex flex-row">
+        <!--<div class="d-flex flex-row">
                 <div class="col-lg-4">
                   <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
                 </div>
@@ -22,10 +22,10 @@
                       <button class="btn btn-primary" type="button">Buscar</button>
                     </span>
                   </div>
-                </div>
+                </div>-->
               </div> 
               <br><br>
-
+        
 
         <div class="d-flex justify-content-around flex-wrap">
         @foreach($veterinarios as $veterinario)

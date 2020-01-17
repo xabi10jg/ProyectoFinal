@@ -8,7 +8,7 @@
                 <div class="col-lg-12 text-center mt-5">
                     <h2 class="section-heading text-uppercase">@lang('Hoteles')</h2>
                 </div>
-
+            <!--
                 <div class="d-flex flex-row mt-4">
                 <div class="col-lg-4">
                     <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
@@ -24,8 +24,8 @@
                     </span>
                   </div>
                 </div>
-              </div> 
               
+              -->
                     <div class="col-md-8 mt-5">
                         <div class="card">
                             <div class="card-body">
@@ -52,6 +52,7 @@
                         </div>
                     </div>
                 </div>
+                </div> 
             </div>
         </div>
     </section>
