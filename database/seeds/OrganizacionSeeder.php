@@ -23,7 +23,7 @@ class OrganizacionSeeder extends Seeder
         $org->name = 'Veterinaria Valdes';
         $org->email = 'valdesVet@gmail.com';
         $org->CIF = '123456789ASD';
-        $org->img = '/img/portfolio/lur.jpg';
+        $org->img = 'https://i.imgur.com/uMiST20.jpg';
         $org->tipo_id = $tipo_vet->id;
         $org->encargado_id = 4;
         $org->save();
@@ -32,7 +32,7 @@ class OrganizacionSeeder extends Seeder
         $org->name = 'Refugio Andoni';
         $org->email = 'andoniRef@gmail.com';
         $org->CIF = '123456789ZXC';
-        $org->img = '/img/portfolio/zuri-thumbnail.jpg';
+        $org->img = 'https://i.imgur.com/Tvvgibr.png';
         $org->tipo_id = $tipo_ref->id;
         $org->encargado_id = 6;
         $org->save();
@@ -41,7 +41,7 @@ class OrganizacionSeeder extends Seeder
         $org->name = 'Acogida Xabi';
         $org->email = 'xabiAcogida@gmail.com';
         $org->CIF = '123456789QWE';
-        $org->img = '/img/portfolio/jaky-thumbnail.jpg';
+        $org->img = 'https://i.imgur.com/Sa5mT4f.png';
         $org->tipo_id = $tipo_ref->id;
         $org->encargado_id = 5;
         $org->save();
@@ -50,7 +50,7 @@ class OrganizacionSeeder extends Seeder
         $org->name = 'Hotel Miren';
         $org->email = 'mirenHotel@gmail.com';
         $org->CIF = '123456789POI';
-        $org->img = '/img/portfolio/doby-thumbnail.jpg';
+        $org->img = 'https://i.imgur.com/39DLbTh.png';
         $org->tipo_id = $tipo_hotel->id;
         $org->encargado_id = 7;
         $org->save();
@@ -59,7 +59,7 @@ class OrganizacionSeeder extends Seeder
         $org->name = 'Protectora Maria';
         $org->email = 'mariaPro@gmail.com';
         $org->CIF = '123456789LKJ';
-        $org->img = '/img/portfolio/mast-thumbnail.jpg';
+        $org->img = 'https://i.imgur.com/rGCpD7X.jpg';
         $org->tipo_id = $tipo_ref->id;
         $org->encargado_id = 8;
         $org->save();
