@@ -48,6 +48,7 @@ Route::get('/', function(){
 
 Route::post('contacto', 'contactoController@insert')->name('contacto');
 Route::get('refugios', 'RefugioController@index')->name('refugios');
+
 Route::get('/refugio/{id}', 'RefugioController@show')->name('refugio');
 Route::get('organizaciones', 'OrganizacionesController@index')->name('organizaciones');
 

@@ -3,8 +3,8 @@
     <header class="masthead">
         <div class="container">
             <div class="intro-text text-dark">
-              <div class="d-flex flex-row">
-                <div class="col-lg-4">
+              <div class="d-flex flex-row-reverse">
+                <!--<div class="col-lg-4">
                   <button class="btn btn-primary" type="button">
                      <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
                   </button>
@@ -13,14 +13,15 @@
                   <button class="btn btn-primary" type="button">
                      <a style="color: white; text-decoration: none;" href="#">Filtrar por Cantidad </a><i class="fas fa-arrow-down"></i>
                   </button>
-                </div>
-                <div class="col-lg-4">
-                  <div class="input-group">
-                    <input type="text" placeholder="Filtrar por Zona" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-primary" type="button">Buscar</button>
-                    </span>
-                  </div>
+                </div>-->
+
+                <div class="col-lg-5">
+                  <nav class="navbar navbar-light flex-row-reverse">
+                    <form class="form-inline">
+                      <input name="buscar" class="form-control mr-sm-2" type="search" aria-label="Search">
+                      <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                  </nav>
                 </div>
               </div>                        
               <br><br>
