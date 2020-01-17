@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 @section('content') 
-    <header class="masthead">
+    <header class="masthead2">
         <div class="container">
             <div class="intro-text text-dark">
               <div class="d-flex flex-row">

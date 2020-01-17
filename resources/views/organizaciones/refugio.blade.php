@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 @section('content') 
-    <header class="masthead">
+    <header class="masthead2">
         <section class="page-section">
             <div class="container">
                 

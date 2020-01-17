@@ -1,5 +1,5 @@
 @extends('layouts.nav')
-<header class="masthead">
+<header class="masthead2">
     <section class="page-section">
         <div class="container">
             <div class="row justify-content-center">
