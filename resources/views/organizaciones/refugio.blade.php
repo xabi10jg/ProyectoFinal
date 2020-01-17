@@ -22,8 +22,10 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
+                                    <img src="{{$refugio->img}}" width="100%">
+                                    <hr>
                                     <h5 class="card-title">
-                                        {{$refugio->name}} <img src="{{$refugio->img}}" width="40px">
+                                        {{$refugio->name}} 
                                     </h5>
                                     <p>Email: {{$refugio->email}}</p>
                                     <p>Dirección: {{$refugio->direccion}}</p>

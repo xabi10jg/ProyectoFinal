@@ -6,7 +6,9 @@
     <div class="container">
             
       <div class="intro-text">
-        <h1 class="intro-heading text-uppercase">Veterinarios</h1>
+        <div class="col-lg-12 text-center mt-5">
+                    <h2 class="section-heading text-uppercase">@lang('Veterinarios')</h2>
+                </div>
 
         <div class="d-flex flex-row">
                 <div class="col-lg-4">
