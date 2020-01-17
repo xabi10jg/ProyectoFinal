@@ -15,8 +15,10 @@
                     @endif
 
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">{{$hotel->name}}<img src="{{$hotel->img}} "width="60px"></h2>
+                        <h2 class="section-heading text-uppercase">{{$hotel->name}}</h2>
                     </div>
+                    <img src="{{$hotel->img}}">
+                    <hr>
                     <div class="prueba">
                         Email: {{$hotel->email}}<br>
                         TLF: {{$hotel->telefono}}<br>

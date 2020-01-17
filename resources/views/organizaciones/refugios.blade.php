@@ -3,6 +3,10 @@
     <header class="masthead2">
         <div class="container">
             <div class="intro-text text-dark">
+
+              <div class="col-lg-12 text-center mt-5">
+                    <h2 class="section-heading text-primary text-uppercase">@lang('REfugios')</h2>
+                </div>
               <div class="d-flex flex-row-reverse">
                 <!--<div class="col-lg-4">
                   <button class="btn btn-primary" type="button">

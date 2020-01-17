@@ -27,8 +27,11 @@
               
               -->
                     <div class="col-md-8 mt-5">
+                        @foreach($hoteles as $hotel)
                         <div class="card">
                             <div class="card-body">
+                                <img src="{{$hotel->img}}">
+                                <hr>
                                 @if (session('status'))
                                 <div class="alert alert-success" role="alert">
                                     {{ session('status') }}
@@ -36,15 +39,11 @@
                                 @endif
             
                             <div class="prueba">
-                                @foreach($hoteles as $hotel)
-                                    Nombre: {{$hotel->name}}<img src="{{$hotel->img}} "width="60px"><br>
-                                    Email: {{$hotel->email}}<br>
-                                    TLF: {{$hotel->telefono}}<br>
-                                    Direccion: {{$hotel->direccion}}<br>
-                                    Localidad: {{$hotel->localidad}}<br>
-                                    Provincia: {{$hotel->provincia}}<br>
-                                    Pais: {{$hotel->pais}}<br>
-                                    Encargado: {{$hotel->encargado->name}}<br>
+                                
+                                    Nombre: {{$hotel->name}}<br><br>
+                                    Email: {{$hotel->email}}<br><br>                                
+                                    Direccion: {{$hotel->direccion}}<br><br>
+                                    
                                     <a class="btn btn-primary" href="{{route('hotel',$hotel->id)}}">
                                     Más Información</a>
                                 @endforeach

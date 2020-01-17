@@ -7,7 +7,7 @@
             
       <div class="intro-text">
         <div class="col-lg-12 text-center mt-5">
-                    <h2 class="section-heading text-uppercase">@lang('Veterinarios')</h2>
+                    <h2 class="section-heading text-primary text-uppercase">@lang('Veterinarios')</h2>
                 </div>
 
         <!--<div class="d-flex flex-row">
@@ -24,8 +24,8 @@
                       <button class="btn btn-primary" type="button">Buscar</button>
                     </span>
                   </div>
-                </div>-->
-              </div> 
+                </div>
+              </div> -->
               <br><br>
         
 

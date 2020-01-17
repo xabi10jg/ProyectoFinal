@@ -22,6 +22,8 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
+                                  <img class="card-img" src="{{$veterinario->img}}">
+                                  <hr>
                                     <h5 class="card-title">
                                         {{$veterinario->name}}
                                     </h5>
