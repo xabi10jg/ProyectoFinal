@@ -8,6 +8,9 @@
               <div class="card">
                 <div class="card-body">
                   <div class="prueba">
+                    <div class="col-lg-12 text-center mt-5">
+                      <h2 class="section-heading text-primary text-uppercase">@lang('Solicitar creacion de organizacion')</h2>
+                    </div>
                     <form method="post" action="{{route('formularioEnc')}}">
                       @csrf
 

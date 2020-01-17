@@ -49,7 +49,47 @@ class mascotasController extends Controller
         $mascota->fecha_nacimiento = $request->input('fecha_nacimiento');
         $mascota->raza = $request->input('raza');
         $mascota->descripcion = $request->input('descripcion');
-        $mascota->img = '/img/portfolio/'.$request->input('img');
+        $imagen = $request->file('img');
+        if($imagen == ''){
+           dd('error');
+          }else{
+
+            $image64 = base64_encode(file_get_contents($imagen)); //pasar la foto a base64
+
+          //llamar a la api y subir la imagen
+          $curl = curl_init();
+
+          $client_id = "9db87030e1b137f";
+
+          $token = "2ce7e04187d9aa9a56c60e998b6c1653a79c4bc9";
+
+          curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://api.imgur.com/3/image",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => false,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => array('image' => $image64),
+            CURLOPT_HTTPHEADER => array(
+              // "Authorization: Client-ID {{1cb45b7462006f}}",
+              "Authorization: Bearer ".$token //nuestro token para acceder a la api
+            ),
+          ));
+          $response = curl_exec($curl);
+          $err = curl_error($curl);
+
+          curl_close($curl);
+
+          if ($err) {
+            echo "cURL Error #:" . $err;
+          } else {
+            $json = json_decode($response);
+            $mascota->img = $json->data->link; //pilla link de la api
+          }
+        }
         if(Auth::user()->role_id === 1){
             $mascota->propietario = Auth::user()->id;
         }else if(Auth::user()->role_id === 2){
