@@ -51,7 +51,6 @@ class mascotasController extends Controller
         $mascota->descripcion = $request->input('descripcion');
         $imagen = $request->file('img');
         if($imagen == ''){
-           dd('error');
           }else{
 
             $image64 = base64_encode(file_get_contents($imagen)); //pasar la foto a base64

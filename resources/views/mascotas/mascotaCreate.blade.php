@@ -11,7 +11,7 @@
                     <div class="col-lg-12 text-center mt-5">
                       <h2 class="section-heading text-primary text-uppercase">@lang('Añadir Mascota')</h2>
                     </div>
-                    <form method="post" action="{{route('mascotas.store')}}">
+                    <form method="post" action="{{route('mascotas.store')}}" enctype="multipart/form-data">
                     @csrf
 
                     Nombre: <input type="text" name="nombre" value=""><br>
