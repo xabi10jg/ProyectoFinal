@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-  <div class="container-fluid text-center">
-    <div class="row content"><br>
-      <div class="prueba">
-          <form method="post" action="{{route('org.update', $org->id)}}">
+<div class="col-lg-10 text-center margenAdmin"> 
+    <div class="prueba">
+          <form method="post" class="text-center" action="{{route('org.update', $org->id)}}">
             @METHOD('PUT')
             @csrf
 
@@ -106,6 +105,4 @@
         </form>
         </div>
       </div>
-    </div>
-
 @endsection

@@ -12,8 +12,9 @@ class HotelesController extends Controller
     	$hoteles = Organizacion::where('tipo_id', 1)->get();
         return view('organizaciones/hoteles', array('hoteles'=>$hoteles));
     }
-    public function show()
+    public function show($id)
     {
-        return view('organizaciones/hotel');
+    	$hotel = Organizacion::where('id', $id)->first();
+        return view('organizaciones/hotel', array('hotel'=>$hotel));
     }
 }

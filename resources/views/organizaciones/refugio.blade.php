@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 @section('content') 
-    <header class="masthead">
+    <header class="masthead2">
         <section class="page-section">
             <div class="container">
                 
@@ -11,9 +11,7 @@
                         @if(Auth::user()->id===$refugio->encargado_id)
                             <div class="d-flex flex-row">
                                 <div class="col-lg-12">
-                	                <button class="btn btn-primary" type="button">
-        	                            <a style="color: white; text-decoration: none;" href="{{route('mascotas.create')}}">Añadir Mascota</a>
-      	                             </button>
+        	                       <a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a>
                                 </div>
                             </div>
                         @endif
@@ -25,7 +23,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        {{$refugio->name}}
+                                        {{$refugio->name}} <img src="{{$refugio->img}}" width="40px">
                                     </h5>
                                     <p>Email: {{$refugio->email}}</p>
                                     <p>Dirección: {{$refugio->direccion}}</p>

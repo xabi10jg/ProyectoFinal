@@ -1,6 +1,6 @@
 @extends('layouts.nav')
 @section('content')
-  <header class="masthead">
+  <header class="masthead2">
     <section class="page-section">
       <div class="container">
         <div class="row justify-content-center">
@@ -8,7 +8,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="prueba">
-                    <form method="post" action="{{route('mascotas.update',$mascota->id)}}">
+                    <form method="post" action="{{route('mascotas.update',$mascota->id)}}" enctype="multipart/form-data">
                       @method('PUT')
                       @csrf
 
@@ -42,7 +42,7 @@
                           <strong>{{ $message }}</strong>
                         </span>
                       @enderror<br>
-                      <input type="submit" name="confirmarcambios" value="Confirmar">
+                      <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
 
 
                   </form>

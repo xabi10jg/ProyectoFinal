@@ -89,9 +89,7 @@ class HomeController extends Controller
 
         if(Auth::user()->role_id === 3){
             $users = User::all();
-            $mascotas = Mascota::all();
-            $organizaciones = Organizacion::all();
-            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones, 'mascotas'=>$mascotas)));
+            return redirect(route('usersAdmin', array('users'=>$users)));
         }else{
             //hay que cambiarlo
             return redirect(route('admin'));
@@ -106,9 +104,7 @@ class HomeController extends Controller
             $user->forceDelete();
 
             $users = User::all();
-            $mascotas = Mascota::all();
-            $organizaciones = Organizacion::all();
-            return redirect(route('admin', array('users'=>$users, 'organizaciones'=>$organizaciones)));
+            return redirect(route('usersAdmin', array('users'=>$users)));
         }else{
             $usuario= User::find(Auth::user()->id);
             $usuario->delete();

@@ -62,11 +62,15 @@ Route::get('EliminarUsuario/{id}', 'HomeController@EliminarUsuario')->name('Elim
 
 //Rutas mascotas
 Route::resource('mascotas', 'mascotasController');
-Route::resource('org', 'OrganizacionesController')->middleware('auth', 'role:Administrador');
+Route::resource('org', 'OrganizacionesController');
 
 //Rutas Admin
 //Route::get('/admin', 'adminController@index')->name('admin');
 Route::get('/admin', 'adminController@index')->middleware('auth', 'role:Administrador')->name('admin');
+Route::get('/org/create', 'OrganizacionesController@create')->middleware('auth', 'role:Administrador')->name('org.create');
+Route::get('/admin/users', 'adminController@usersAdmin')->middleware('auth', 'role:Administrador')->name('usersAdmin');
+Route::get('/admin/mascotas', 'adminController@mascAdmin')->middleware('auth', 'role:Administrador')->name('mascAdmin');
+Route::get('/admin/organizaciones', 'adminController@orgAdmin')->middleware('auth', 'role:Administrador')->name('orgAdmin');
 
 Route::get('/veterinarios', 'VeterinarioController@index')->name('veterinarios');
 
@@ -74,7 +78,7 @@ Route::get('/veterinario/{id}', 'VeterinarioController@show')->name('veterinario
 
 Route::get('/hoteles', 'HotelesController@index')->name('hoteles');
 
-Route::get('/hotel', 'HotelesController@show')->name('hotel');
+Route::get('/hotel/{id}', 'HotelesController@show')->name('hotel');
 
 
 Route::get('/formulario', 'contactoController@index')->name('formularioEncargado');

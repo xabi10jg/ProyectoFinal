@@ -2,7 +2,7 @@
 @section('content')
 
 
-<header class="masthead">
+<header class="masthead2">
     <div class="container">
             
       <div class="intro-text">
@@ -10,14 +10,10 @@
 
         <div class="d-flex flex-row">
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                  <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Disponibilidad </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                  <a class="btn btn-primary" href="#">Filtrar por Disponibilidad <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
                   <div class="input-group">
@@ -37,7 +33,7 @@
             <div class="card  text-dark">
               <div class="card-body">
 
-       			    <img class="card-img" src="img/portfolio/Bort.jpg">
+       			    <img class="card-img" src="{{$veterinario->img}}">
 
        			    <div class="card-title">{{$veterinario->name}}</div>
        			      <hr>
@@ -45,7 +41,7 @@
        			      <hr>
        			    <p>Horario: Lunes a Sábado {{$veterinario->horarioApertura}}-{{$veterinario->horarioCierre}}</p>
        			      <br>
-       			    <a href="{{route('veterinario',$veterinario->id)}}"><button>Ver Veterinaria</button></a>
+       			    <a class="btn btn-primary" href="{{route('veterinario',$veterinario->id)}}">Ver Veterinaria</a>
           	  </div>
             </div>
           </div>

@@ -29,4 +29,19 @@ class adminController extends Controller
 
         return view('administrador', array('user'=>$user), array('users'=>$users, 'mascotas'=>$mascotas, 'organizaciones'=>$organizaciones));
     }
+
+    public function usersAdmin(){
+        $users = User::all();
+        return view('admin.usersAdmin', array('users'=>$users));
+    }
+
+    public function mascAdmin(){
+        $mascotas = Mascota::all();
+        return view('admin.mascAdmin', array('mascotas'=>$mascotas));
+    }
+
+    public function orgAdmin(){
+        $organizaciones = Organizacion::all();
+        return view('admin.orgAdmin', array('organizaciones'=>$organizaciones));
+    }
 }

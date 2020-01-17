@@ -1,5 +1,5 @@
 @extends('layouts.nav')
-<header class="masthead">
+<header class="masthead2">
     <section class="page-section">
     <div class="container">
     <div class="row justify-content-center">
@@ -15,17 +15,16 @@
                     @endif
 
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
+                        <h2 class="section-heading text-uppercase">{{$hotel->name}}<img src="{{$hotel->img}} "width="60px"></h2>
                     </div>
                     <div class="prueba">
-                        Nombre: <br>
-                        Email: <br>
-                        TLF: <br>
-                        Direccion: <br>
-                        Localidad: <br>
-                        Provincia: <br>
-                        Pais: <br>
-                        Encargado: <br>
+                        Email: {{$hotel->email}}<br>
+                        TLF: {{$hotel->telefono}}<br>
+                        Direccion: {{$hotel->direccion}}<br>
+                        Localidad: {{$hotel->localidad}}<br>
+                        Provincia: {{$hotel->provincia}}<br>
+                        Pais: {{$hotel->pais}}<br>
+                        Encargado: {{$hotel->encargado->name}}<br>
                     </div>
 
 

@@ -1,9 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-  <div class="container-fluid text-center">
-    <div class="row content"><br>
-      <div class="prueba">
-          <form method="post" action="{{route('org.store')}}">
+<div class="col-lg-10 text-center margenAdmin"> 
+    <div class="prueba">
+          <form method="post" class="text-center" action="{{route('org.store')}}">
             @csrf
 
             Nombre: <input type="text" name="nombre" value=""><br>
@@ -96,6 +95,4 @@
         </form>
         </div>
       </div>
-    </div>
-
 @endsection

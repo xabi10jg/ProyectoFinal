@@ -1,5 +1,5 @@
 @extends('layouts.nav')
-<header class="masthead">
+<header class="masthead2">
     <section class="page-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -11,14 +11,10 @@
 
                 <div class="d-flex flex-row mt-4">
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                    <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
-                  <button class="btn btn-primary" type="button">
-                     <a style="color: white; text-decoration: none;" href="#">Filtrar por Disponibilidad </a><i class="fas fa-arrow-down"></i>
-                  </button>
+                     <a class="btn btn-primary" href="#">Filtrar por Disponibilidad <i class="fas fa-arrow-down"></i></a>
                 </div>
                 <div class="col-lg-4">
                   <div class="input-group">
@@ -41,7 +37,7 @@
             
                             <div class="prueba">
                                 @foreach($hoteles as $hotel)
-                                    Nombre: {{$hotel->name}}<br>
+                                    Nombre: {{$hotel->name}}<img src="{{$hotel->img}} "width="60px"><br>
                                     Email: {{$hotel->email}}<br>
                                     TLF: {{$hotel->telefono}}<br>
                                     Direccion: {{$hotel->direccion}}<br>
@@ -49,10 +45,10 @@
                                     Provincia: {{$hotel->provincia}}<br>
                                     Pais: {{$hotel->pais}}<br>
                                     Encargado: {{$hotel->encargado->name}}<br>
+                                    <a class="btn btn-primary" href="{{route('hotel',$hotel->id)}}">
+                                    Más Información</a>
                                 @endforeach
                             </div>
-
-
                         </div>
                     </div>
                 </div>

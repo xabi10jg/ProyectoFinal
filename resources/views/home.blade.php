@@ -1,5 +1,5 @@
 @extends('layouts.nav')
-<header class="masthead">
+<header class="masthead2">
     <section class="page-section">
     <div class="container">
     <div class="row justify-content-center">
@@ -29,12 +29,8 @@
                         Rol: {{Auth()->user()->roles->rol}}<br>
 
                         Te uniste en {{Auth()->user()->email_verified_at}}<br>
-                        <button id="EditarPerfil">
-                            <a href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a>
-                        </button>
-                        <button id="EliminarPerfil">
-                            <a href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a>
-                        </button>
+                            <a class="btn btn-primary" href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a>
+                            <a class="btn btn-primary" href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a>
                         
                     </div>
                     
