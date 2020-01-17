@@ -1,4 +1,5 @@
 @extends('layouts.nav')
+@section('content')
   <header class="masthead2">
     <section class="page-section">
       <div class="container">
@@ -52,5 +53,6 @@
         </div>
     </section>
   </header>
+  @endsection
 </body>
 </html>
