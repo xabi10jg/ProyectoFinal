@@ -18,6 +18,8 @@
               <th>Localidad</th>
               <th>Provincia</th>
               <th>Pais</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +34,13 @@
             <td>{{$user->localidad}}</td>
             <td>{{$user->provincia}}</td>
             <td>{{$user->pais}}</td>
+            <td><a class="btn btn-warning text-gray-900" href="{{route('FormularioEditar', $user->id)}}">Editar</a></td>
+            <td>
+              <button class="btn btn-warning text-gray-900" id="EliminarPerfil">
+                <a class="text-gray-900" href="{{route('EliminarUsuario', $user->id)}}">Eliminar</a>
+              </button>
+            </td>
+          </tr>
           </tr>
           @endforeach
         </tbody>

@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div class="container-lg">
+<div class="container">
   <div class="row-lg text-center">
     <div class="card col-lg-3 float-left text-gray-900">
       <div class="card-body">

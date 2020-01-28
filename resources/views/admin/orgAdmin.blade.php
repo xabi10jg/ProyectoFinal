@@ -21,6 +21,8 @@
               <th>Pais</th>
               <th>Horario Cierre</th>
               <th>Horario Apertura</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +40,14 @@
             <td>{{$org->pais}}</td>
             <td>{{$org->horarioApertura}}</td>
             <td>{{$org->horarioCierre}}</td>
+            <td><a class="btn btn-warning text-gray-900" href="{{route('org.edit',$org->id)}}">Editar</a></td>
+            <td>
+              <form action="{{route('org.destroy',$org->id)}}" method="post">
+                @method('DELETE')
+                @csrf
+                <input class="btn btn-warning text-gray-900" type="submit" value="Eliminar">
+              </form>
+            </td>
           </tr>
           @endforeach
         </tbody>

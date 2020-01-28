@@ -18,6 +18,8 @@
               @endisset
               <th>Descripcion</th>
               <th>Imagen</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +34,14 @@
             @endisset
             <td>{{$mascota->descripcion}}</td>
             <td>{{$mascota->img}}</td>
+            <td><a class="btn btn-warning text-gray-900" href="{{route('mascotas.edit',$mascota->id)}}">Editar</a></td>
+            <td>
+              <form action="{{route('mascotas.destroy',$mascota->id)}}" method="post">
+                @method('DELETE')
+                @csrf
+                <input class="btn btn-warning text-gray-900" type="submit" value="Eliminar">
+              </form>
+            </td>
           </tr>
           @endforeach
         </tbody>
