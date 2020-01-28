@@ -1,30 +1,48 @@
 @extends('layouts.admin')
 @section('content')
-<div class="col-sm-8 text-center margenAdmin"> 
-    <div class="prueba">
-      <table id="orgs" class="col-lg-12 text-center text-gray-900">
-      	<tr>
-	    	<th class="col-md-4 text-center">@lang('Nombre')</th>
-	        <th class="col-md-4 text-center">Email</th>
-	        <th class="col-md-4 text-center">@lang('Tipo')</th>
-	    </tr>
-	    @foreach($organizaciones as $org)
-	        <tr>
-	          <td class="col-md-4">{{$org->name}}</td>
-	          <td class="col-md-4">{{$org->email}}</td>
-	          <td class="col-md-4">{{$org->tipo->name}}</td>
-	          <td class="col-md-4"><a class="text-gray-900" href="{{route('org.edit',$org->id)}}">Editar</a></td>
-	          <td class="col-md">
-	            <form action="{{route('org.destroy',$org->id)}}" method="post">
-	              @method('DELETE')
-	              @csrf
-	              <input class="btn btn-warning text-gray-900" type="submit" value="Eliminar">
-	            </form>
-	          </td>
-	        </tr>
-      	@endforeach
-    </table>
+<div class="card shadow mb-4  text-gray-900">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold">Organizaciones</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table id="example" class="display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+              <th>@lang('Nombre')</th>
+              <th>CIF</th>
+              <th>Email</th>
+              <th>Tipo</th>
+              <th>Encargado</th>
+              <th>Telefono</th>
+              <th>Direccion</th>
+              <th>Localidad</th>
+              <th>Provincia</th>
+              <th>Pais</th>
+              <th>Horario Cierre</th>
+              <th>Horario Apertura</th>
+            </tr>
+        </thead>
+        <tbody>
+          @foreach($organizaciones as $org)
+          <tr>
+            <td>{{$org->name}}</td>
+            <td>{{$org->CIF}}</td>
+            <td>{{$org->email}}</td>
+            <td>{{$org->tipo->name}}</td>
+            <td>{{$org->encargado->name}}</td>
+            <td>{{$org->telefono}}</td>
+            <td>{{$org->direccion}}</td>
+            <td>{{$org->localidad}}</td>
+            <td>{{$org->provincia}}</td>
+            <td>{{$org->pais}}</td>
+            <td>{{$org->horarioApertura}}</td>
+            <td>{{$org->horarioCierre}}</td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
     </div>
-  <hr>
+  </div>
 </div>
 @endsection

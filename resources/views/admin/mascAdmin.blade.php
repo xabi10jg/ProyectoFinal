@@ -1,36 +1,42 @@
 @extends('layouts.admin')
 @section('content')
-<div class="col-sm-8 text-center margenAdmin">
-    <div class="prueba">
-      <table id="mascotas" class="col-lg-12 text-center text-gray-900">
-        <tr>
-          <th class="col-md-4 text-center">@lang('Nombre')</th>
-          <th class="col-md-4 text-center">Raza</th>
-          <th class="col-md-4 text-center">@lang('Propietario')</th>
-        </tr>
-        @foreach($mascotas as $mascota)
+<div class="card shadow mb-4  text-gray-900">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold">Mascotas</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table id="example" class="display responsive nowrap" style="width:100%">
+        <thead>
+            <tr>
+              <th>@lang('Nombre')</th>
+              <th>Fecha Nacimiento</th>
+              <th>Raza</th>
+              <th>Propietario</th>
+              @isset($mascota->organizacion->name)
+                <th>Organizacion</th>
+              @endisset
+              <th>Descripcion</th>
+              <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+          @foreach($mascotas as $mascota)
           <tr>
-            <td class="col-md-4 text-center">{{$mascota->name}}</td>
-            <td class="col-md-4 text-center">{{$mascota->raza}}</td>
-            @isset($mascota->usuario->name)
-              <td class="col-md-4 text-center">{{$mascota->usuario->name}}</td>
-            @endisset
+            <td>{{$mascota->name}}</td>
+            <td>{{$mascota->fecha_nacimiento}}</td>
+            <td>{{$mascota->raza}}</td>
+            <td>{{$mascota->usuario->name}}</td>
             @isset($mascota->organizacion->name)
-              <td class="col-md-4 text-center">{{$mascota->organizacion->name}}</td>
+              <td>{{$mascota->organizacion->name}}</td>
             @endisset
-            
-            <td class="col-md-4"><a class="text-gray-900" href="{{route('mascotas.edit',$mascota->id)}}">Editar</a></td>
-            <td class="col-md">
-              <form action="{{route('mascotas.destroy',$mascota->id)}}" method="post">
-                @method('DELETE')
-                @csrf
-                <input class="btn btn-warning text-gray-900" type="submit" value="Eliminar">
-              </form>
-            </td>
+            <td>{{$mascota->descripcion}}</td>
+            <td>{{$mascota->img}}</td>
           </tr>
-        @endforeach
+          @endforeach
+        </tbody>
       </table>
     </div>
-  <hr>
+  </div>
 </div>
 @endsection
