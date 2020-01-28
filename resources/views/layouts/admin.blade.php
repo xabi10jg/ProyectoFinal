@@ -12,11 +12,11 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
 
   <!-- Custom fonts for this template-->
-  <link href="/zonaAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="{{asset('/zonaAdmin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="/zonaAdmin/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="{{asset('/zonaAdmin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -119,7 +119,7 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="">@lang('Registrar Organizacion')</a>
+                <a class="dropdown-item" href="{{route('org.create')}}">@lang('Registrar Organizacion')</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
@@ -146,7 +146,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Comanimals 2019</span>
           </div>
         </div>
       </footer>
@@ -164,21 +164,21 @@
   </a>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="/zonaAdmin/vendor/jquery/jquery.min.js"></script>
-  <script src="/zonaAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{asset('/zonaAdmin/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('/zonaAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="/zonaAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{{asset('/zonaAdmin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="/zonaAdmin/js/sb-admin-2.min.js"></script>
+  <script src="{{asset('/zonaAdmin/js/sb-admin-2.min.js')}}"></script>
 
   <!-- Page level plugins -->
-  <script src="/zonaAdmin/vendor/chart.js/Chart.min.js"></script>
+  <script src="{{asset('/zonaAdmin/vendor/chart.js/Chart.min.js')}}"></script>
 
   <!-- Page level custom scripts -->
-  <script src="/zonaAdmin/js/demo/chart-area-demo.js"></script>
-  <script src="/zonaAdmin/js/demo/chart-pie-demo.js"></script>
+  <script src="{{asset('/zonaAdmin/js/demo/chart-area-demo.js')}}"></script>
+  <script src="{{asset('/zonaAdmin/js/demo/chart-pie-demo.js')}}"></script>
 
 </body>
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-lg-10 text-center text-gray-900">
-  <h1>Editar {{$mascota->name}}</h1>
+  <h1>Editar mascota: {{$mascota->name}}</h1>
   <form method="post" class="text-center" action="{{route('mascotas.update',$mascota->id)}}">
   @method('PUT')
   @csrf
@@ -97,7 +97,7 @@
       @enderror<br>
     </dir>
   </div>
-    <input type="submit" name="confirmarcambios" value="Confirmar">
+    <input type="submit" class="btn btn-warning text-gray-900" name="confirmarcambios" value="Confirmar">
   </form>
 </div>
 @endsection
