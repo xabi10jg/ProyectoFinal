@@ -1,85 +1,185 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>{{ config('app.name', 'Laravel') }}</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="es">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <!-- Custom styles for this template -->
-  <link href="/css/agency.css" rel="stylesheet">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{{ config('app.name', 'Laravel') }}</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/zonaAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/zonaAdmin/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
+
 <body id="page-top">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="{{route('admin')}}">Comanimals Admin Zone</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        @guest 
-          <li class="nav-item">
-              <a class="nav-link"data-toggle="modal" data-target="#modalLoginForm">@lang('Iniciar Sesión')</a>
-          </li>
-          @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">@lang('Registrarse')</a>
-            </li>
-          @endif
-        @else
-          @if(Auth::user()->role_id === 1)
-            <li class="nav-item">
-              <a class="nav-link" href="">@lang('Registrar Organizacion')</a>
-            </li>
-          @endif
-          <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
-            </a>
+  <!-- Page Wrapper -->
+  <div id="wrapper">
 
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('logout') }}"
-                 onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();">
-                  Cerrar Sesión
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: orange;" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin')}}">
+        <div class="sidebar-brand-icon">
+          <i class="fas fa-paw text-gray-900"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3 text-gray-900">Comanimals</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link text-gray-900" href="{{route('usersAdmin')}}">
+          <i class="fas fa-users text-gray-900"></i>
+          <span>Usuarios</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-gray-900" href="{{route('mascAdmin')}}">
+          <i class="fas fa-paw text-gray-900"></i>
+          <span>Mascotas</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-gray-900" href="{{route('orgAdmin')}}">
+          <i class="fas fa-briefcase text-gray-900"></i>
+          <span>Organizaciones</span></a>
+      </li>
+        <!--<a class="nav-link" href="{{route('org.create')}}"><span>Crear Organizacion</span></a>
+        <a class="nav-link" href="{{route('usersAdmin')}}"><span>Usuarios</span></a>
+        <a class="nav-link" href="{{route('mascAdmin')}}"><span>Mascotas</span></a>
+        <a class="nav-link" href="{{route('orgAdmin')}}"><span>Organizaciones</span></a>-->
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item text-gray-900">
+        <a class="nav-link collapsed text-gray-900" href="#" data-toggle="collapse" data-target="#collapseTwo"  aria-controls="collapseTwo" aria-haspopup="true" aria-expanded="false" v-pre>
+          <i class="fas fa-fw fa-cog text-gray-900"></i>
+          <span>Acciones</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Acciones admin:</h6>
+            <a class="collapse-item" href="{{route('org.create')}}">Crear Organizacion</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: orange;">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+          @guest 
+            <li class="nav-item">
+                <a class="nav-link"data-toggle="modal" data-target="#modalLoginForm">@lang('Iniciar Sesión')</a>
+            </li>
+            @if(Route::has('register'))
+              <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#exampleModal">@lang('Registrarse')</a>
+              </li>
+            @endif
+          @else
+            
+            <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle text-gray-900" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  {{ Auth::user()->name }} <span class="caret"></span>
               </a>
 
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-              </form>
-            </div>
-          </li>
-      @endguest
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('change_lang', ['locale' => 'es']) }}">ES </a>
-  </li>
-  <li class="nav-item">
-      <a class="nav-link" href="{{ route('change_lang', ['locale' => 'en']) }}">EN</a>
-  </li>
-      </ul>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="">@lang('Registrar Organizacion')</a>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    Cerrar Sesión
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+              </div>
+            </li>
+          @endguest
+            <li class="nav-item">
+              <a class="nav-link text-gray-900" href="{{ route('change_lang', ['locale' => 'es']) }}">ES </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-gray-900" href="{{ route('change_lang', ['locale' => 'en']) }}">EN</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Topbar -->
+    @yield('content')
+    <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
     </div>
+    <!-- End of Content Wrapper -->
+
   </div>
-</nav>
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="{{route('org.create')}}">Crear Organizacion</a></p>
-      <p id="usu"><a href="{{route('usersAdmin')}}">Usuarios</a></p>
-      <p id="masc"><a href="{{route('mascAdmin')}}">Mascotas</a></p>
-      <p id="hot"><a href="{{route('orgAdmin')}}">Organizaciones</a></p>
-    </div>
-@yield('content')
-  </div>
-</div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/zonaAdmin/vendor/jquery/jquery.min.js"></script>
+  <script src="/zonaAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/zonaAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/zonaAdmin/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/zonaAdmin/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/zonaAdmin/js/demo/chart-area-demo.js"></script>
+  <script src="/zonaAdmin/js/demo/chart-pie-demo.js"></script>
 
 </body>
+
 </html>

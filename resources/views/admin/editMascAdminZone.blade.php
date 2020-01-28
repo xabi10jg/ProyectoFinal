@@ -1,75 +1,103 @@
 @extends('layouts.admin')
 @section('content')
-<div class="col-lg-10 text-center margenAdmin"> 
-    <div class="prueba">
-          <form method="post" class="text-center" action="{{route('mascotas.update',$mascota->id)}}">
-            @method('PUT')
-            @csrf
+<div class="col-lg-10 text-center text-gray-900">
+  <h1>Editar {{$mascota->name}}</h1>
+  <form method="post" class="text-center" action="{{route('mascotas.update',$mascota->id)}}">
+  @method('PUT')
+  @csrf
 
-            Nombre: <input type="text" name="nombre" value="{{$mascota->name}}"><br>
-            @error('nombre')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror<br>
-            Fecha Nacimiento: <input type="date" name="fecha_nacimiento" value="{{$mascota->fecha_nacimiento}}"><br>
-            @error('fecha_nacimiento')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror<br>
-            Raza: <input type="text" name="raza" value="{{$mascota->raza}}"><br>
-            @error('raza')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror<br>
-            Descripcion: <input type="text" name="descripcion" value="{{$mascota->descripcion}}"><br>
-            @error('descripcion')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror<br>
-            Propietario: <select name="user">
-                <option hidden selected value="null">Sin Propietario</option>
-                <option value="null">Sin Propietario</option>
-              @foreach($users as $user)s
-                @if($user->id === $mascota->propietario)
-                  <option selected value="{{$user->id}}">{{$user->name}}</option>
-                @else
-                  <option value="{{$user->id}}">{{$user->name}}</option>
-                @endif
-              @endforeach
-            </select>
-            @error('user')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-             @enderror<br>
-            Organizacion: <select name="org">
-              <option hidden selected value="null">nada</option>
-              <option value="null">Sin Organizacion</option>
-              @foreach($orgs as $org)
-                @if($org->id === $mascota->organizacion_id)
-                  <option selected value="{{$org->id}}">{{$org->name}}</option>
-                @else
-                  <option value="{{$org->id}}">{{$org->name}}</option>
-                @endif
-              @endforeach
-            </select>
-            @error('org')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-             @enderror<br>
-            Imagen: <input class="file" type="file" name="img"><br>
-            @error('img')
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-              </span>
-            @enderror<br>
-            <input type="submit" name="confirmarcambios" value="Confirmar">
-        </form>
-        </div>
-      </div>
+  <div class="form-row">
+    <div class="col">
+      <label>Nombre</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Introduce un nombre" name="nombre" value="{{$mascota->name}}">
+      @error('nombre')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="col">
+      <label>Fecha Nacimiento:</label>
+      <input type="date" class="form-control" name="fecha_nacimiento" value="{{$mascota->fecha_nacimiento}}">
+      @error('nombre')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <label>Raza:</label>
+      <input type="text" class="form-control" id="raza" placeholder="Introduce una raza" name="raza" value="{{$mascota->raza}}">
+      @error('raza')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="col">
+      <label>Descripcion:</label>
+      <input type="text" name="descripcion" class="form-control" placeholder="Introduce una descripcion" value="{{$mascota->descripcion}}">
+      @error('descripcion')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <label>Propietario:</label>
+      <select class="custom-select" name="user">
+        <option hidden selected value="null">Sin Propietario</option>
+        <option value="null">Sin Propietario</option>
+        @foreach($users as $user)s
+          @if($user->id === $mascota->propietario)
+            <option selected value="{{$user->id}}">{{$user->name}}</option>
+          @else
+            <option value="{{$user->id}}">{{$user->name}}</option>
+          @endif
+        @endforeach
+      </select>
+      @error('user')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+    <div class="col">
+      <label>Organizacion:</label>
+      <select class="custom-select" name="org">
+        <option hidden selected value="null">Sin Organizacion</option>
+        <option value="null">Sin Organizacion</option>
+        @foreach($orgs as $org)
+          @if($org->id === $mascota->organizacion_id)
+            <option selected value="{{$org->id}}">{{$org->name}}</option>
+          @else
+            <option value="{{$org->id}}">{{$org->name}}</option>
+          @endif
+        @endforeach
+      </select>
+      @error('tipo')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror
+    </div>
+  </div>
+  <div class="form-row">
+    <dir class="row">
+      <label>Imagen</label>
+      <input type="file" class="custom-file text-center" name="img">
+      @error('img')
+        <span class="invalid-feedback" role="alert">
+          <strong>{{ $message }}</strong>
+        </span>
+      @enderror<br>
+    </dir>
+  </div>
+    <input type="submit" name="confirmarcambios" value="Confirmar">
+  </form>
+</div>
 @endsection
