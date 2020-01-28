@@ -55,10 +55,6 @@
           <i class="fas fa-briefcase text-gray-900"></i>
           <span>Organizaciones</span></a>
       </li>
-        <!--<a class="nav-link" href="{{route('org.create')}}"><span>Crear Organizacion</span></a>
-        <a class="nav-link" href="{{route('usersAdmin')}}"><span>Usuarios</span></a>
-        <a class="nav-link" href="{{route('mascAdmin')}}"><span>Mascotas</span></a>
-        <a class="nav-link" href="{{route('orgAdmin')}}"><span>Organizaciones</span></a>-->
       <!-- Divider -->
       <hr class="sidebar-divider">
 
