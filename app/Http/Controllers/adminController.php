@@ -27,7 +27,7 @@ class adminController extends Controller
         $organizaciones = Organizacion::all();
 
 
-        return view('administrador', array('user'=>$user), array('users'=>$users, 'mascotas'=>$mascotas, 'organizaciones'=>$organizaciones));
+        return view('admin.index', array('user'=>$user), array('users'=>$users, 'mascotas'=>$mascotas, 'organizaciones'=>$organizaciones));
     }
 
     public function usersAdmin(){

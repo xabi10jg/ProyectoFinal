@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-sm-8 text-center margenAdmin"> 
     <div class="prueba">
-      <table id="orgs" class="col-lg-12 text-center">
+      <table id="orgs" class="col-lg-12 text-center text-gray-900">
       	<tr>
 	    	<th class="col-md-4 text-center">@lang('Nombre')</th>
 	        <th class="col-md-4 text-center">Email</th>
@@ -13,12 +13,12 @@
 	          <td class="col-md-4">{{$org->name}}</td>
 	          <td class="col-md-4">{{$org->email}}</td>
 	          <td class="col-md-4">{{$org->tipo->name}}</td>
-	          <td class="col-md-4"><a href="{{route('org.edit',$org->id)}}">Editar</a></td>
+	          <td class="col-md-4"><a class="text-gray-900" href="{{route('org.edit',$org->id)}}">Editar</a></td>
 	          <td class="col-md">
 	            <form action="{{route('org.destroy',$org->id)}}" method="post">
 	              @method('DELETE')
 	              @csrf
-	              <input type="submit" value="Eliminar">
+	              <input class="btn btn-warning text-gray-900" type="submit" value="Eliminar">
 	            </form>
 	          </td>
 	        </tr>
