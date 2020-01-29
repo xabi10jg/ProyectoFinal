@@ -2,7 +2,7 @@
 @section('content')
 <div class="col-lg-10 text-center text-gray-900">
   <h1>Editar mascota: {{$mascota->name}}</h1>
-  <form method="post" class="text-center" action="{{route('mascotas.update',$mascota->id)}}">
+  <form method="post" class="text-center" action="{{route('mascotas.update',$mascota->id)}}" enctype="multipart/form-data">
   @method('PUT')
   @csrf
 
