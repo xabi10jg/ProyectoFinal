@@ -15,7 +15,7 @@
 
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
-                    </div>
+                    </div><br>
                     <div class="text-black justify-content-center">
                         <div class="row col-lg-12 mx-auto">
                             <div class="col-lg-6">@lang('Nombre'): {{Auth()->user()->name}}</div>
