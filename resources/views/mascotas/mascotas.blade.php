@@ -40,48 +40,6 @@
                   </div>
                 </div>
                 @endforeach
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                  <a class="portfolio-link" data-toggle="modal" href="#mascota{{$mascota->id}}">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-hover-content">
-                        <i class="fas fa-plus fa-3x"></i>
-                      </div>
-                    </div>
-                    <img class="img-fluid d-block mx-auto" src="{{$mascota->img}}" alt="" width="100%" height="50%;">
-                  </a>
-                  <div class="portfolio-caption">
-                    <h4>{{$mascota->name}}</h4>
-                    <p class="text-muted">{{$mascota->raza}}</p>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                  <a class="portfolio-link" data-toggle="modal" href="#mascota{{$mascota->id}}">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-hover-content">
-                        <i class="fas fa-plus fa-3x"></i>
-                      </div>
-                    </div>
-                    <img class="img-fluid d-block mx-auto" src="{{$mascota->img}}" alt="" width="100%" height="50%;">
-                  </a>
-                  <div class="portfolio-caption">
-                    <h4>{{$mascota->name}}</h4>
-                    <p class="text-muted">{{$mascota->raza}}</p>
-                  </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                  <a class="portfolio-link" data-toggle="modal" href="#mascota{{$mascota->id}}">
-                    <div class="portfolio-hover">
-                      <div class="portfolio-hover-content">
-                        <i class="fas fa-plus fa-3x"></i>
-                      </div>
-                    </div>
-                    <img class="img-fluid d-block mx-auto" src="{{$mascota->img}}" alt="" width="100%" height="50%;">
-                  </a>
-                  <div class="portfolio-caption">
-                    <h4>{{$mascota->name}}</h4>
-                    <p class="text-muted">{{$mascota->raza}}</p>
-                  </div>
-                </div>
               </div>
             </div> 
           </section>
