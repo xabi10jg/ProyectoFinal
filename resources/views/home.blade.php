@@ -5,8 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -17,24 +15,30 @@
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
                     </div>
-                    <div class="prueba">
-                        @lang('Nombre'): {{Auth()->user()->name}}<br>
-                        Apellido: {{Auth()->user()->apellido}}</br>
-                        E-mail: {{Auth()->user()->email}}<br>
-                        Dirección: {{Auth()->user()->direccion}}<br>
-                        Localidad: {{Auth()->user()->localidad}}<br>
-                        Provincia: {{Auth()->user()->provincia}}<br>
-                        País: {{Auth()->user()->pais}}<br>
-                        Teléfono: {{Auth()->user()->telefono}}<br>
-                        Rol: {{Auth()->user()->roles->rol}}<br>
-
-                        Te uniste en {{Auth()->user()->email_verified_at}}<br>
-                            <a class="btn btn-primary" href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a>
-                            <a class="btn btn-primary" href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a>
-                        
+                    <div class="text-black">
+                        <div class="row col-lg-12">
+                            <div class="col-lg-4">@lang('Nombre'): {{Auth()->user()->name}}</div>
+                            <div class="col-lg-4">@lang('Apellido'): {{Auth()->user()->apellido}}</div>
+                            <div class="col-lg-4">E-mail: {{Auth()->user()->email}}</div>
+                        </div><br>
+                        <div class="row col-lg-12">
+                            <div class="col-lg-4">@lang('Direccion'): {{Auth()->user()->direccion}}</div>
+                            <div class="col-lg-4">@lang('Localidad'): {{Auth()->user()->localidad}}</div>
+                            <div class="col-lg-4">@lang('Provincia'): {{Auth()->user()->provincia}}</div>
+                        </div><br>
+                        <div class="row col-lg-12">
+                            <div class="col-lg-4">@lang('Pais'): {{Auth()->user()->pais}}</div>
+                            <div class="col-lg-4">@lang('Telefono'): {{Auth()->user()->telefono}}</div>
+                            <div class="col-lg-4">@lang('Rol'): {{Auth()->user()->roles->rol}}</div>
+                        </div><br>
+                        <div class="row col-lg-12">
+                            <div class="col-lg-12">Te uniste en {{Auth()->user()->email_verified_at}}</div>
+                        </div><br>
+                        <div class="row col-lg-12">
+                            <div class="col"><a class="btn btn-primary" href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a></div>
+                            <div class="col"><a class="btn btn-primary" href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a></div>
+                        </div>
                     </div>
-                    
-
                 </div>
             </div>
         </div>

@@ -1,60 +1,54 @@
 @extends('layouts.nav')
 @section('content')
-
-
 <header class="masthead2">
+  <section class="page-section">
     <div class="container">
-            
-      <div class="intro-text">
-        <div class="col-lg-12 text-center mt-5">
-                    <h2 class="section-heading text-primary text-uppercase">@lang('Veterinarios')</h2>
-                </div>
-
-        <!--<div class="d-flex flex-row">
-                <div class="col-lg-4">
-                  <a class="btn btn-primary" href="#">Filtrar por Valoración <i class="fas fa-arrow-down"></i></a>
-                </div>
-                <div class="col-lg-4">
-                  <a class="btn btn-primary" href="#">Filtrar por Disponibilidad <i class="fas fa-arrow-down"></i></a>
-                </div>
-                <div class="col-lg-4">
-                  <div class="input-group">
-                    <input type="text" placeholder="Filtrar por Zona" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-primary" type="button">Buscar</button>
-                    </span>
-                  </div>
-                </div>
-              </div> -->
-              <br><br>
-        
-
-        <div class="d-flex justify-content-around flex-wrap">
-        @foreach($veterinarios as $veterinario)
-          <div class="col-lg-5 text-center">
-            <div class="card  text-dark">
-              <div class="card-body">
-
-       			    <img class="card-img" src="{{$veterinario->img}}">
-
-       			    <div class="card-title">{{$veterinario->name}}</div>
-       			      <hr>
-       			    <p>Dirección: {{$veterinario->direccion}}</p>
-       			      <hr>
-       			    <p>Horario: Lunes a Sábado {{$veterinario->horarioApertura}}-{{$veterinario->horarioCierre}}</p>
-       			      <br>
-       			    <a class="btn btn-primary" href="{{route('veterinario',$veterinario->id)}}">Ver Veterinaria</a>
-          	  </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">@lang('Veterinarios')</h2>
+        </div>
+        <div class="d-flex flex-row-reverse">
+          <div class="row">
+            <div class="col-sm-4">
+              <button class="btn btn-primary" type="button">
+                <a style="color: white; text-decoration: none;" href="#">Filtrar por Valoración </a><i class="fas fa-arrow-down"></i>
+              </button>
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary" type="button">
+                <a style="color: white; text-decoration: none;" href="#">Filtrar por Cantidad </a><i class="fas fa-arrow-down"></i>
+              </button>
+            </div>
+            <div class="col-sm-4">
+              <nav class="navbar navbar-light flex-row-reverse">
+                <form class="form-inline">
+                  <input name="buscar" class="form-control mr-sm-2" type="search" aria-label="Search">
+                  <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+              </nav>
             </div>
           </div>
-        @endforeach
-    	</div>
+        </div><br><br>
+        <div class="row col-lg-12 justify-content-center">
+          @foreach($veterinarios as $vet)
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{$vet->name}}</h5>
+                <img class="card-img" width="100%" src="{{$vet->img}}">
+                <p class="card-text">Email: {{$vet->email}}</p>
+                <p class="card-text">Dirección: {{$vet->direccion}}</p>
+                <p class="card-text">Horario: Lunes a Sábado {{$vet->horarioApertura}}-{{$vet->horarioCierre}}</p>
+                <a class="btn btn-primary" href="{{route('veterinario',$vet->id)}}">Más Información</a>
+              </div>
+            </div><br> 
+          </div>         
+          @endforeach    
+        </div>
       </div>
     </div>
+  </section>
 </header>
-
 @endsection
-
 </body>
-
 </html>
