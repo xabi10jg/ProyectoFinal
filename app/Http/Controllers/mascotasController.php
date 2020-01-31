@@ -132,6 +132,10 @@ class mascotasController extends Controller
             $users = User::all();
             $orgs = Organizacion::all();
             return view('admin.editMascAdminZone', array('users'=>$users, 'mascota'=>$mascota, 'orgs'=>$orgs));
+        }else if(Auth::user()->role_id === 2){
+            $users = User::all();
+            $orgs = Organizacion::all();
+            return view ('mascotas.mascotaEdit')->with(['users'=>$users,'mascota'=> $mascota, 'orgs'=>$orgs]);
         }else{
             $users = User::all();
             $orgs = Organizacion::all();
