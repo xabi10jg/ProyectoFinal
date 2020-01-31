@@ -59,13 +59,14 @@
                             <strong>{{ $message }}</strong>
                           </span>
                          @enderror<br>
-                    Teléfono: <input type="text" name="telefono" value="{{Auth()->user()->telefono}}"><br>
+                    Teléfono: <input id="tlfR" type="text" name="telefono" value="{{Auth()->user()->telefono}}" class=" @error('telefono') is-invalid @enderror" value="{{ old('telefono') }}" required autocomplete="telefono" autofocus><br>
+                    <div id="tlfMal">Introduce un telefono correcto.</div>
                     @error('telefono')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                          @enderror<br>
-                    <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
+                    <input class="btn btn-primary" id="submitR" enabled type="submit" name="confirmarcambios" value="Confirmar">
 
 
                   </form>

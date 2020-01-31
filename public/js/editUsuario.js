@@ -6,6 +6,7 @@ $(document).ready(function(){
     let localidadMal = document.getElementById("localidadMal");
     let provinciaMal = document.getElementById("provinciaMal");
     let paisMal = document.getElementById("paisMal");
+    let tlfMal = document.getElementById("tlfMal");
 
     nameMal.hidden = true;
     apellidoMal.hidden = true;
@@ -14,6 +15,7 @@ $(document).ready(function(){
     localidadMal.hidden = true;
     provinciaMal.hidden = true;
     paisMal.hidden = true;
+    tlfMal.hidden = true;
   
       $('input').keyup(function(){
       comprobar();
@@ -32,7 +34,9 @@ $(document).ready(function(){
       var localidad = document.getElementById("localidadR");
       var provincia = document.getElementById("provinciaR");
       var pais = document.getElementById("paisR");
+      var tlf = document.getElementById("tlfR");
       var emailReg = /.+[@].+[\.].+/g;
+      var tlfReg = /^[\d]{3}[-]*([\d]{2}[-]*){2}[\d]{2}$/;
   
         if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
             nameMal.hidden = false;
@@ -84,7 +88,15 @@ $(document).ready(function(){
             paisMal.hidden = true;
             bien++;
         }
-        if(bien === 6){
+        if(tlf.value.match(tlfReg)){
+            console.log(tlf.value.match(tlfReg));
+            tlfMal.hidden = true;
+            bien++;
+        }else{
+            tlfMal.hidden = false;
+            bien--;
+        }
+        if(bien === 8){
             EnableSubmit();
         }else{
             DisableSubmit();
