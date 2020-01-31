@@ -45,23 +45,23 @@
                           <strong>{{ $message }}</strong>
                         </span>
                       @enderror<br>
-                      @if(Auth::user()->rol_id === 2)
-                        <label>Propietario:</label>
-                        <select class="custom-select" name="user">
-                          <option hidden selected value="null">Sin Propietario</option>
-                          <option value="null">Sin Propietario</option>
-                          @foreach($users as $user)
-                            @if($user->id === $mascota->propietario)
-                              <option selected value="{{$user->id}}">{{$user->name}}</option>
-                            @else
-                              <option value="{{$user->id}}">{{$user->name}}</option>
-                            @endif
-                          @endforeach
-                        </select>
-                      @endif
+                      @isset($mascota->organizacion)
+                        @if(Auth::user()->id === $mascota->organizacion->encargado_id)
+                          <label>Propietario:</label>
+                          <select class="custom-select" name="user">
+                            <option hidden selected value="null">Sin Propietario</option>
+                            <option value="null">Sin Propietario</option>
+                            @foreach($users as $user)
+                              @if($user->id === $mascota->propietario)
+                                <option selected value="{{$user->id}}">{{$user->name}}</option>
+                              @else
+                                <option value="{{$user->id}}">{{$user->name}}</option>
+                              @endif
+                            @endforeach
+                          </select>
+                        @endif
+                      @endisset
                       <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
-
-
                   </form>
                   </div>
                 </div>
