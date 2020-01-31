@@ -22,7 +22,6 @@
                                     </span>
                                 @enderror<br>
                     Fecha Nacimiento: <input id="fechaR" type="date" class="@error('fecha_nacimiento') is-invalid @enderror" name="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}" required autocomplete="fecha_nacimiento" autofocus>
-                                <div id="fechaMal">Introduce una fecha.</div>
                                 @error('fecha_nacimiento')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -35,19 +34,15 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror<br>
-                    Descripcion:<input id="descripcionR" type="text" class="@error('descripcion') is-invalid @enderror" name="descripcion" required autocomplete="descripcion" autofocus>
-                                <div id="DescripcionMal">Introduce una descripcion valida</div>
+                                Descripcion: <input id="descripcionR" type="text" class="@error('descripcion') is-invalid @enderror" name="descripcion" value="{{ old('descripcion') }}" required autocomplete="descripcion" autofocus>
+                                <div id="descripcionMal">Introduce una descripcion valida.</div>
                                 @error('descripcion')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror<br>
+                                <!-- Falta validad las imagenes -->
                     Imagen: <input type="file" name="img"><br>
-                    @error('img')
-                      <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                      </span>
-                    @enderror<br>
                     <input class="btn btn-primary" id="submitR" disabled type="submit" disabled  name="confirmarcambios" value="Confirmar">
 
 

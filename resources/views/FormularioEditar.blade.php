@@ -10,44 +10,50 @@
                     <form method="post" action="{{route('ConfirmarEdicion', Auth::user()->id)}}">
                     
                     @csrf
-
-                    Nombre: <input type="text" name="nombre" value="{{Auth()->user()->name}}"><br>
-                    @error('nombre')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                        @enderror<br>
-                    Apellido: <input type="text" name="apellido" value="{{Auth()->user()->apellido}}"><br>
-                    @error('apellido')
-                          <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                          </span>
-                         @enderror<br>
-                    Email: <input type="text" name="email" value="{{Auth()->user()->email}}"><br>
+                    Nombre: <input id="nameR" type="text" value="{{Auth()->user()->name}}" class=" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus><br>
+                    <div id="nameMal">Introduce un nombre.</div>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror<br>
+                    Apellido: <input id="apellidoR" type="text" value="{{Auth()->user()->apellido}}" class=" @error('apellido') is-invalid @enderror" name="apellido" value="{{ old('apellido') }}" required autocomplete="apellido" autofocus><br>
+                    <div id="apellidoMal">Introduce un apellido.</div>
+                                @error('apellido')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror<br>
+                    Email: <input id="emailR" type="text" name="email" value="{{Auth()->user()->email}}" class=" @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" autofocus><br>
+                    <div id="emailMal">Introduce un email correcto.</div>
                     @error('email')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                          @enderror<br>
-                    Dirección: <input type="text" name="direccion" value="{{Auth()->user()->direccion}}"><br>
+                    Dirección: <input id="direccionR" type="text" name="direccion" value="{{Auth()->user()->direccion}}" class=" @error('direccion') is-invalid @enderror" value="{{ old('direccion') }}" required autocomplete="direccion" autofocus><br>
+                    <div id="direccionMal">Introduce un direccion correcta.</div>
                     @error('direccion')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                          @enderror<br>
-                    Localidad: <input type="text" name="localidad" value="{{Auth()->user()->localidad}}"><br>
+                    Localidad: <input id="localidadR" type="text" name="localidad" value="{{Auth()->user()->localidad}}" class=" @error('localidad') is-invalid @enderror" value="{{ old('localidad') }}" required autocomplete="localidad" autofocus><br>
+                    <div id="localidadMal">Introduce una localidad correcta.</div>
                     @error('localidad')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                          @enderror<br>
-                    Provincia: <input type="text" name="provincia" value="{{Auth()->user()->provincia}}"><br>
+                    Provincia: <input id="provinciaR" type="text" name="provincia" value="{{Auth()->user()->provincia}}" class=" @error('provincia') is-invalid @enderror" value="{{ old('provincia') }}" required autocomplete="provincia" autofocus><br>
+                    <div id="provinciaMal">Introduce una provincia correcta.</div>
                     @error('provincia')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                          @enderror<br>
-                    País: <input type="text" name="pais" value="{{Auth()->user()->pais}}"><br>
+                    País: <input id="paisR" type="text" name="pais" value="{{Auth()->user()->pais}}"class=" @error('pais') is-invalid @enderror" value="{{ old('pais') }}" required autocomplete="pais" autofocus><br>
+                    <div id="paisMal">Introduce un pais correcto.</div>
                     @error('pais')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

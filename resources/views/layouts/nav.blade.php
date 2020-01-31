@@ -270,3 +270,4 @@
   <script src="/js/registro.js"></script>
   <script src="/js/inicioSesion.js"></script>
   <script src="/js/mascotacreate.js"></script>
+  <script src="/js/editUsuario.js"></script>

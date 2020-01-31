@@ -1,11 +1,9 @@
 $(document).ready(function(){
   let nameMal = document.getElementById("nameMal");
-  let fechaMal = document.getElementById("fechaMal");
   let razaMal = document.getElementById("razaMal");
   let descripcionMal = document.getElementById("descripcionMal");
 
   nameMal.hidden = true;
-  fechaMal.hidden = true;
   razaMal.hidden = true;
   descripcionMal.hidden = true;
 
@@ -21,7 +19,6 @@ $(document).ready(function(){
   function comprobar(){
     var bien = 0;
     var name = document.getElementById("nameR");
-    var fecha = document.getElementById("fechaR");
     var raza = document.getElementById("razaR");
     var descripcion = document.getElementById("descripcionR");
 
