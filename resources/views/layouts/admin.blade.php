@@ -13,7 +13,11 @@
 
   <!-- Custom fonts for this template-->
   <link href="{{asset('/zonaAdmin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- Custom styles for this template-->
   <link href="{{asset('/zonaAdmin/css/sb-admin-2.min.css')}}" rel="stylesheet">
@@ -168,13 +172,12 @@
 
   <!-- Custom scripts for all pages-->
   <script src="{{asset('/zonaAdmin/js/sb-admin-2.min.js')}}"></script>
+  <script src="{{asset('/zonaAdmin/js/demo/datatables-demo.js')}}"></script>
 
-  <!-- Page level plugins -->
-  <script src="{{asset('/zonaAdmin/vendor/chart.js/Chart.min.js')}}"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="{{asset('/zonaAdmin/js/demo/chart-area-demo.js')}}"></script>
-  <script src="{{asset('/zonaAdmin/js/demo/chart-pie-demo.js')}}"></script>
+  <!--Prueba tablas-->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 
 </body>
 

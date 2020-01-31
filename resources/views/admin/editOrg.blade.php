@@ -5,7 +5,7 @@
   <form method="post" class="text-center" action="{{route('org.store')}}">
     @csrf
     <div class="form-row">
-      <div class="col">
+      <div class="col-lg-6">
         <label>Nombre:</label>
         <input type="text" class="form-control" id="nombre" placeholder="Introduce un nombre" value="{{$org->name}}" name="nombre">
         @error('nombre')
@@ -14,7 +14,7 @@
           </span>
         @enderror
       </div>
-      <div class="col">
+      <div class="col-lg-6">
         <label>Email:</label>
         <input type="email" class="form-control" placeholder="Introduce un email" name="email" value="{{$org->email}}">
         @error('email')
@@ -23,7 +23,9 @@
           </span>
         @enderror
       </div>
-      <div class="col">
+    </div>
+    <div class="form-row">
+      <div class="col-lg-6">
         <label>Direccion:</label>
         <input type="text" class="form-control" placeholder="Introduce una direccion" name="direccion" value="{{$org->direccion}}">
         @error('direccion')
@@ -32,9 +34,7 @@
           </span>
         @enderror
       </div>
-    </div>
-    <div class="form-row">
-      <div class="col">
+      <div class="col-lg-6">
         <label>Localidad:</label>
         <input type="text" class="form-control" placeholder="Introduce una localidad" name="localidad" value="{{$org->localidad}}">
         @error('direccion')
@@ -43,7 +43,9 @@
           </span>
         @enderror
       </div>
-      <div class="col">
+    </div>
+    <div class="form-row">
+      <div class="col-lg-6">
         <label>Provincia:</label>
         <input type="text" class="form-control" placeholder="Introduce una provincia" name="provincia" value="{{$org->provincia}}">
         @error('provincia')
@@ -52,7 +54,7 @@
           </span>
         @enderror
       </div>
-      <div class="col">
+      <div class="col-lg-6">
         <label>Pais:</label>
         <input type="text" class="form-control" placeholder="Introduce un pais" name="pais" value="{{$org->pais}}">
         @error('pais')
@@ -63,7 +65,7 @@
       </div>
     </div>
     <div class="form-row">
-      <div class="col">
+      <div class="col-lg-6">
         <label>Telefono:</label>
         <input type="text" class="form-control" placeholder="Introduce un telefono" name="telefono" value="{{$org->telefono}}">
         @error('telefono')
@@ -72,7 +74,7 @@
           </span>
         @enderror
       </div>
-      <div class="col">
+      <div class="col-lg-6">
         <label>CIF:</label>
         <input type="text" class="form-control" placeholder="Introduce el CIF" name="CIF" value="{{$org->CIF}}">
         @error('CIF')
@@ -81,7 +83,9 @@
           </span>
         @enderror
       </div>
-      <div class="col">
+    </div>
+    <div class="form-row">
+      <div class="col-lg-6">
         <label>Horario Apertura:</label>
         <input type="time" class="form-control" name="HApertura" value="{{$org->horarioApertura}}">
         @error('HApertura')
@@ -90,9 +94,7 @@
           </span>
         @enderror
       </div>
-    </div>
-    <div class="form-row">
-      <div class="col">
+      <div class="col-lg-6">
         <label>Horario Cierre:</label>
         <input type="time" class="form-control" name="HCierre" value="{{$org->horarioCierre}}">
         @error('HCierres')
@@ -101,18 +103,9 @@
           </span>
         @enderror
       </div>
-      <div class="col custom-file mb-3">
-        <label>Imagen:</label>
-        <input type="file" class="custom-file text-center" name="img">
-        @error('img')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-          </span>
-        @enderror
-      </div>
     </div>
     <div class="form-row">
-      <div class="col">
+      <div class="col-lg-6">
         <label>Encargado:</label>
         <select class="custom-select" name="user">
           @foreach($users as $user)
@@ -129,7 +122,7 @@
           </span>
         @enderror
       </div>
-      <div class="col">
+      <div class="col-lg-6">
         <label>Tipo Organizacion:</label>
         <select class="custom-select" name="tipo">
           @foreach($tipos as $tipo)
@@ -142,6 +135,17 @@
         </select>
         @error('tipo')
           <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+          </span>
+        @enderror
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col custom-file mb-3">
+        <label>Imagen:</label>
+        <input type="file" class="custom-file text-center" name="img">
+        @error('img')
+        <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
           </span>
         @enderror

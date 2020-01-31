@@ -1,50 +1,47 @@
 @extends('layouts.nav')
 @section('content')
 <header class="masthead2">
-    <section class="page-section">
+  <section class="page-section">
     <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            
-          <div class="prueba">
-            
-            <section class="page-section" id="portfolio">
-              <div class="d-flex flex-row">
-                <div class="col-lg-5">
-                  <a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a>
-                </div>
-                <div class="col-lg-5">
-                  <div class="input-group">
-                    <input type="text" placeholder="Filtrar por Nombre" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-primary" type="button">Buscar</button>
-                    </span>
-                  </div>
-                </div>
-              </div>                      	
-          		<br><br>
-              <div class="container">
-              	
-                  <div class="row">
-                  @foreach($mascotas as $mascota)
-                      <div class="col-md-4 col-sm-6 portfolio-item">
-                          <a class="portfolio-link" data-toggle="modal" href="#mascota{{$mascota->id}}">
-                          <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                              <i class="fas fa-plus fa-3x"></i>
-                            </div>
-                          </div>
-                          <img class="img-fluid d-block mx-auto" src="{{$mascota->img}}" alt="" width="100%" height="50%;">
-                          </a>
-                        <div class="portfolio-caption">
-                          <h4>{{$mascota->name}}</h4>
-                          <p class="text-muted">{{$mascota->raza}}</p>
-                        </div>
-                      </div>
-                  @endforeach
-                  </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">@lang('Tus Mascotas')</h2>
+        </div>
+        <div class="col-md-12">
+          <section class="page-section2" id="portfolio">
+            <div class="d-flex flex-row">
+              <div class="col-lg-5">
+                <a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a>
               </div>
-              
+              <div class="col-lg-5">
+                <div class="input-group">
+                  <input type="text" placeholder="Filtrar por Nombre" class="form-control">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">Buscar</button>
+                  </span>
+                </div>
+              </div>
+            </div><br><br>
+            <div class="container">
+              <div class="row col-lg-12 justify-content-center">
+                @foreach($mascotas as $mascota)
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                  <a class="portfolio-link" data-toggle="modal" href="#mascota{{$mascota->id}}">
+                    <div class="portfolio-hover">
+                      <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                      </div>
+                    </div>
+                    <img class="img-fluid d-block mx-auto" src="{{$mascota->img}}" alt="" width="100%" height="50%;">
+                  </a>
+                  <div class="portfolio-caption">
+                    <h4>{{$mascota->name}}</h4>
+                    <p class="text-muted">{{$mascota->raza}}</p>
+                  </div>
+                </div>
+                @endforeach
+              </div>
+            </div> 
           </section>
           
           <!--Modal-->
@@ -95,20 +92,11 @@
               </div>
             </div>
             @endforeach
-        </div>
-
-                
-        </div>
+        </div>       
+      </div>
     </div>
 </div>
-
-
-
-
-
 @endsection
-
 </body>
-
 </html>
 

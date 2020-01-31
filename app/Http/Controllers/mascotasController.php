@@ -132,6 +132,10 @@ class mascotasController extends Controller
             $users = User::all();
             $orgs = Organizacion::all();
             return view('admin.editMascAdminZone', array('users'=>$users, 'mascota'=>$mascota, 'orgs'=>$orgs));
+        }else if(Auth::user()->role_id === 2){
+            $users = User::all();
+            $orgs = Organizacion::all();
+            return view ('mascotas.mascotaEdit')->with(['users'=>$users,'mascota'=> $mascota, 'orgs'=>$orgs]);
         }else{
             $users = User::all();
             $orgs = Organizacion::all();
@@ -164,7 +168,6 @@ class mascotasController extends Controller
         $mascota->raza = $request -> input('raza');
         $mascota->descripcion = $request -> input('descripcion');
         if($imagen == ''){
-           dd('error');
           }else{
 
             $image64 = base64_encode(file_get_contents($imagen)); //pasar la foto a base64

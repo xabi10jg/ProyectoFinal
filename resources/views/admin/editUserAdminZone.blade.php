@@ -5,7 +5,7 @@
   <form method="post" class="text-center" action="{{route('ConfirmarEdicion', $user->id)}}">
     @csrf
       <div class="form-row">
-        <div class="col">
+        <div class="col-lg-4">
           <label>Nombre</label>
           <input type="text" class="form-control" id="nombre" placeholder="Introduce un nombre" name="nombre" value="{{$user->name}}">
           @error('nombre')
@@ -14,7 +14,7 @@
             </span>
           @enderror
         </div>
-        <div class="col">
+        <div class="col-lg-4">
           <label>Apellido</label>
           <input type="text" name="apellido" class="form-control" value="{{$user->apellido}}" placeholder="Introduce un apellido">
           @error('apellido')
@@ -23,7 +23,7 @@
             </span>
           @enderror
         </div>
-        <div class="col">
+        <div class="col-lg-4">
           <label>Email</label>
           <input type="text" name="email" class="form-control" value="{{$user->email}}" placeholder="Introduce un email">
            @error('email')
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-lg-4">
           <label>Dirección</label>
           <input type="text" name="direccion" value="{{$user->direccion}}" placeholder="Introduce una dirección" class="form-control">
           @error('direccion')
@@ -43,7 +43,7 @@
             </span>
           @enderror
         </div>
-        <div class="col">
+        <div class="col-lg-4">
           <label>Localidad</label>
           <input type="text" name="localidad" value="{{$user->localidad}}" placeholder="Introduce una localidad" class="form-control">
           @error('localidad')
@@ -52,7 +52,7 @@
             </span>
           @enderror
         </div>
-        <div class="col">
+        <div class="col-lg-4">
           <label>Provincia</label>
           <input type="text" name="provincia" value="{{$user->provincia}}" placeholder="Introduce una provincia" class="form-control">
           @error('provincia')
@@ -63,7 +63,7 @@
         </div>       
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-lg-4">
           <label>País</label>
           <input type="text" name="pais" value="{{$user->pais}}" placeholder="Introduce un pais" class="form-control">
           @error('pais')
@@ -72,7 +72,7 @@
             </span>
           @enderror
         </div>
-        <div class="col">
+        <div class="col-lg-4">
           <label>Teléfono</label>
           <input type="text" name="telefono" value="{{$user->telefono}}" placeholder="Introduce un telefono" class="form-control">
           @error('telefono')
@@ -81,7 +81,7 @@
             </span>
           @enderror
         </div>
-        <div class="col">
+        <div class="col-lg-4">
           <label>Rol</label>
           <select name="rol" class="custom-select">
             @foreach($roles as $rol)

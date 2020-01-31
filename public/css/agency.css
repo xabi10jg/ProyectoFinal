@@ -38,6 +38,9 @@ h6 {
 .page-section {
   padding: 100px 0;
 }
+.page-section2 {
+  padding: 2% 0;
+}
 
 .page-section h2.section-heading {
   font-size: 40px;
@@ -204,14 +207,12 @@ header.masthead .intro-text .intro-heading {
 }
 header.masthead2 {
   text-align: center;
-  color: white;
-  background-image: url("../img/lur.jpg");
+  color: black;
+  background-color: #999999;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
-  height: auto;
-  width: auto;
   
 }
 
@@ -740,25 +741,6 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   background-color: #ff9900;
 }
 
-.prueba{
-  color: black;
-}
-
-.pruebaMargen{
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.pruebaPadding{
-  padding-left: 2%;
-  padding-right: 2%;
-}
-
-.margenAdmin{
-  margin-top: 5%;
-  margin-left: 15%;
-}
-
 .newcard {
   position: relative;
   display: -ms-flexbox;
@@ -775,26 +757,6 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   margin-top: 70px;
   }
 
-.adminCard {
-  position: relative;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #6c757d;
-  color: white;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
-}
-
-  .margincard{
-    margin-top: 300px;
-
-  }
   #mapid{
   margin-top: 2px;
   height: 50%;

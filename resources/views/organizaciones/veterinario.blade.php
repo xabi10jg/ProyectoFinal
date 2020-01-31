@@ -1,47 +1,58 @@
 @extends('layouts.nav')
 @section('content')
 <header class="masthead2">
-        <section class="page-section">
-            <div class="container">
-                
-                <div class="row justify-content-center">
-                    <div class="col-md-8">    
-                        <div class="prueba mb-5">
-                        @auth
-                        @if(Auth::user()->id===$veterinario->encargado_id)
-                            <div class="d-flex flex-row">
-                                <div class="col-lg-12">
-                                 <a class="btn btn-primary" href="{{route('mascotas.create')}}">Editar Veterinario</a>
-                                </div>
-                            </div>
-                        @endif
-                        @endauth
+    <section class="page-section">
+    <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
                         </div>
-                    
-                    <div class="row justify-content-center  text-dark">
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                  <img class="card-img" src="{{$veterinario->img}}">
-                                  <hr>
-                                    <h5 class="card-title">
-                                        {{$veterinario->name}}
-                                    </h5>
-                                    <p>Email: {{$veterinario->email}}</p>
-                                    <p>Dirección: {{$veterinario->direccion}}</p>
-                                    <p>Localidad: {{$veterinario->localidad}}</p>
-                                    <p>Provincia: {{$veterinario->Provincia}}</p>
-                                    <p>Pais: {{$veterinario->pais}}</p>
-                                    <p>Telefono: {{$veterinario->telefono}}</p>
-                                    <p>Horario: Desde {{$veterinario->horarioApertura}} hasta {{$veterinario->horarioCierre}}</p>
-                                </div>
+                    @endif
+
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">{{$veterinario->name}}</h2>
+                    </div>
+                    <div>
+                    <div class="prueba mb-5">
+                      @auth
+                        @if(Auth::user()->id===$veterinario->encargado_id)
+                          <div class="d-flex flex-row">
+                            <div class="col-lg-12">
+                              <a class="btn btn-primary" href="{{route('mascotas.create')}}">Editar Veterinario</a>
                             </div>
+                          </div>
+                        @endif
+                      @endauth
+                    </div>
+                    </div>
+                    <div class="text-black">
+                        <div class="row col-lg-6 mx-auto">
+                            <img class="card-img" src="{{$veterinario->img}}">
+                        </div><br>
+                        <div class="row col-lg-12 mx-auto">
+                            <div class="col-lg-6">Email: {{$veterinario->email}}</div>
+                            <div class="col-lg-6">@lang('Telefono'): {{$veterinario->telefono}}</div>
+                        </div><br>
+                        <div class="row col-lg-12 mx-auto">
+                            <div class="col-lg-6">@lang('Direccion'): {{$veterinario->direccion}}</div>
+                            <div class="col-lg-6">@lang('Localidad'): {{$veterinario->localidad}}</div>
+                        </div><br>
+                        <div class="row col-lg-12 mx-auto">
+                            <div class="col-lg-6">@lang('Pais'): {{$veterinario->pais}}</div>
+                            <div class="col-lg-6">@lang('Encargado'): {{$veterinario->encargado->name}}</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>    
-    </header>
+        </div>
+    </div>
+</div>
+</section>
+</header>
 <!--<header class="masthead2">
   <section class="page-section">
     <div class="container">  
