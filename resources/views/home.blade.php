@@ -12,30 +12,29 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
                     </div><br>
-                    <div class="text-black justify-content-center">
+                    <div class="text-black justify-content-center rounded-lg border border-warning shadow p-4 mb-4">
+                        <div class="row col-lg-12 mx-auto ">
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Nombre'): {{Auth()->user()->name}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action">@lang('Apellido'): {{Auth()->user()->apellido}}</div>
+                        </div>
                         <div class="row col-lg-12 mx-auto">
-                            <div class="col-lg-6">@lang('Nombre'): {{Auth()->user()->name}}</div>
-                            <div class="col-lg-6">@lang('Apellido'): {{Auth()->user()->apellido}}</div>
-                        </div><br>
+                            <div class="col-lg-6 list-group-item list-group-item-action">E-mail: {{Auth()->user()->email}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Direccion'): {{Auth()->user()->direccion}}</div>
+                        </div>
                         <div class="row col-lg-12 mx-auto">
-                            <div class="col-lg-6">E-mail: {{Auth()->user()->email}}</div>
-                            <div class="col-lg-6">@lang('Direccion'): {{Auth()->user()->direccion}}</div>
-                        </div><br>
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Localidad'): {{Auth()->user()->localidad}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action">@lang('Provincia'): {{Auth()->user()->provincia}}</div>
+                        </div>
                         <div class="row col-lg-12 mx-auto">
-                            <div class="col-lg-6">@lang('Localidad'): {{Auth()->user()->localidad}}</div>
-                            <div class="col-lg-6">@lang('Provincia'): {{Auth()->user()->provincia}}</div>
-                        </div><br>
+                            <div class="col-lg-6 list-group-item list-group-item-action">@lang('Pais'): {{Auth()->user()->pais}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Telefono'): {{Auth()->user()->telefono}}</div>
+                        </div>
                         <div class="row col-lg-12 mx-auto">
-                            <div class="col-lg-6">@lang('Pais'): {{Auth()->user()->pais}}</div>
-                            <div class="col-lg-6">@lang('Telefono'): {{Auth()->user()->telefono}}</div>
-                        </div><br>
-                        <div class="row col-lg-12 mx-auto">
-                            <div class="col-lg-6">@lang('Rol'): {{Auth()->user()->roles->rol}}</div>
-                            <div class="col-lg-6">Te uniste en {{Auth()->user()->email_verified_at}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Rol'): {{Auth()->user()->roles->rol}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action">Te uniste en {{Auth()->user()->email_verified_at}}</div>
                         </div><br>
                         <div class="row col-lg-12 mx-auto">
                             <div class="col"><a class="btn btn-primary" href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a></div>
