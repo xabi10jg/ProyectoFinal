@@ -51,6 +51,7 @@ class contactoController extends Controller
         $contacto->email = $request->input('email');
         $contacto->cif = $request->input('cif');
         $contacto->tipo = $request->input('tipo');
+        $contacto->encargado = $request->input('encargado');
 
         $contacto->save();
 

@@ -34,7 +34,7 @@
                       @enderror<br>
                       Tipo de Organización: <select name="tipo">
                       	@foreach ($tipo as $tip)
-						  <option value="{{$tip->name}}">{{$tip->name}}</option>
+						  <option value="{{$tip->id}}">{{$tip->name}}</option>
 						 @endforeach
 						</select><br>
                       @error('organizacion')
@@ -43,7 +43,7 @@
                         </span>
                       @enderror<br>
                      
-                      
+                      <input type="text" name="encargado" value="{{Auth::user()->id}}" hidden>
                       <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
 
 

@@ -71,6 +71,9 @@ Route::get('/org/create', 'OrganizacionesController@create')->middleware('auth',
 Route::get('/admin/users', 'adminController@usersAdmin')->middleware('auth', 'role:Administrador')->name('usersAdmin');
 Route::get('/admin/mascotas', 'adminController@mascAdmin')->middleware('auth', 'role:Administrador')->name('mascAdmin');
 Route::get('/admin/organizaciones', 'adminController@orgAdmin')->middleware('auth', 'role:Administrador')->name('orgAdmin');
+Route::get('/admin/peticiones', 'adminController@peticiones')->middleware('auth', 'role:Administrador')->name('peticiones');
+Route::get('/admin/peticion/{id}', 'adminController@aceptarPeticion')->middleware('auth', 'role:Administrador')->name('peticion.create');
+Route::delete('/admin/peticion/{id}', 'adminController@eliminarPeticion')->middleware('auth', 'role:Administrador')->name('peticion.destroy');
 
 Route::get('/veterinarios', 'VeterinarioController@index')->name('veterinarios');
 

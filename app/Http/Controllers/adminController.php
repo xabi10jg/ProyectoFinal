@@ -46,8 +46,30 @@ class adminController extends Controller
         return view('admin.orgAdmin', array('organizaciones'=>$organizaciones));
     }
 
-    public function crearOrg(){
-        $peticiones = $peticiones->diff(Contacto::whereIn('tipo', [null])->get());
-        dd($peticiones);
+    public function peticiones(){
+        $peticiones = Contacto::all();
+        return view('admin.peticiones', array('peticiones'=>$peticiones));
+    }
+
+    public function aceptarPeticion($id){
+        $peticion = Contacto::find($id);
+
+        $organizacion = new Organizacion();
+        $organizacion->name = $peticion->nombre;
+        $organizacion->email = $peticion->email;
+        $organizacion->CIF = $peticion->cif;
+        $organizacion->tipo_id = $peticion->tipo;
+        $organizacion->encargado_id = $peticion->encargado;
+
+        $organizacion->save();
+
+        $peticion->forceDelete();
+
+        return redirect(route('peticiones'));
+    }
+
+    public function eliminarPeticion($id){
+        $peticion = Contacto::find($id);
+        $peticion->forceDelete();
     }
 }
