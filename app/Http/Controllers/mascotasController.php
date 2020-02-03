@@ -45,7 +45,7 @@ class mascotasController extends Controller
 
         $mascota = new Mascota();
 
-        $mascota->name = $request->input('nombre');
+        $mascota->name = $request->input('name');
         $mascota->fecha_nacimiento = $request->input('fecha_nacimiento');
         $mascota->raza = $request->input('raza');
         $mascota->descripcion = $request->input('descripcion');
