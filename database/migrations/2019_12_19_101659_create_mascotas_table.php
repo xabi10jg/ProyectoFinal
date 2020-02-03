@@ -18,6 +18,7 @@ class CreateMascotasTable extends Migration
             $table->string('name');
             $table->date('fecha_nacimiento');
             $table->string('raza');
+            $table->string('tipo');
             $table->string('descripcion', 150)->nullable();
             $table->string('img');
             $table->timestamps();
