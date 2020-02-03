@@ -9,6 +9,7 @@ use App\Role;
 use App\Mascota;
 use App\Organizacion;
 use App\Tipo;
+use App\Contacto;
 
 class adminController extends Controller
 {
@@ -43,5 +44,10 @@ class adminController extends Controller
     public function orgAdmin(){
         $organizaciones = Organizacion::all();
         return view('admin.orgAdmin', array('organizaciones'=>$organizaciones));
+    }
+
+    public function crearOrg(){
+        $peticiones = $peticiones->diff(Contacto::whereIn('tipo', [null])->get());
+        dd($peticiones);
     }
 }
