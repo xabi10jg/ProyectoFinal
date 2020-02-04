@@ -64,6 +64,7 @@
                             @endforeach
                           </div>
                         </div>
+                        
                         </section>
                         <!--Modal-->
                         @foreach($mascotas as $mascota)
