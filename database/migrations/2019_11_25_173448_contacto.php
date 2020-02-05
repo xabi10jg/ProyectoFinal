@@ -20,6 +20,7 @@ class Contacto extends Migration
             $table->string('mensaje')->nullable();
             $table->string('cif')->nullable();
             $table->string('tipo')->nullable();
+            $table->string('encargado')->nullable();
             $table->timestamps();
         });
     }

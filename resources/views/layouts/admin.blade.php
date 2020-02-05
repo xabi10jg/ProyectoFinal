@@ -72,6 +72,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Acciones admin:</h6>
             <a class="collapse-item" href="{{route('org.create')}}">Crear Organizacion</a>
+            <a class="collapse-item" href="{{route('peticiones')}}">Peticiones Organizacion</a>
           </div>
         </div>
       </li>
