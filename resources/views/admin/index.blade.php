@@ -11,7 +11,7 @@
     </div>
     <div class="card col-lg-4 float-left text-gray-900">
       <div class="card-body">
-        <h4 class="card-title">Masctoas</h4>
+        <h4 class="card-title">Mascotas</h4>
         <p class="card-text">{{$mascotas->count()}}</p>
         <a href="{{route('mascAdmin')}}" class="btn btn-warning text-gray-900">Ver Mascotas</a>
       </div>

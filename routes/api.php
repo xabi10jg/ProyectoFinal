@@ -25,4 +25,7 @@ Route::get('/apiUsuarios', 'apiController@usuarios');
 Route::get('/apiOrgs', 'apiController@organizaciones');
 //Devuelve un listado de los usuarios registrados en cada mes en base al año pasado por parametro si no se pasa por defecto sera 2020
 Route::get('/apiUserYear/{year}', 'apiController@userYear');
+
+Route::get('/apiOrgYear/{year}', 'apiController@orgYear');
+
 Route::get('/apiRefugios/{id}', 'apiController@mascotasRefugio');
