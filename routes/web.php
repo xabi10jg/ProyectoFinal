@@ -58,7 +58,7 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('FormularioEditar/{id}', 'HomeController@VistaEditarUsuario')->name('FormularioEditar')->middleware('verified');
 Route::post('FormularioEditar/{id}', 'HomeController@EditarUsuario')->name('ConfirmarEdicion')->middleware('verified');
-Route::post('FormularioEditar/{id}', 'HomeController@EditarOrganizacion')->name('ConfirmarEdicionOrganizacion')->middleware('verified');
+Route::post('FormularioEditarOrg/{id}', 'HomeController@EditarOrganizacion')->name('ConfirmarEdicionOrganizacion')->middleware('verified');
 Route::get('EliminarUsuario/{id}', 'HomeController@EliminarUsuario')->name('EliminarUsuario')->middleware('verified');
 
 //Rutas mascotas
