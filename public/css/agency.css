@@ -11,6 +11,11 @@ body {
 
 .pruebaFondo{
   background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
 }
 
 p {
