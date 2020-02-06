@@ -11,7 +11,7 @@
     </div>
     <div class="card col-lg-4 float-left text-gray-900">
       <div class="card-body">
-        <h4 class="card-title">Masctoas</h4>
+        <h4 class="card-title">Mascotas</h4>
         <p class="card-text">{{$mascotas->count()}}</p>
         <a href="{{route('mascAdmin')}}" class="btn btn-warning text-gray-900">Ver Mascotas</a>
       </div>
@@ -47,7 +47,7 @@
           console.log(typeof(year.value));
           let datos = [['Mes', 'Usuarios']];
           //llamada a la API pasando el parametro del año
-          $.get("http://comanimals.herokuapp.com/api/apiUserYear/"+year.value, function (info, status){
+          $.get("http://127.0.0.1:8000/api/apiUserYear/"+year.value, function (info, status){
             console.log(info);
             if(status === "success"){
               for(let i = 0; i < info.length; i++){
