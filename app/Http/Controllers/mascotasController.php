@@ -40,7 +40,8 @@ class mascotasController extends Controller
             'fecha_nacimiento'=>'date|required',
             'raza'=>'string|min:2|max:50|required',
             'descripcion'=>'string|min:2|max:50|required',
-            'img'=>'required'
+            'img'=>'required',
+            'tipo'=>'required'
         ]);
 
         $mascota = new Mascota();
@@ -49,6 +50,7 @@ class mascotasController extends Controller
         $mascota->fecha_nacimiento = $request->input('fecha_nacimiento');
         $mascota->raza = $request->input('raza');
         $mascota->descripcion = $request->input('descripcion');
+        $mascota->tipo = $request->input('tipo');
         $imagen = $request->file('img');
         if($imagen == ''){
           }else{

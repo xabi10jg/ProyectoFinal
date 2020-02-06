@@ -29,7 +29,14 @@ class HomeController extends Controller
     public function index()
     {
         $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
-        $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+        if(Auth::user()->role_id ===1){
+            $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+        }
+        else{
+            if(Auth::user()->role_id ===2){
+                $mascotas = Mascota::where('organizacion_id',Auth::user()->id)->get();
+            }
+        }
         return view('home', array('mascotas'=>$mascotas, 'organizacion'=>$organizacion));
     }
 

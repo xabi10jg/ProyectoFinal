@@ -44,6 +44,12 @@
                         <strong>{{ $message }}</strong>
                       </span>
                     @enderror<br>
+                    Tipo: <input type="text" name="tipo"><br>
+                    @error('tipo')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
+                    @enderror<br>
                     <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
 
 
