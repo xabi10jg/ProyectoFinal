@@ -838,11 +838,6 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
       height: 40%;
       margin-bottom: 0.8em;
     }
-
-    .card-img1 img{
-      width: 25%;
-      height: auto;
-    }
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
       .sidenav {
