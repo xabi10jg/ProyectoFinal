@@ -10,7 +10,7 @@ body {
 }
 
 .pruebaFondo{
-  background-color: #8f8b88;
+  background-image: url("../img/fondo.jpg");
 }
 
 p {
@@ -213,7 +213,7 @@ header.masthead .intro-text .intro-heading {
 header.masthead2 {
   text-align: center;
   color: black;
-  background-color: #8f8b88;
+  background-image: url("../img/fondo.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
