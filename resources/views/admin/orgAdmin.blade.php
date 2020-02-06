@@ -78,7 +78,7 @@
           let datos = [['Mes', 'Organizaciones']];
           //llamada a la API pasando el parametro del año
           $.get("http://127.0.0.1:8000/api/apiOrgYear/"+year.value, function (info, status){
-            console.log(info);
+            console.log(info.length);
             if(status === "success"){
               for(let i = 0; i < info.length; i++){
                 console.log(info[i].mes);

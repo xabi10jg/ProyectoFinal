@@ -13,14 +13,6 @@
               <div class="col-lg-5">
                 <a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a>
               </div>
-              <div class="col-lg-5">
-                <div class="input-group">
-                  <input type="text" placeholder="Filtrar por Nombre" class="form-control">
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button">Buscar</button>
-                  </span>
-                </div>
-              </div>
             </div><br><br>
             <div class="container">
               <div class="row col-lg-12 justify-content-center">

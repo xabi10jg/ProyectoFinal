@@ -4,8 +4,8 @@
     <section class="page-section">
     <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-10">
+            <div class="card2">
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -39,7 +39,6 @@
                         </div><br>
                         <div class="row col-lg-12 mx-auto">
                             <div class="col-lg-6">@lang('Direccion'): {{$veterinario->direccion}}</div>
-                            <div class="col-lg-6">@lang('Localidad'): {{$veterinario->localidad}}</div>
                         </div><br>
                         <div class="row col-lg-12 mx-auto">
                             <div class="col-lg-6">@lang('Pais'): {{$veterinario->pais}}</div>
