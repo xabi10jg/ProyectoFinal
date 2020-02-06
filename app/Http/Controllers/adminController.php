@@ -63,6 +63,10 @@ class adminController extends Controller
 
         $organizacion->save();
 
+        $encargado = User::find($peticion->encargado);
+        $encargado->role_id = 2;
+        $encargado->save();
+
         $peticion->forceDelete();
 
         return redirect(route('peticiones'));
@@ -71,5 +75,10 @@ class adminController extends Controller
     public function eliminarPeticion($id){
         $peticion = Contacto::find($id);
         $peticion->forceDelete();
+        $encargado = User::find($peticion->encargado);
+        $encargado->role_id = 1;
+        $encargado->save();
+        
+        return redirect(route('peticiones'));
     }
 }

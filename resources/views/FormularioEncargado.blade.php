@@ -13,40 +13,55 @@
                     </div>
                     <form method="post" action="{{route('formularioEnc')}}">
                       @csrf
-
-                      Nombre: <input type="text" name="nombre" placeholder="Nombre de la organización"><br>
-                      @error('nombre')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror<br>
-                      Email <input type="text" name="email" placeholder="Email de la cuenta"><br>
-                      @error('email')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror<br>
-                      CIF <input type="text" name="cif" placeholder="CIF de la empresa"><br>
-                      @error('cif')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror<br>
-                      Tipo de Organización: <select name="tipo">
-                      	@foreach ($tipo as $tip)
-						  <option value="{{$tip->id}}">{{$tip->name}}</option>
-						 @endforeach
-						</select><br>
-                      @error('organizacion')
-                        <span class="invalid-feedback" role="alert">
-                          <strong>{{ $message }}</strong>
-                        </span>
-                      @enderror<br>
-                     
+                      <div class="form-row">
+                        <div class="col-lg-6">
+                          <label>Nombre:</label>
+                          <input type="text" class="form-control" id="nombreFE" placeholder="Nombre de la organizacion" name="nombre">
+                          <div id="nombreMalFE">Introduce un nombre valido</div>
+                          @error('nombre')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                        <div class="col-lg-6">
+                          <label>Email:</label>
+                          <input type="email" class="form-control" id="emailFE" placeholder="Introduce un email" name="email">
+                          <div id="emailMalFE">Introduce un email valido</div>
+                          @error('email')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col-lg-6">
+                          <label>CIF:</label>
+                          <input type="text" class="form-control" id="cifFE" placeholder="Introduce el CIF" name="cif">
+                          <div id="cifMalFE">Introduce un CIF valido</div>
+                          @error('nombre')
+                            <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                        <div class="col-lg-6">
+                          <label>Tipo de Organizacion:</label>
+                          <select class="custom-select" name="tipo">
+                          @foreach ($tipo as $tip)
+                            <option value="{{$tip->id}}">{{$tip->name}}</option>
+                          @endforeach
+                          </select>
+                          @error('tipo')
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $message }}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                      </div><br>                     
                       <input type="text" name="encargado" value="{{Auth::user()->id}}" hidden>
-                      <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
-
-
+                      <input class="btn btn-primary" disabled id="submitFE" type="submit" name="confirmarcambios" value="Confirmar">
                   </form>
                   </div>
                 </div>

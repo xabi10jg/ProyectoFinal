@@ -29,9 +29,10 @@
                 <td>{{$peticion->encargado}}</td>
                 <td><a class="btn btn-warning text-gray-900" href="{{route('peticion.create', $peticion->id)}}">Aceptar</a></td>
                 <td>
-                  <button class="btn btn-warning text-gray-900" id="EliminarPerfil">
-                    <a class="text-gray-900" href="{{route('peticion.destroy', $peticion->id)}}">Denegar</a>
-                  </button>
+                  <form style="display:inline" action="{{route('peticion.destroy', $peticion->id)}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-warning text-gray-900" type="submit">@lang('Eliminar')</button></form>
                 </td>
               </tr>
             @endif
