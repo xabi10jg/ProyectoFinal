@@ -28,4 +28,6 @@ Route::get('/apiUserYear/{year}', 'apiController@userYear');
 
 Route::get('/apiOrgYear/{year}', 'apiController@orgYear');
 
+Route::get('/apiMascYear/{year}', 'apiController@mascYear');
+
 Route::get('/apiRefugios/{id}', 'apiController@mascotasRefugio');

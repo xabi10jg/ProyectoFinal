@@ -65,6 +65,24 @@ class apiController extends Controller
         
         return $orgMes;
     }
+    public function mascYear($year){
+        $mascMes=array();
+        if(isset($year)){
+            for($i = 1; $i < 13; $i++){
+                $mascota = Mascota::whereYear('created_at', $year)->whereMonth('created_at', $i)->count();
+                array_push($mascMes, ['mes'=>$i, 'mascota'=>$mascota]);
+
+            }
+        }else{
+            $year = 2020;
+            for($i = 1; $i < 13; $i++){
+                $mascota = Mascota::whereYear('created_at', $year)->whereMonth('created_at', $i)->count();
+                array_push($mascMes, ['mes'=>$i, 'mascota'=>$mascota]);
+            }
+        }
+        
+        return $mascMes;
+    }
      public function mascotasRefugio($id){
 
         
