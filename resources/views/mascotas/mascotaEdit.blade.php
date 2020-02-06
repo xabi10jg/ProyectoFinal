@@ -18,13 +18,13 @@
                       <div class="form-row">
                       <div class="col-lg-6">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" name="nombre" value="{{$mascota->name}}" required>
+                        <input type="text" class="form-control" id="nameME" name="nombre" value="{{$mascota->name}}" required>
                         @error('nombre')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="nombreMal">Introduce un nombre valido</div>
+                        <div id="nombreMalME">Introduce un nombre valido</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Fecha Nacimiento:</label>
@@ -34,23 +34,23 @@
                     <div class="form-row">
                       <div class="col-lg-6">
                         <label>Raza:</label>
-                        <input type="text" class="form-control" placeholder="Introduce una raza" name="raza" value="{{$mascota->raza}}" required>
+                        <input type="text" class="form-control" id="razaME" placeholder="Introduce una raza" name="raza" value="{{$mascota->raza}}" required>
                         @error('raza')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="razaMal">Introduce una raza valida</div>
+                        <div id="razaMalME">Introduce una raza valida</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Descripcion:</label>
-                        <input type="text" class="form-control" value="{{$mascota->descripcion}}" name="descripcion" required>
+                        <input type="text" class="form-control" id="descripcionME" value="{{$mascota->descripcion}}" name="descripcion" required>
                         @error('descripcion')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="descMal">Introduce una descripcion valida</div>
+                        <div id="descMalME">Introduce una descripcion valida</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Tipo Mascota:</label>
@@ -61,12 +61,12 @@
                             <option value="Perro">Perro</option>
                           @endif
                           @if($mascota->tipo === "Gato")
-                            <option value="Gato">Gato</option>
+                            <option selected value="Gato">Gato</option>
                           @else
                             <option value="Gato">Gato</option>
                           @endif
                           @if($mascota->tipo === "Pajaro")
-                            <option value="Pajaro">Pajaro</option>
+                            <option selected value="Pajaro">Pajaro</option>
                           @else
                             <option value="Pajaro">Pajaro</option>
                           @endif
@@ -76,7 +76,6 @@
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="tipoMal">Selecciona un tipo de mascota</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Imagen:</label>
@@ -86,10 +85,9 @@
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="imgMal">Introduce una imagen valida</div>
                       </div>
                     </div><br>
-                      <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
+                      <input class="btn btn-primary" id="submitME" type="submit" disabled name="confirmarcambios" value="Confirmar">
                   </form>
                   </div>
                 </div>

@@ -16,39 +16,39 @@
                     <div class="form-row">
                       <div class="col-lg-6">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" placeholder="Introduce un nombre" name="nombre" value="" required>
+                        <input type="text" class="form-control" placeholder="Introduce un nombre" id="nameMC" name="nombre" value="" required>
                         @error('nombre')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="nombreMal">Introduce un nombre valido</div>
+                        <div id="mcnameMal">Introduce un nombre valido</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Fecha Nacimiento:</label>
-                        <input type="date" class="form-control" name="fecha_nacimiento" required>
+                        <input type="date" class="form-control" id="fechaMC" name="fecha_nacimiento" required>
                       </div>
                     </div>
                     <div class="form-row">
                       <div class="col-lg-6">
                         <label>Raza:</label>
-                        <input type="text" class="form-control" placeholder="Introduce una raza" name="raza" value="" required>
+                        <input type="text" class="form-control" id="razaMC" placeholder="Introduce una raza" name="raza" value="" required>
                         @error('raza')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="razaMal">Introduce una raza valida</div>
+                        <div id="mcrazaMal">Introduce una raza valida</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Descripcion:</label>
-                        <input type="text" class="form-control" placeholder="Introduce una descripcion" name="descripcion" required>
+                        <input type="text" class="form-control" id="descripcionMC" placeholder="Introduce una descripcion" name="descripcion" required>
                         @error('descripcion')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="descMal">Introduce una descripcion valida</div>
+                        <div id="mcdescripcionMal">Introduce una descripcion valida</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Tipo Mascota:</label>
@@ -62,7 +62,6 @@
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="tipoMal">Selecciona un tipo de mascota</div>
                       </div>
                       <div class="col-lg-6">
                         <label>Imagen:</label>
@@ -72,10 +71,9 @@
                             <strong>{{ $message }}</strong>
                           </span>
                         @enderror
-                        <div id="imgMal">Introduce una imagen valida</div>
                       </div>
                     </div><br>
-                    <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
+                    <input class="btn btn-primary" id="submitMC" type="submit" disabled name="confirmarcambios" value="Confirmar">
                   </form>
                   </div>
                 </div>

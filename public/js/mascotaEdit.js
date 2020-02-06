@@ -1,11 +1,11 @@
 $(document).ready(function(){
-    let nameMalMC = document.getElementById("mcnameMal");
-    let razaMalMC = document.getElementById("mcrazaMal");
-    let descripcionMalMC = document.getElementById("mcdescripcionMal");
+    let nameMalME = document.getElementById("nombreMalME");
+    let razaMalME = document.getElementById("razaMalME");
+    let descripcionMalME = document.getElementById("descMalME");
   
-    nameMalMC.hidden = true;
-    razaMalMC.hidden = true;
-    descripcionMalMC.hidden = true;
+    nameMalME.hidden = true;
+    razaMalME.hidden = true;
+    descripcionMalME.hidden = true;
   
   
     $('input').keyup(function(){
@@ -18,30 +18,29 @@ $(document).ready(function(){
   
     function comprobar(){
       var bien = 0;
-      var name = document.getElementById("nameMC");
-      var fecha = document.getElementById("fechaMC");
-      var raza = document.getElementById("razaMC");
-      var descripcion = document.getElementById("descripcionMC");
+      var name = document.getElementById("nameME");
+      var raza = document.getElementById("razaME");
+      var descripcion = document.getElementById("descripcionME");
   
       if (typeof name != "string" && name.value.length < 3 || name.value.length >= 50){
-          nameMalMC.hidden = false;
+          nameMalME.hidden = false;
           bien--;
       }else{
-        nameMalMC.hidden = true;
+        nameMalME.hidden = true;
         bien++;
       }
       if (typeof raza != "string" && raza.value.length < 3 || raza.value.length >= 50){
-        razaMalMC.hidden = false;
+        razaMalME.hidden = false;
         bien--;
       }else{
-        razaMalMC.hidden = true;
+        razaMalME.hidden = true;
         bien++;
       }
       if (typeof descripcion != "string" && descripcion.value.length < 3 || descripcion.value.length >= 50){
-        descripcionMalMC.hidden = false;
+        descripcionMalME.hidden = false;
         bien--;
       }else{
-        descripcionMalMC.hidden = true;
+        descripcionMalME.hidden = true;
         bien++;
       }
       if(bien === 3){
@@ -52,11 +51,11 @@ $(document).ready(function(){
     }
 
     function EnableSubmit(){
-      document.getElementById("submitMC").disabled = false;
+      document.getElementById("submitME").disabled = false;
     }
   
     function DisableSubmit(){
-      document.getElementById("submitMC").disabled = true;
+      document.getElementById("submitME").disabled = true;
     }
               
   });

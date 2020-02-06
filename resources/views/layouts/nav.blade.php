@@ -269,3 +269,5 @@
   <script src="/js/agency.min.js"></script>
   <script src="/js/registro.js"></script>
   <script src="/js/inicioSesion.js"></script>
+  <script src="/js/mascotaCreate.js"></script>
+  <script src="/js/mascotaEdit.js"></script>
