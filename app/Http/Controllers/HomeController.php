@@ -102,8 +102,9 @@ class HomeController extends Controller
             $users = User::all();
             return redirect(route('usersAdmin', array('users'=>$users)));
         }else{
-            //hay que cambiarlo
-            return redirect(route('admin'));
+            
+            $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+            return redirect(route('home', array('mascotas'=>$mascotas, 'usuario'=>$usuario)));
         }
     }
     public function EditarOrganizacion(Request $request, $id){
@@ -134,12 +135,7 @@ class HomeController extends Controller
 
         }
 
-
-        
-
-
-            
-        return view('home', array('mascotas'=>$mascotas, 'organizacion'=>$organizacion));
+            return view('home', array('mascotas'=>$mascotas, 'organizacion'=>$organizacion));
 
     }
 

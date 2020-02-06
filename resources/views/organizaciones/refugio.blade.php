@@ -62,7 +62,11 @@
                                   </div>
                                 </div>
                             @endforeach
+                            
                           </div>
+                          <div class="row-lg-12">
+                              <div id="chart" style="width: 100%; height: 500px;"></div>
+                            </div>
                         </div>
                         
                         </section>
@@ -129,56 +133,56 @@
 </header>
 <script type="text/javascript">
     $(document).ready(function(){
-      
+        
         var options = {
-          title: 'Usuarios registrados',
+          title: 'Mascotas en Refugio',
           hAxis: {title: 'Mes',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
           let datos = [['Mes', 'Mascotas']];
-          //llamada a la API pasando el parametro del año
-          $.get("http://127.0.0.1:8000/api/apiRefugios/"+{{$refugio}}, function (info, status){
-            console.log(info);
+          //llamada a la API pasando el parametro del refugio
+          $.get("http://127.0.0.1:8000/api/apiRefugios/{{$refugio->id}}", function (info, status){
+            console.log(info.length);
             if(status === "success"){
               for(let i = 0; i < info.length; i++){
                 console.log(info[i].mes);
                 //switch para introducir los nombres de los meses en el array datos
                 switch(i) {
                   case 0:
-                    datos.push(['Enero',info[i].mascotas]);
+                    datos.push(['Enero',parseInt(info[i].mascotas)]);
                     break;
                   case 1:
-                    datos.push(['Febrero',info[i].mascotas]);
+                    datos.push(['Febrero',parseInt(info[i].mascotas)]);
                     break;
                   case 2:
-                    datos.push(['Marzo',info[i].mascotas]);
+                    datos.push(['Marzo',parseInt(info[i].mascotas)]);
                     break;
                   case 3:
-                    datos.push(['Abril',info[i].mascotas]);
+                    datos.push(['Abril',parseInt(info[i].mascotas)]);
                     break;
                   case 4:
-                    datos.push(['Mayo',info[i].mascotas]);
+                    datos.push(['Mayo',parseInt(info[i].mascotas)]);
                     break;
                   case 5:
-                    datos.push(['Junio',info[i].mascotas]);
+                    datos.push(['Junio',parseInt(info[i].mascotas)]);
                     break;
                   case 6:
-                    datos.push(['Julio',info[i].mascotas]);
+                    datos.push(['Julio',parseInt(info[i].mascotas)]);
                     break;
                   case 7:
-                    datos.push(['Agosto',info[i].mascotas]);
+                    datos.push(['Agosto',parseInt(info[i].mascotas)]);
                     break;
                   case 8:
-                    datos.push(['Septiembre',info[i].mascotas]);
+                    datos.push(['Septiembre',parseInt(info[i].mascotas)]);
                     break;
                   case 9:
-                    datos.push(['Octubre',info[i].mascotas]);
+                    datos.push(['Octubre',parseInt(info[i].mascotas)]);
                     break;
                   case 10:
-                    datos.push(['Noviembre',info[i].mascotas]);
+                    datos.push(['Noviembre',parseInt(info[i].mascotas)]);
                     break;
                   case 11:
-                    datos.push(['Diciembre',info[i].mascotas]);
+                    datos.push(['Diciembre',parseInt(info[i].mascotas)]);
                     break;
                   default:
                     break;

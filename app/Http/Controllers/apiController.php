@@ -50,7 +50,7 @@ class apiController extends Controller
         
         $mascotasMes = array();
         for($i = 1; $i < 13; $i++){
-            $mascotas = Mascota::where('organizacion_id',$id)->whereYear('created_at', 2020)->whereMonth('created_at', $i)->count();
+            $mascotas = Mascota::where('organizacion_id',$id)->whereYear('created_at', '2020')->whereMonth('created_at', $i)->count();
             array_push($mascotasMes, ['mes'=>$i, 'mascotas'=>$mascotas]);
         }
         
