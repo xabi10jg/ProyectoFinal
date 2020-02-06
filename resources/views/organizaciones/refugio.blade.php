@@ -64,6 +64,7 @@
                             @endforeach
                           </div>
                         </div>
+                        
                         </section>
                         <!--Modal-->
                         @foreach($mascotas as $mascota)
@@ -126,6 +127,78 @@
 </div>
 </section>
 </header>
+<script type="text/javascript">
+    $(document).ready(function(){
+      
+        var options = {
+          title: 'Usuarios registrados',
+          hAxis: {title: 'Mes',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+          let datos = [['Mes', 'Mascotas']];
+          //llamada a la API pasando el parametro del año
+          $.get("http://127.0.0.1:8000/api/apiRefugios/"+{{$refugio}}, function (info, status){
+            console.log(info);
+            if(status === "success"){
+              for(let i = 0; i < info.length; i++){
+                console.log(info[i].mes);
+                //switch para introducir los nombres de los meses en el array datos
+                switch(i) {
+                  case 0:
+                    datos.push(['Enero',info[i].mascotas]);
+                    break;
+                  case 1:
+                    datos.push(['Febrero',info[i].mascotas]);
+                    break;
+                  case 2:
+                    datos.push(['Marzo',info[i].mascotas]);
+                    break;
+                  case 3:
+                    datos.push(['Abril',info[i].mascotas]);
+                    break;
+                  case 4:
+                    datos.push(['Mayo',info[i].mascotas]);
+                    break;
+                  case 5:
+                    datos.push(['Junio',info[i].mascotas]);
+                    break;
+                  case 6:
+                    datos.push(['Julio',info[i].mascotas]);
+                    break;
+                  case 7:
+                    datos.push(['Agosto',info[i].mascotas]);
+                    break;
+                  case 8:
+                    datos.push(['Septiembre',info[i].mascotas]);
+                    break;
+                  case 9:
+                    datos.push(['Octubre',info[i].mascotas]);
+                    break;
+                  case 10:
+                    datos.push(['Noviembre',info[i].mascotas]);
+                    break;
+                  case 11:
+                    datos.push(['Diciembre',info[i].mascotas]);
+                    break;
+                  default:
+                    break;
+                }
+              }
+            }
+              //crea y dibuja el formulario con los datos
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart(){
+              var data = google.visualization.arrayToDataTable(datos);
+              var chart = new google.visualization.AreaChart(document.getElementById('chart'));
+              chart.draw(data, options);
+            }
+          }).fail(function () {
+            console.log('Error');
+          });
+        
+      });
+      </script>
 @endsection
 </body>
 </html>

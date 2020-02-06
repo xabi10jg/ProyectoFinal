@@ -28,8 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
         $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
-        return view('home', array('mascotas'=>$mascotas));
+        return view('home', array('mascotas'=>$mascotas, 'organizacion'=>$organizacion));
     }
 
     public function VistaEditarUsuario($id)
@@ -39,8 +40,18 @@ class HomeController extends Controller
             $roles = Role::all();
             return view('admin.editUserAdminZone', array('user'=>$user, 'roles'=>$roles));
         }else{
-            return view('FormularioEditar');
+            if(Auth::user()->role_id === 2){
+                $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
+                return view('FormularioEditar', array('organizacion'=>$organizacion));
+            }
+            else{
+
+                return view('FormularioEditar');
+
+            }
         }
+
+
     }
     public function EditarUsuario(Request $request, $id){
 
@@ -94,6 +105,42 @@ class HomeController extends Controller
             //hay que cambiarlo
             return redirect(route('admin'));
         }
+    }
+    public function EditarOrganizacion(Request $request, $id){
+
+        
+            $request->validate([
+                'nombre'=>'string|required|min:3|max:50',
+                'email'=>'email|required|min:6|max:50',
+                'direccion'=>['string','min:2','max:50','nullable'],
+                'telefono'=>['regex:/^[679][0-9]{8}$/','nullable'],
+                'cif'=>['required']
+            ]);
+        
+
+
+        $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
+        $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+
+        foreach($organizacion as $orga){
+
+        $orga->name = $request->input('nombre');
+        $orga->email = $request->input('email');
+        $orga->direccion = $request->input('direccion');
+        $orga->telefono = $request->input('telefono');
+        $orga->img = $request->input('img');
+        $orga->CIF = $request->input('cif');
+        $orga->save();
+
+        }
+
+
+        
+
+
+            
+        return view('home', array('mascotas'=>$mascotas, 'organizacion'=>$organizacion));
+
     }
 
     public function EliminarUsuario($id){
