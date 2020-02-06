@@ -159,7 +159,7 @@ class mascotasController extends Controller
             'nombre' => 'required|min:2|max:30|string',
             'fecha_nacimiento' => 'required|date',
             'raza' => 'required|min:2|max:30|string',
-            'descripcion' => 'required|string|min:2|max:300'
+            'descripcion' => 'string|min:2|max:300'
            
             
         ]);

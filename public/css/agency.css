@@ -10,7 +10,13 @@ body {
 }
 
 .pruebaFondo{
+  text-align: center;
+  color: black;
   background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
 }
 
 p {

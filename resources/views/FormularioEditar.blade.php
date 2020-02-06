@@ -60,6 +60,12 @@
                             <strong>{{ $message }}</strong>
                           </span>
                          @enderror<br>
+                    Imagen: <input type="file" name="img" value="{{Auth()->user()->img}}"><br>
+                    @error('img')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                         @enderror<br>
                     <input class="btn btn-primary" type="submit" name="confirmarcambios" value="Confirmar">
 
 

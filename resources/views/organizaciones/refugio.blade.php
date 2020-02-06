@@ -99,9 +99,7 @@
                                         @endisset
                                         <li>{{$mascota->raza}}</li>
                                       </ul>
-                                        @if(Auth::user()->id != $refugio->encargado_id)
-                                            <a class="btn btn-primary" href="">Solicitar Adopcion</a>
-                                        @endif
+                                        @auth
                                         @if(Auth::user()->id === $refugio->encargado_id)
                                             <a class="btn btn-primary" href="{{route('mascotas.edit',$mascota->id)}}"><i class="fas fa-pencil-alt"></i>
                                                 @lang('Editar')</a>
@@ -115,6 +113,7 @@
                                                 <i class="fas fa-times"></i>
                                                 @lang('Cerrar')</button>
                                         @endif
+                                        @endauth
                                     </div>
                                   </div>
                                 </div>

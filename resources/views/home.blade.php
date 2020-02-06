@@ -37,7 +37,11 @@
                         <div class="row col-lg-12 mx-auto">
                             <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Rol'): {{Auth()->user()->roles->rol}}</div>
                             <div class="col-lg-6 list-group-item list-group-item-action">Te uniste en {{Auth()->user()->email_verified_at}}</div>
-                        </div><br>
+                        </div>
+                        <div class="row col-lg-12 mx-auto">
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Imagen'): {{Auth()->user()->img}}</div>
+                        </div>
+                        <br>
                         <div class="row col-lg-12 mx-auto">
                             <div class="col"><a class="btn btn-primary" href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a></div>
                             <div class="col"><a class="btn btn-primary" href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a></div>
