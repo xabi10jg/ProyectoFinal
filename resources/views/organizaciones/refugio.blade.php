@@ -4,8 +4,8 @@
     <section class="page-section">
     <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-10">
+            <div class="card2">
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -62,8 +62,13 @@
                                   </div>
                                 </div>
                             @endforeach
+                            
                           </div>
+                          <div class="row-lg-12">
+                              <div id="chart" style="width: 100%; height: 500px;"></div>
+                            </div>
                         </div>
+                        
                         </section>
                         <!--Modal-->
                         @foreach($mascotas as $mascota)
@@ -126,6 +131,78 @@
 </div>
 </section>
 </header>
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        var options = {
+          title: 'Mascotas en Refugio',
+          hAxis: {title: 'Mes',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+          let datos = [['Mes', 'Mascotas']];
+          //llamada a la API pasando el parametro del refugio
+          $.get("http://127.0.0.1:8000/api/apiRefugios/{{$refugio->id}}", function (info, status){
+            console.log(info.length);
+            if(status === "success"){
+              for(let i = 0; i < info.length; i++){
+                console.log(info[i].mes);
+                //switch para introducir los nombres de los meses en el array datos
+                switch(i) {
+                  case 0:
+                    datos.push(['Enero',parseInt(info[i].mascotas)]);
+                    break;
+                  case 1:
+                    datos.push(['Febrero',parseInt(info[i].mascotas)]);
+                    break;
+                  case 2:
+                    datos.push(['Marzo',parseInt(info[i].mascotas)]);
+                    break;
+                  case 3:
+                    datos.push(['Abril',parseInt(info[i].mascotas)]);
+                    break;
+                  case 4:
+                    datos.push(['Mayo',parseInt(info[i].mascotas)]);
+                    break;
+                  case 5:
+                    datos.push(['Junio',parseInt(info[i].mascotas)]);
+                    break;
+                  case 6:
+                    datos.push(['Julio',parseInt(info[i].mascotas)]);
+                    break;
+                  case 7:
+                    datos.push(['Agosto',parseInt(info[i].mascotas)]);
+                    break;
+                  case 8:
+                    datos.push(['Septiembre',parseInt(info[i].mascotas)]);
+                    break;
+                  case 9:
+                    datos.push(['Octubre',parseInt(info[i].mascotas)]);
+                    break;
+                  case 10:
+                    datos.push(['Noviembre',parseInt(info[i].mascotas)]);
+                    break;
+                  case 11:
+                    datos.push(['Diciembre',parseInt(info[i].mascotas)]);
+                    break;
+                  default:
+                    break;
+                }
+              }
+            }
+              //crea y dibuja el formulario con los datos
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart(){
+              var data = google.visualization.arrayToDataTable(datos);
+              var chart = new google.visualization.AreaChart(document.getElementById('chart'));
+              chart.draw(data, options);
+            }
+          }).fail(function () {
+            console.log('Error');
+          });
+        
+      });
+      </script>
 @endsection
 </body>
 </html>

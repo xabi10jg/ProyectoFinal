@@ -53,6 +53,92 @@
         </tbody>
       </table>
     </div>
+     <div class="row-lg-12">
+      <div class="col-lg-6"><input type="number" id="year" name="year"></div>
+      <div class="col-lg-6"><button id="buscar">Buscar</button></div>
+    </div>
+    <div class="row-lg-12">
+      <div id="chart_div" style="width: 100%; height: 500px;"></div>
+    </div>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+      
+      let year = document.getElementById("year");
+      let buscar = document.getElementById("buscar");
+
+        var options = {
+          title: 'Organizaciones registradas',
+          hAxis: {title: 'Mes',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        buscar.onclick = function(){
+          console.log(typeof(year.value));
+          let datos = [['Mes', 'Organizaciones']];
+          //llamada a la API pasando el parametro del año
+          $.get("http://127.0.0.1:8000/api/apiOrgYear/"+year.value, function (info, status){
+            console.log(info.length);
+            if(status === "success"){
+              for(let i = 0; i < info.length; i++){
+                console.log(info[i].mes);
+                //switch para introducir los nombres de los meses en el array datos
+                switch(i) {
+                  case 0:
+                    datos.push(['Enero',info[i].org]);
+                    break;
+                  case 1:
+                    datos.push(['Febrero',info[i].org]);
+                    break;
+                  case 2:
+                    datos.push(['Marzo',info[i].org]);
+                    break;
+                  case 3:
+                    datos.push(['Abril',info[i].org]);
+                    break;
+                  case 4:
+                    datos.push(['Mayo',info[i].org]);
+                    break;
+                  case 5:
+                    datos.push(['Junio',info[i].org]);
+                    break;
+                  case 6:
+                    datos.push(['Julio',info[i].org]);
+                    break;
+                  case 7:
+                    datos.push(['Agosto',info[i].org]);
+                    break;
+                  case 8:
+                    datos.push(['Septiembre',info[i].org]);
+                    break;
+                  case 9:
+                    datos.push(['Octubre',info[i].org]);
+                    break;
+                  case 10:
+                    datos.push(['Noviembre',info[i].org]);
+                    break;
+                  case 11:
+                    datos.push(['Diciembre',info[i].org]);
+                    break;
+                  default:
+                    break;
+                }
+              }
+            }
+              //crea y dibuja el formulario con los datos
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart(){
+              var data = google.visualization.arrayToDataTable(datos);
+              var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+              chart.draw(data, options);
+            }
+          }).fail(function () {
+            console.log('Error');
+          });
+        }
+      });
+      </script>
   </div>
 </div>
 @endsection

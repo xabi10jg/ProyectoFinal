@@ -28,8 +28,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
-        return view('home', array('mascotas'=>$mascotas));
+        $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
+        if(Auth::user()->role_id ===1){
+            $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+        }
+        else{
+            if(Auth::user()->role_id ===2){
+                $mascotas = Mascota::where('organizacion_id',Auth::user()->id)->get();
+            }
+        }
+        return view('home', array('mascotas'=>$mascotas, 'organizacion'=>$organizacion));
     }
 
     public function VistaEditarUsuario($id)
@@ -39,8 +47,18 @@ class HomeController extends Controller
             $roles = Role::all();
             return view('admin.editUserAdminZone', array('user'=>$user, 'roles'=>$roles));
         }else{
-            return view('FormularioEditar');
+            if(Auth::user()->role_id === 2){
+                $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
+                return view('FormularioEditar', array('organizacion'=>$organizacion));
+            }
+            else{
+
+                return view('FormularioEditar');
+
+            }
         }
+
+
     }
     public function EditarUsuario(Request $request, $id){
 
@@ -91,9 +109,41 @@ class HomeController extends Controller
             $users = User::all();
             return redirect(route('usersAdmin', array('users'=>$users)));
         }else{
-            //hay que cambiarlo
-            return redirect(route('admin'));
+            
+            $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+            return redirect(route('home', array('mascotas'=>$mascotas, 'usuario'=>$usuario)));
         }
+    }
+    public function EditarOrganizacion(Request $request, $id){
+
+        
+            $request->validate([
+                'nombre'=>'string|required|min:3|max:50',
+                'email'=>'email|required|min:6|max:50',
+                'direccion'=>['string','min:2','max:50','nullable'],
+                'telefono'=>['regex:/^[679][0-9]{8}$/','nullable'],
+                'cif'=>['required']
+            ]);
+        
+
+
+        $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
+        $mascotas = Mascota::where('propietario',Auth::user()->id)->get();
+
+        foreach($organizacion as $orga){
+
+        $orga->name = $request->input('nombre');
+        $orga->email = $request->input('email');
+        $orga->direccion = $request->input('direccion');
+        $orga->telefono = $request->input('telefono');
+        $orga->img = $request->input('img');
+        $orga->CIF = $request->input('cif');
+        $orga->save();
+
+        }
+
+            return view('home', array('mascotas'=>$mascotas, 'organizacion'=>$organizacion));
+
     }
 
     public function EliminarUsuario($id){

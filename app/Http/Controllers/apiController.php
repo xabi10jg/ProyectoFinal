@@ -32,17 +32,70 @@ class apiController extends Controller
         if(isset($year)){
             for($i = 1; $i < 13; $i++){
                 $usuarios = User::whereYear('created_at', $year)->whereMonth('created_at', $i)->count();
-                //dd($usuarios);
                 array_push($usuariosMes, ['mes'=>$i, 'usuarios'=>$usuarios]);
+
             }
         }else{
             $year = 2020;
             for($i = 1; $i < 13; $i++){
                 $usuarios = User::where('created_at', $year)->whereMonth('created_at', $i)->count();
                 array_push($usuariosMes, ['mes'=>$i, 'usuarios'=>$usuarios]);
+                dd($usuariosMes);
             }
         }
         
         return $usuariosMes;
     }
+    
+    public function orgYear($year){
+        $orgMes=array();
+        if(isset($year)){
+            for($i = 1; $i < 13; $i++){
+                $org = Organizacion::whereYear('created_at', $year)->whereMonth('created_at', $i)->count();
+                array_push($orgMes, ['mes'=>$i, 'org'=>$org]);
+
+            }
+        }else{
+            $year = 2020;
+            for($i = 1; $i < 13; $i++){
+                $org = Organizacion::where('created_at', $year)->whereMonth('created_at', $i)->count();
+                array_push($orgMes, ['mes'=>$i, 'org'=>$org]);
+            }
+        }
+        
+        return $orgMes;
+    }
+    public function mascYear($year){
+        $mascMes=array();
+        if(isset($year)){
+            for($i = 1; $i < 13; $i++){
+                $mascota = Mascota::whereYear('created_at', $year)->whereMonth('created_at', $i)->count();
+                array_push($mascMes, ['mes'=>$i, 'mascota'=>$mascota]);
+
+            }
+        }else{
+            $year = 2020;
+            for($i = 1; $i < 13; $i++){
+                $mascota = Mascota::whereYear('created_at', $year)->whereMonth('created_at', $i)->count();
+                array_push($mascMes, ['mes'=>$i, 'mascota'=>$mascota]);
+            }
+        }
+        
+        return $mascMes;
+    }
+     public function mascotasRefugio($id){
+
+        
+        $mascotasMes = array();
+        for($i = 1; $i < 13; $i++){
+            $mascotas = Mascota::where('organizacion_id',$id)->whereYear('created_at', '2020')->whereMonth('created_at', $i)->count();
+            array_push($mascotasMes, ['mes'=>$i, 'mascotas'=>$mascotas]);
+        }
+        
+        
+        return $mascotasMes;
+
+        
+    }
+
 }
