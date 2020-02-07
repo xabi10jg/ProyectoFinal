@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-lg-10 text-center text-gray-900">
-  <h1>Editar Organizacion</h1>
+  <h1>Crear Organizacion</h1>
   <form method="post" class="text-center" action="{{route('org.store')}}" enctype="multipart/form-data">
     @csrf
     <div class="form-row">
