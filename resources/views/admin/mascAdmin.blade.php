@@ -81,7 +81,7 @@
           console.log(typeof(year.value));
           let datos = [['Mes', 'Mascotas']];
           //llamada a la API pasando el parametro del año
-          $.get("http://127.0.0.1:8000/api/apiMascYear/"+year.value, function (info, status){
+          $.get("http://comanimals.herokuapp.com/api/apiMascYear/"+year.value, function (info, status){
             console.log(info);
             if(status === "success"){
               for(let i = 0; i < info.length; i++){
