@@ -291,6 +291,10 @@ class OrganizacionesController extends Controller
     public function destroy($id)
     {
     	$org = Organizacion::find($id);
+
+        $user = User::find($org->encargado_id);
+        $user->role_id = 1;
+        $user->save();
     	$org->forceDelete();
 
         $organizaciones = Organizacion::all();
