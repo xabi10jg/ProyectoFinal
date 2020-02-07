@@ -111,4 +111,5 @@
       </form>
       </div>
     </div>
+    <script src="/js/editUserAdmin.js"></script>
 @endsection

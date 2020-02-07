@@ -71,7 +71,7 @@
         </div>
     </section>
   </header>
-
+<script src="/js/peticionFE.js"></script>
 @endsection
 </body>
 </html>

@@ -103,4 +103,5 @@
     <input type="submit" class="btn btn-warning text-gray-900" name="confirmarcambios" value="Confirmar">
   </form>
 </div>
+<script src="/js/mascEditAdmin.js"></script>
 @endsection

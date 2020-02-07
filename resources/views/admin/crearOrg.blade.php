@@ -154,4 +154,5 @@
     <input class="btn btn-warning text-gray-900" id="submitOEA" disabled type="submit" name="confirmarcambios" value="Confirmar">
   </form>
 </div>
+<script src="/js/orgAdminEdit.js"></script>
 @endsection

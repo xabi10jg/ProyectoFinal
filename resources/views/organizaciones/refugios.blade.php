@@ -13,7 +13,7 @@
             <div class="col-sm-4">
               <div class="card1">
                 <div class="card-body">
-                  <img class="card-img1" src="{{$refugio->img}}">
+                  <img class="card-img" src="{{$refugio->img}}">
                   <h5 class="card-title">{{$refugio->name}}</h5>
                   <p class="card-text">
                     Direccion: {{$refugio->direccion}}

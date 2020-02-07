@@ -97,6 +97,7 @@
         </div>
     </section>
   </header>
+  <script src="/js/mascotaEdit.js"></script>
 @endsection
 </body>
 </html>

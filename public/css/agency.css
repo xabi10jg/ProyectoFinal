@@ -803,7 +803,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
       padding: 15px;
     }
 
-    .card1 {
+    .card1{
       position: relative;
       display: -webkit-box;
       display: flex;

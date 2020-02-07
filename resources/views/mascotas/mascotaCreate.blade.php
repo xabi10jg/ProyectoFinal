@@ -83,6 +83,7 @@
         </div>
     </section>
   </header>
+  <script src="/js/mascotaCreate.js"></script>
   @endsection
 </body>
 </html>
