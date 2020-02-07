@@ -22,7 +22,7 @@
                         @if(Auth::user()->id===$veterinario->encargado_id)
                           <div class="d-flex flex-row">
                             <div class="col-lg-12">
-                              <a class="btn btn-primary" href="{{route('mascotas.create')}}">Editar Veterinario</a>
+                              <a class="btn btn-primary" href="{{route('org.edit', $veterinario->id)}}">Editar Veterinario</a>
                             </div>
                           </div>
                         @endif

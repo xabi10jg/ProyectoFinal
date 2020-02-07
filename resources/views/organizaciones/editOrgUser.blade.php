@@ -8,116 +8,13 @@
               <div class="card">
                 <div class="card-body">
                   <div class="prueba">
-                    <form method="post" class="text-center" action="{{route('ConfirmarEdicion', Auth::user()->id)}}" enctype="multipart/form-data">
-                    @csrf
-                      <div class="form-row">
-                        <div class="col-lg-6">
-                          <label>Nombre</label>
-                          <input type="text" class="form-control" id="nombreUA" name="nombre" value="{{Auth::user()->name}}">
-                          <div id="nombreMalUA">Introduce un nombre valido</div>
-                          @error('nombre')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                        <div class="col-lg-6">
-                          <label>Apellido</label>
-                          <input type="text" name="apellido" id="apellidoUA" class="form-control" value="{{Auth::user()->apellido}}">
-                          <div id="apellidoMalUA">Introduce un apellido valido</div>
-                          @error('apellido')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col-lg-6">
-                          <label>Email</label>
-                          <input type="text" name="email" id="emailUA" class="form-control" value="{{Auth::user()->email}}">
-                          <div id="emailMalUA">Introduce un email valido</div>
-                           @error('email')
-                              <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                              </span>
-                            @enderror
-                        </div>
-                        <div class="col-lg-6">
-                          <label>Dirección</label>
-                          <input type="text" name="direccion" id="direccionUA" value="{{Auth::user()->direccion}}" class="form-control">
-                          <div id="direccionMalUA">Introduce una direccion valida</div>
-                          @error('direccion')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col-lg-6">
-                          <label>Localidad</label>
-                          <input type="text" name="localidad" id="localidadUA" value="{{Auth::user()->localidad}}" class="form-control">
-                          <div id="localidadMalUA">Introduce una localidad valida</div>
-                          @error('localidad')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                        <div class="col-lg-6">
-                          <label>Provincia</label>
-                          <input type="text" name="provincia" id="provinciaUA" value="{{Auth::user()->provincia}}" class="form-control">
-                          <div id="provinciaMalUA">Introduce una localidad valida</div>
-                          @error('provincia')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col-lg-6">
-                          <label>País</label>
-                          <input type="text" name="pais" id="paisUA" value="{{Auth::user()->pais}}" class="form-control">
-                          <div id="paisMalUA">Introduce un pais valido</div>
-                          @error('pais')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                        <div class="col-lg-6">
-                          <label>Teléfono</label>
-                          <input type="text" name="telefono" id="telefonoUA" value="{{Auth::user()->telefono}}" class="form-control">
-                          <div id="telefonoMalUA">Introduce un telefono valido</div>
-                          @error('telefono')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="form-row">
-                        <div class="col">
-                          <label>Imagen:</label>
-                          <input type="file" class="custom-file text-center" name="imgUser">
-                          @error('img')
-                          <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
-                        </div>
-                      </div><br>
-                        <input type="submit" class="btn btn-warning text-gray-900" id="submitUA" disabled name="confirmarcambios" value="Confirmar">
-                      </form>
-                  @if(Auth()->user()->role_id===2)
-                  @foreach($organizacion as $org)
-                  <form method="post" class="text-center" action="{{route('org.update', $org->id)}}" enctype="multipart/form-data">
+                    <div class="col-lg-12 text-center mt-5">
+                      <h2 class="section-heading text-primary text-uppercase">@lang('Editar Organizacion')</h2>
+                    </div>
+                    <form method="post" class="text-center" action="{{route('org.update', $org->id)}}" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
-
-                    <div class="form-row">
+                      <div class="form-row">
                         <div class="col-lg-6">
                           <label>Nombre:</label>
                           <input type="text" class="form-control" id="nombreOEA" value="{{$org->name}}" name="nombre">
@@ -255,8 +152,6 @@
                       </div><br>
                       <input class="btn btn-warning text-gray-900" id="submitOEA" disabled type="submit" name="confirmarcambios" value="Confirmar">
                   </form>
-                  @endforeach
-                  @endif
                   </div>
                 </div>
               </div>
@@ -265,6 +160,5 @@
         </div>
     </section>
   </header>
-  <script src="/js/editUserAdmin.js"></script>
-  <script src="/js/orgAdminEdit.js"></script>
+<script src="/js/orgAdminEdit.js"></script>
 @endsection

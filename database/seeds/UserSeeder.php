@@ -100,21 +100,5 @@ class UserSeeder extends Seeder
         $user->email_verified_at = $time->toDateTimeString();
         $user->save();
 
-        $user = new User();
-        $user->name = 'Ane';
-        $user->email = 'Ane@gmail.com';
-        $user->password = bcrypt('12345678');
-        $user->role_id = $role_encargado->id;
-        $user->email_verified_at = $time->toDateTimeString();
-        $user->save();
-
-        $user = new User();
-        $user->name = 'Ines';
-        $user->email = 'Ines@gmail.com';
-        $user->password = bcrypt('12345678');
-        $user->role_id = $role_encargado->id;
-        $user->email_verified_at = $time->toDateTimeString();
-        $user->save();
-
     }
 }

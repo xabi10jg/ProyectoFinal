@@ -15,8 +15,6 @@
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">@lang('Perfil Usuario')</h2>
                     </div><br>
-
-                    @if (Auth()->user()->role_id===1)
                     <div class="text-black justify-content-center rounded-lg border border-warning shadow p-4 mb-4">
                         <div class="row col-lg-12 mx-auto ">
                             <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Nombre'): {{Auth()->user()->name}}</div>
@@ -39,7 +37,7 @@
                             <div class="col-lg-6 list-group-item list-group-item-action">Te uniste en {{Auth()->user()->email_verified_at}}</div>
                         </div>
                         <div class="row col-lg-12 mx-auto">
-                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Imagen'): {{Auth()->user()->img}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Imagen'):<img width="100px" src="{{Auth::user()->img}}"></div>
                         </div>
                         <br>
                         <div class="row col-lg-12 mx-auto">
@@ -47,7 +45,7 @@
                             <div class="col"><a class="btn btn-primary" href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a></div>
                         </div>
                     </div>
-                    @elseif(Auth()->user()->role_id===2)
+                    @if(Auth()->user()->role_id===2)
                     @foreach($organizacion as $orga)
 
                       <div class="text-black justify-content-center rounded-lg border border-warning shadow p-4 mb-4">
@@ -60,20 +58,15 @@
                             <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Teléfono'): {{$orga->telefono}}</div>
                         </div>
                         <div class="row col-lg-12 mx-auto">
-                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Imagen'): {{$orga->img}}</div>
+                            <div class="col-lg-6 list-group-item list-group-item-action list-group-item-warning">@lang('Imagen Empresa'): <img width="100px" src="{{$orga->img}}"></div>
                             <div class="col-lg-6 list-group-item list-group-item-action">@lang('CIF'): {{$orga->CIF}}</div>
                         </div>
                         <br>
                         <div class="row col-lg-12 mx-auto">
-                            <div class="col"><a class="btn btn-primary" href="{{route('FormularioEditar', Auth::user()->id)}}">Editar</a></div>
-                            <div class="col"><a class="btn btn-primary" href="{{route('EliminarUsuario', Auth::user()->id)}}">Eliminar</a></div>
+                            <div class="col"><a class="btn btn-primary" href="{{route('org.edit', $orga->id)}}">Editar Organizacion</a></div>
                         </div>
                     </div>
                     @endforeach
-                        
-                    
-                    
-
                     @endif
                     <section class="page-section2" id="portfolio">
                     <div class="container">

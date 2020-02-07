@@ -7,6 +7,7 @@ use App\User;
 use App\Mascota;
 use App\Role;
 use App\Organizacion;
+use App\Tipo;
 use Auth;
 
 class HomeController extends Controller
@@ -48,8 +49,10 @@ class HomeController extends Controller
             return view('admin.editUserAdminZone', array('user'=>$user, 'roles'=>$roles));
         }else{
             if(Auth::user()->role_id === 2){
+                $roles = Role::all();
+                $tipos = Tipo::all();
                 $organizacion= Organizacion::where('encargado_id',Auth::user()->id)->get();
-                return view('FormularioEditar', array('organizacion'=>$organizacion));
+                return view('FormularioEditar', array('organizacion'=>$organizacion, 'tipos'=>$tipos, 'roles'=>$roles));
             }
             else{
 
@@ -98,7 +101,7 @@ class HomeController extends Controller
         $usuario->provincia = $request->input('provincia');
         $usuario->pais = $request->input('pais');
         $usuario->telefono = $request->input('telefono');
-        $imagen = $request->file('img');
+        $imagen = $request->file('imgUser');
         if($imagen == ''){
           }else{
 

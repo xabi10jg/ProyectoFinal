@@ -12,7 +12,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div class="prueba mb-5">
+                      @auth
+                        @if(Auth::user()->id===$hotel->encargado_id)
+                          <div class="d-flex flex-row">
+                            <div class="col-lg-12">
+                              <a class="btn btn-primary" href="{{route('org.edit', $hotel->id)}}">Editar Hotel</a>
+                            </div>
+                          </div>
+                        @endif
+                      @endauth
+                    </div>
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">{{$hotel->name}}</h2>
                     </div>

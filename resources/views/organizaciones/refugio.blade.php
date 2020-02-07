@@ -21,7 +21,8 @@
                         @if(Auth::user()->id===$refugio->encargado_id)
                         <div class="d-flex flex-row">
                             <div class="col-lg-12">
-                                <a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a>
+                              <div class="col-lg-4 d-inline"><a class="btn btn-primary" href="{{route('mascotas.create')}}">Añadir Mascota</a></div>
+                              <div class="col-lg-4 d-inline"><a class="btn btn-primary" href="{{route('org.edit', $refugio->id)}}">Editar Datos</a></div>
                             </div>
                         </div>
                         @endif

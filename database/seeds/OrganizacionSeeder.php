@@ -76,8 +76,8 @@ class OrganizacionSeeder extends Seeder
         $org->save();
 
         $org = new Organizacion();
-        $org->name = 'Protectora Maria';
-        $org->email = 'mariaPro@gmail.com';
+        $org->name = 'Protectora Encargado';
+        $org->email = 'ProEncargado@gmail.com';
         $org->CIF = '123456789LKJ';
         $org->horarioApertura = '08:00:00';
         $org->horarioCierre = '20:00:00';
@@ -86,7 +86,7 @@ class OrganizacionSeeder extends Seeder
         $org->provincia = 'Barcelona';
         $org->telefono = '635652355';
         $org->tipo_id = $tipo_ref->id;
-        $org->encargado_id = 8;
+        $org->encargado_id = 2;
         $org->save();
     }
 }
