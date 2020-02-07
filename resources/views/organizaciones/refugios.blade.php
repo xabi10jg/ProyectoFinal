@@ -10,11 +10,11 @@
        <br>
         <div class="row col-lg-12">
           @foreach($refugios as $refugio)
-            <div class="col-sm-4">
+            <div class="col-lg-4">
               <div class="card1">
                 <div class="card-body">
-                  <img class="card-img1" src="{{$refugio->img}}">
                   <h5 class="card-title">{{$refugio->name}}</h5>
+                  <img class="card-img1" src="{{$refugio->img}}"> 
                   <p class="card-text">
                     Direccion: {{$refugio->direccion}}
                   </p>

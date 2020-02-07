@@ -9,7 +9,8 @@
   <div class="form-row">
     <div class="col-lg-6">
       <label>Nombre</label>
-      <input type="text" class="form-control" id="nombre" placeholder="Introduce un nombre" name="nombre" value="{{$mascota->name}}">
+      <input type="text" class="form-control" id="nombreMA" placeholder="Introduce un nombre" name="nombre" value="{{$mascota->name}}">
+      <div id="nombreMalMA">Introduce un nombre valido</div>
       @error('nombre')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
@@ -29,7 +30,8 @@
   <div class="form-row">
     <div class="col-lg-6">
       <label>Raza:</label>
-      <input type="text" class="form-control" id="raza" placeholder="Introduce una raza" name="raza" value="{{$mascota->raza}}">
+      <input type="text" class="form-control" id="razaMA" placeholder="Introduce una raza" name="raza" value="{{$mascota->raza}}">
+      <div id="razaMalMA">Introduce una raza valida</div>
       @error('raza')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
@@ -38,7 +40,8 @@
     </div>
     <div class="col-lg-6">
       <label>Descripcion:</label>
-      <input type="text" name="descripcion" class="form-control" placeholder="Introduce una descripcion" value="{{$mascota->descripcion}}">
+      <input type="text" id="descripcionMA" name="descripcion" class="form-control" placeholder="Introduce una descripcion" value="{{$mascota->descripcion}}">
+      <div id="descMalMA">Introduce una descripcion valida</div>
       @error('descripcion')
         <span class="invalid-feedback" role="alert">
           <strong>{{ $message }}</strong>
@@ -100,4 +103,5 @@
     <input type="submit" class="btn btn-warning text-gray-900" name="confirmarcambios" value="Confirmar">
   </form>
 </div>
+<script src="/js/mascEditAdmin.js"></script>
 @endsection

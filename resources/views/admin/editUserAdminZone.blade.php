@@ -7,7 +7,8 @@
       <div class="form-row">
         <div class="col-lg-4">
           <label>Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Introduce un nombre" name="nombre" value="{{$user->name}}">
+          <input type="text" class="form-control" id="nombreUA" name="nombre" value="{{$user->name}}">
+          <div id="nombreMalUA">Introduce un nombre valido</div>
           @error('nombre')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -16,7 +17,8 @@
         </div>
         <div class="col-lg-4">
           <label>Apellido</label>
-          <input type="text" name="apellido" class="form-control" value="{{$user->apellido}}" placeholder="Introduce un apellido">
+          <input type="text" name="apellido" id="apellidoUA" class="form-control" value="{{$user->apellido}}">
+          <div id="apellidoMalUA">Introduce un apellido valido</div>
           @error('apellido')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -25,7 +27,8 @@
         </div>
         <div class="col-lg-4">
           <label>Email</label>
-          <input type="text" name="email" class="form-control" value="{{$user->email}}" placeholder="Introduce un email">
+          <input type="text" name="email" id="emailUA" class="form-control" value="{{$user->email}}">
+          <div id="emailMalUA">Introduce un email valido</div>
            @error('email')
               <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -36,7 +39,8 @@
       <div class="form-row">
         <div class="col-lg-4">
           <label>Dirección</label>
-          <input type="text" name="direccion" value="{{$user->direccion}}" placeholder="Introduce una dirección" class="form-control">
+          <input type="text" name="direccion" id="direccionUA" value="{{$user->direccion}}" class="form-control">
+          <div id="direccionMalUA">Introduce una direccion valida</div>
           @error('direccion')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -45,7 +49,8 @@
         </div>
         <div class="col-lg-4">
           <label>Localidad</label>
-          <input type="text" name="localidad" value="{{$user->localidad}}" placeholder="Introduce una localidad" class="form-control">
+          <input type="text" name="localidad" id="localidadUA" value="{{$user->localidad}}" class="form-control">
+          <div id="localidadMalUA">Introduce una localidad valida</div>
           @error('localidad')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -54,7 +59,8 @@
         </div>
         <div class="col-lg-4">
           <label>Provincia</label>
-          <input type="text" name="provincia" value="{{$user->provincia}}" placeholder="Introduce una provincia" class="form-control">
+          <input type="text" name="provincia" id="provinciaUA" value="{{$user->provincia}}" class="form-control">
+          <div id="provinciaMalUA">Introduce una localidad valida</div>
           @error('provincia')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -65,7 +71,8 @@
       <div class="form-row">
         <div class="col-lg-4">
           <label>País</label>
-          <input type="text" name="pais" value="{{$user->pais}}" placeholder="Introduce un pais" class="form-control">
+          <input type="text" name="pais" id="paisUA" value="{{$user->pais}}" class="form-control">
+          <div id="paisMalUA">Introduce un pais valido</div>
           @error('pais')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -74,7 +81,8 @@
         </div>
         <div class="col-lg-4">
           <label>Teléfono</label>
-          <input type="text" name="telefono" value="{{$user->telefono}}" placeholder="Introduce un telefono" class="form-control">
+          <input type="text" name="telefono" id="telefonoUA" value="{{$user->telefono}}" class="form-control">
+          <div id="telefonoMalUA">Introduce un telefono valido</div>
           @error('telefono')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
@@ -99,8 +107,9 @@
           @enderror
         </div>
       </div><br>
-        <input type="submit" class="btn btn-warning text-gray-900" name="confirmarcambios" value="Confirmar">
+        <input type="submit" class="btn btn-warning text-gray-900" id="submitUA" disabled name="confirmarcambios" value="Confirmar">
       </form>
       </div>
     </div>
+    <script src="/js/editUserAdmin.js"></script>
 @endsection

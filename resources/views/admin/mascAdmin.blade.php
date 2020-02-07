@@ -13,9 +13,7 @@
               <th>Fecha Nacimiento</th>
               <th>Raza</th>
               <th>Propietario</th>
-              @isset($mascota->organizacion->name)
-                <th>Organizacion</th>
-              @endisset
+              <th>Organizacion</th>
               <th>Descripcion</th>
               <th>Imagen</th>
               <th>Editar</th>
@@ -30,11 +28,19 @@
             <td>{{$mascota->raza}}</td>
             @isset($mascota->usuario->name)
               <td>{{$mascota->usuario->name}}</td>
+            @else
+              <td>No tiene</td>
             @endisset
             @isset($mascota->organizacion->name)
               <td>{{$mascota->organizacion->name}}</td>
+            @else
+              <td>No tiene</td>
             @endisset
-            <td>{{$mascota->descripcion}}</td>
+            @isset($mascota->descripcion)
+              <td>{{$mascota->descripcion}}</td>
+            @else
+              <td>No tiene</td>
+            @endisset
             <td>{{$mascota->img}}</td>
             <td><a class="btn btn-warning text-gray-900" href="{{route('mascotas.edit',$mascota->id)}}">Editar</a></td>
             <td>
