@@ -1,0 +1,28 @@
+Datos Proyecto
+URL: comanimals.herokuapp.com
+Direccion correo gmail: comanimalsorg@gmail.com	
+Contraseña: Com12345.
+Si no funciona el registro acceder a la siguiente direccion
+https://accounts.google.com/UnlockCaptcha
+Datos API:
+Client ID: 9db87030e1b137f
+Client Secret: fe2c227c01c63ebc4e7aaa9db12f38c68d6a1e28
+Access Token: 2ce7e04187d9aa9a56c60e998b6c1653a79c4bc9
+Refresh Token: e8ed595ae2996bb69e18810e77927d5133dfd6b7
+Configuracion envio smtp archivo .env:
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=465
+MAIL_USERNAME=comanimalsorg@gmail.com
+MAIL_PASSWORD=Com12345.
+MAIL_ENCRYPTION=ssl
+Tipos de usuarios:
+Usuario estandar:
+Correo: estandar@gmail.com
+Contraseña: 12345678
+Usuario encargado:
+Correo: encargado@gmail.com
+Contraseña: 12345678
+Usuario Administrador:
+Correo: administrador@gmail.com
+Contraseña: admin123
