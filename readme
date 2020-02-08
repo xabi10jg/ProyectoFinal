@@ -16,7 +16,24 @@ MAIL_PORT=465
 MAIL_USERNAME=comanimalsorg@gmail.com
 MAIL_PASSWORD=Com12345.
 MAIL_ENCRYPTION=ssl
-Tipos de usuarios:
+Cambio nombre aplicacion .env:
+APP_NAME=Comanimals
+Cambios base de datos .env en local:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=comanimals
+DB_USERNAME=laravel
+DB_PASSWORD=laravel
+Cambios base de datos .env heroku:
+DATABASE_URL: postgres://yhsndgfqneymhe:c6843f974f569500c251750f95dc9b2e3f43591dbab2d29452819f6c5af9482c@ec2-107-22-160-102.compute-1.amazonaws.com:5432/d4dg8tioc4kre9
+DB_CONNECTION: pgsql
+DB_DATABASE: d4dg8tioc4kre9
+DB_HOST: ec2-107-22-160-102.compute-1.amazonaws.com
+DB_PASSWORD: c6843f974f569500c251750f95dc9b2e3f43591dbab2d29452819f6c5af9482c
+DB_PORT: 5432
+DB_USERNAME: yhsndgfqneymhe
+Tipos de usuarios
 Usuario estandar:
 Correo: estandar@gmail.com
 Contraseña: 12345678
